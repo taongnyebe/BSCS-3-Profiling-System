@@ -1,0 +1,34 @@
+Features
+- Profiling 
+	-> Grades 
+	-> Basic Data
+	-> Device's and Connection
+	-> Contacts
+	-> Vaccinated
+	-> Scholarship Grant
+	-> 
+- Grading System
+- User System
+	>> Search and Specialized
+	>> Specialized
+- news Feed
+* Class Attendance
+	-> Lab and Lecture
+
+Scope
+- BSCS 1, 2, 3 and Irregulars of BSCS
+
+Data Needed
+- Student Information
+- Schedule Classes (official)
+	- Designation
+- Teachers Involved
+* Grades of Student
+
+Cost: ???
+Duration:
+November - January: 3 months
+
+Design Ara
+
+
