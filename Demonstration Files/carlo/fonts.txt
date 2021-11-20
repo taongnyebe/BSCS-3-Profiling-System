@@ -1,2 +1,0 @@
-primary text: Quando - 400
-secondary text: Droid Sans - 400
