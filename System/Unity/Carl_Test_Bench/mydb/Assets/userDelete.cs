@@ -5,7 +5,7 @@ using UnityEngine;
 public class userDelete : MonoBehaviour
 {
    
-    string URL = "http://localhost/BSCS-3-Profiling-System/System/PHP/Carl_Test_Bench/mydb/userDelete.php";
+    string URL = "http://localhost/BSCS-3-Profiling-System/System/Unity/Carl_Test_Bench/mydb/Assets/userDelete.php";
     public string  WhereField, WhereCondition;
 
     // Start is called before the first frame update

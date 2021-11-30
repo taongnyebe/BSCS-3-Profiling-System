@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class userInsert : MonoBehaviour
 {
-    string URL = "http://localhost/BSCS-3-Profiling-System/System/PHP/Carl_Test_Bench/mydb/userInsert.php";
+    string URL = "http://localhost/BSCS-3-Profiling-System/System/Unity/Carl_Test_Bench/mydb/Assets/userInsert.php";
     public string InputUsername, InputEmail, InputPassword;
 
 

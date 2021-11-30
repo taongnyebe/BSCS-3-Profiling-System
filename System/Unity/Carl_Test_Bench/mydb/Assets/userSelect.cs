@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class userSelect : MonoBehaviour
 {
-    string URL = "http://localhost/BSCS-3-Profiling-System/System/PHP/Carl_Test_Bench/mydb/userSelect.php";
+    string URL = "http://localhost/BSCS-3-Profiling-System/System/Unity/Carl_Test_Bench/mydb/Assets/userSelect.php";
     public string [] usersData;
 
     //Use this for initialization

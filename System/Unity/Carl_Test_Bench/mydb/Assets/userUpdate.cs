@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class userUpdate : MonoBehaviour
 {
-    string URL = "http://localhost/BSCS-3-Profiling-System/System/PHP/Carl_Test_Bench/mydb/userUpdate.php";
+    string URL = "http://localhost/BSCS-3-Profiling-System/System/Unity/Carl_Test_Bench/mydb/Assets/userUpdate.php";
     public string InputUsername, InputEmail, InputPassword, WhereField, WhereCondition;
 
     // Start is called before the first frame update
