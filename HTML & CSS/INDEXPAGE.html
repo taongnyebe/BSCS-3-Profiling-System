@@ -1,0 +1,88 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="slide_container.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="search.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
+<center>
+<div class="header">	
+		<img src = "CSORG.png" style="float:left; width:140px; height:140px;">		
+		<h2>STUDENT INFORMATION MANAGEMENT SYSTEM</h2>
+		<h3>ISABELA STATE UNIVERSITY - ECHAGUE CAMPUS</h3>
+		<h4>Bachelor of Science in Computer Science</h4>
+</div>
+</center>
+</head>
+
+<body>
+
+<div class = "sdiv">
+	<a href= "SEARCH.html">Search</a><i class = "fa fa-search" style = "font-size:32px;"></i>
+</div>
+<br>
+<br>
+<br>
+
+<div class = "topnav">
+	<a href = "LOGIN.html">Login</a>
+</div>
+
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img src="3.jpg" style="width:750px; height:320px;">
+    <div class="text">Caption One</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="1.jpg" style="width:750px; height:320px;">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <img src="3.jpg" style="width:750px; height:320px;">
+    <div class="text">Caption Three</div>
+  </div>
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div class="footer">
+  <a href = "About.html">About Developers</a>
+</div>
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+</body>
+</html>

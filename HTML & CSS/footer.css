@@ -1,0 +1,30 @@
+.footer {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+
+
+.footer {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: right;
+}
+
+.footer a {
+  float: right;
+  text-align:right;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 15px;
+  margin: 0;
+  padding: 10px;
+}
