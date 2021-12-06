@@ -14,9 +14,7 @@
 .grid-container2 {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
-	margin-left: 530px;
-	margin-top: 0;
+	margin-left: 38%;
 }
 
 .researchdiv button {

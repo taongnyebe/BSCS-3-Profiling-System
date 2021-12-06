@@ -12,13 +12,12 @@
 }
 
 button{
-  margin: 20px;
+  margin: 1%;
 }
 .btn-group button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
+  border-bottom: none;
 }
 
-/* Add a background color on hover */
 .btn-group button:hover {
   background-color: #3e8e41;
 }
