@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="header.css">
 <link rel="stylesheet" href="topnav.css">
 <link rel="stylesheet" href="footer.css">
-<link rel="stylesheet" href="back.css">
+<link rel="stylesheet" href="backcp.css">
 <script src="https://kit.fontawesome.com/a11b1e5760.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="student_container.css">
 <link rel="stylesheet" href="search_bar.css">
@@ -22,122 +22,143 @@
 
 <body>
 
-<div class = "backdiv">
-	<a href = "INDEXPAGE.html">Back</a>
-	<a>BS in Computer Science 1</a>
-	<center><button style="height: 49px; background-color: blue;" class="btn"><i class="fas fa-plus"></i></button></i></center>
-</div>
-<div class="wrap">
-   <div class="search">
-      <input type="text" class="searchTerm" placeholder="What are you looking for?">
-      <button type="submit" class="searchButton"><i class="fa fa-search"></i>
-     </button>
-   </div>
-</div>
+<div class = "backCPdiv">
 
-<br>
-
-<div class = "grid-container">
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
-  
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+		<a href = "#" style = "float: left;">
+			Back
+		</a>
+		
+		<h1 style = "margin-left: 32%;">
+			BS in Computer Science 1
+			<div class="wrap">
+				<div class="search">
+					<input type="text" class="searchTerm" placeholder="What are you looking for?">
+					<button type="submit" class="searchButton"><i class="fa fa-search"></i>
+						</button>
+				</div>
+			</div>
+		</h1>
+		
+		<a href="ADDSTUDENT.html" style = "margin-left: 31%;">
+			<i class="fas fa-pencil-alt">
+				</i>
+		</a>
 </div>
 
 <div class = "grid-container">
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+	</div>
   
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
   </div>
+
+</div>
+  
+<div class = "grid-container">
+
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+	</div>
+  
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+    </div>
+  
 </div>
 
 <div class = "grid-container">
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+	</div>
   
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+    </div>
+  
 </div>
 
 <div class = "grid-container">
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+	</div>
   
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+    </div>
+  
 </div>
 
 <div class = "grid-container">
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+	</div>
   
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+    </div>
+  
 </div>
 
 <div class = "grid-container">
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
+
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+	</div>
   
-  <div class = "studentdiv">
-   <button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
-   <a href="#"><i class="fas fa-pencil-alt"></i></a>
-   <a href="#"><i class="fa fa-trash"></i></a>
-   </button>
-  </div>
-</div>
-
-<br>
-
-<div class="footer">
-  <a href = "About.html">About Developers</a>
+	<div class = "studentdiv">
+		<button style="width: 400px; height: 49px;">Dela Cruz, Jedidiah Andrei V.
+				<a href="#"><i class="fas fa-pencil-alt"></i></a>
+				<a href="#" style="margin-right:10px;"><i class="fa fa-trash"></i></a>
+			</button>
+    </div>
+  
 </div>
 
 </body>
+
+<footer>
+<div class = "footerdiv">
+	<a href="#">ABOUT DEVELOPERS</a>
+</div>
+</footer>
+
 </html>

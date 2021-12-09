@@ -1,17 +1,39 @@
 .backdiv {
-  display: flex;                  /* establish flex container */
-  flex-direction: row;            /* default value; can be omitted */
-  flex-wrap: nowrap;              /* default value; can be omitted */
-  justify-content: space-between; /* switched from default (flex-start, see below) */
+  display: inline-flex;                              
   background-color: blue;
-  height:30px;
+  height:7.5%;
+  width: 100%;
 }
 
 .backdiv a {
   color: #f2f2f2;
   text-align: center;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 200%;
   padding: 10px;
-  height:20px;
+
+}
+
+.backdiv i{
+	float: right;
+}
+
+.backCPdiv {
+  display: inline-flex;                              
+  background-color: blue;
+  height:7.5%;
+  width: 100%;
+}
+
+.backCPdiv a {
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 200%;
+  padding: 10px;
+
+}
+
+.backCPdiv i{
+	float: right;
 }

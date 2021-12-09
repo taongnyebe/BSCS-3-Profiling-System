@@ -1,25 +1,32 @@
 .btn-group button {
-  background-color: #04AA6D; 
-  border: 1px solid green; 
+  border: 1px ; 
+  border-radius: 10px;
   color: white; 
-  padding: 35px 24px; 
   cursor: pointer; 
   width: 50%; 
-  display: flex;
-  justify-content: center;
-  background: red;
+  height: 20%;
+  display: relative;
+  text-align: center;
+  background-image: linear-gradient(0.30turn, rgba(255,255,255,.50) 30%, blue, skyblue), url("CS2.png");
+  background-repeat: no-repeat;
+  background-position: left;
 
+ 
 }
-
 button{
-  margin: 1%;
+	margin: 1%;
 }
 .btn-group button:not(:last-child) {
-  border-bottom: none; /* Prevent double borders */
+  border-bottom: none;
 }
 
-/* Add a background color on hover */
-.btn-group button:hover {
-  background-color: #3e8e41;
+.btn-group a{
+	display:flex;
+	justify-content: center;
+	float: center;
 }
 
+.btn-group img{
+	float: left;
+	opacity: 0.5;
+}
