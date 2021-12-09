@@ -11,7 +11,7 @@ public class userInsert : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Debug.Log("check");
     }
 
     // Update is called once per frame
@@ -20,6 +20,8 @@ public class userInsert : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space)){
             AddUser (InputUsername, InputEmail, InputPassword);
         }
+
+        Debug.Log("check 2");
     }
 
     public void AddUser(string username, string email, string password){
@@ -28,6 +30,7 @@ public class userInsert : MonoBehaviour
         form.AddField ("addEmail",  email);
         form.AddField ("addPassword", password);
 
+        Debug.Log(username + " " + email + " " + password);
         WWW www = new WWW (URL, form);
     }
 }

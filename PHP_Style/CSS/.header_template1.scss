@@ -1,0 +1,161 @@
+*{
+      font-family:'Sans-serif';
+}
+section {
+      padding: 1%;
+      //border: 2px solid black;      // this are used for test conditions
+      
+}
+
+.header{
+
+      padding-bottom: 2%;
+      img {
+            float: left;
+            width: 10%;
+            min-width: 5rem;
+      }
+
+      h1 {
+            font-size: 300%;
+            font-weight: bold;
+      }
+      
+      h3 {
+            font-size: 230%;
+            font-weight: bold;
+      }
+      
+      h5 {
+            font-size: 170%;
+      }
+      
+}
+
+.search {
+      width: 15%;
+      min-width: 200px;
+      float: right;
+      margin-right: 1rem;
+      line-height: 0;
+      margin-top: -3.5%;
+}
+
+.move-top{
+      margin: -2rem auto 0 auto;
+}
+
+.heading {
+      padding: 20px 0 ;
+}
+
+.news {
+      
+      padding: 0 10%;
+      img {
+            height: 30rem;
+            
+      }
+}
+
+.footer {
+      position:fixed;
+      bottom:0;
+      width:100%;
+      height:60px;   /* Height of the footer */
+      background:rgb(255, 102, 102);
+   }
+
+.gradient-custom {
+      /* fallback for old browsers */
+      background: #6a11cb;
+    
+      /* Chrome 10-25, Safari 5.1-6 */
+      background: -webkit-linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+    
+      /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      background: linear-gradient(to right, rgba(106, 17, 203, 1), rgba(37, 117, 252, 1));
+
+    }
+
+.card img{
+      width: 80%;
+      margin: auto;
+}
+
+.choices .card .card-body{
+      p {
+            font-size: 50%;
+      }
+}
+
+.wrapper-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, 20rem);
+      justify-content: center;
+}
+
+.wrapper-grid-research {
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-content: center;
+}
+
+.wrapper-grid-subject {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+      h4, h3{
+            display: inline;
+      }
+}
+
+.wrapper-grid-awards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      justify-content: center;
+}
+
+.btn-class {
+      background-image: linear-gradient(0.30turn, rgba(255,255,255,.50), #1e90ff 30% 90%), url("../Assets/logo/CSOrg.ico");
+      background-repeat: no-repeat;
+      background-position: left;
+
+      div {
+            min-height: fit-content;
+      }
+
+      :hover {
+            
+            h2{
+                  transition: all .5s ease-in-out;
+                  font-size: 230%;
+            }
+      }
+}
+
+@media screen and (max-width: 1950px){
+      .wrapper-grid-subject{
+            grid-template-columns: repeat(2, 1fr);
+      }
+      .wrapper-grid-awards{
+            grid-template-columns: repeat(2, 1fr);
+      }
+}
+@media screen and (max-width: 1280px){
+
+      .header{
+            h1 {
+                  font-size: 190%;
+            }
+
+            h3 {
+                  font-size: 170%;
+            }
+      
+            h4 {
+                  font-size: 130%;
+            }
+      }
+}
+
