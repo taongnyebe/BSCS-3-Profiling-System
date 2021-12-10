@@ -14,7 +14,7 @@
       <?php 
             $_SESSION['MainMenu'] = "research";
 
-            include './SectionTemplate/header_1.php';
+            include './SectionTemplate/header_2.php';
 
             $title = "Researches";
             $button = 2;

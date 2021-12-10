@@ -1,4 +1,4 @@
-<section class="container-fluid">
+<section class="container-fluid bg-title">
       <header class="header text-center">	
                   <img src = "./assets/logo/CS Org..png">		
                   <h1>STUDENT INFORMATION MANAGEMENT SYSTEM</h1>

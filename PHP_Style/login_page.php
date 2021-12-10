@@ -38,7 +38,7 @@
         <div class="m-5 p-5"></div>
       </section>
 
-<section class="gradient-custom mb-5 pb-5" style="height: auto;">
+<section class="mb-5 pb-5" style="height: auto;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -72,10 +72,6 @@
 
                 <button class="btn btn-outline-light btn-lg px-5" type="submit" name="submit">Login</button>
               </form>
-
-              
-              <a href="./admin_page.php"><button class="btn btn-outline-light btn-lg px-5">Test</button></a>
-
             </div>
           </div>
         </div>

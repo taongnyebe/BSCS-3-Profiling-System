@@ -13,7 +13,7 @@
 
       <?php 
             $_SESSION['Subject'] = $_GET["title"];
-            include './SectionTemplate/header_1.php';
+            include './SectionTemplate/header_2.php';
 
             $title = $_GET["title"];
             $button = 2;

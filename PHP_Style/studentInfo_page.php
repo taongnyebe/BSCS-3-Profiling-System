@@ -14,10 +14,10 @@
       <?php 
             $_SESSION['Student'] = "1";
 
-            include './SectionTemplate/header_1.php';
+            include './SectionTemplate/header_2.php';
 
-            $title = "Aspiras Carlo";
-            $subtitle = "19-1234"." : "."BSCS 1-1";
+            $title = $_GET['name'];
+            $subtitle = $_GET['id']." : ".$_GET['section'];
             $button = 4;
             include './MinorTemplate/back_tab.php'
       ?>

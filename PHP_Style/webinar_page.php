@@ -14,7 +14,9 @@
       <?php 
             $_SESSION['Activities'] = "Seminar";
 
-            include './SectionTemplate/header_1.php';
+            include './SectionTemplate/header_2.php';
+
+            include './MinorTemplate/search_tab.php';
 
             $title = "Seminars and Webinars";
             $button = 2;
