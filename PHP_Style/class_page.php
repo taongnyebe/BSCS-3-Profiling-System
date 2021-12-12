@@ -12,15 +12,21 @@
 <body>
 
       <?php 
-            $_SESSION['Class'] = $_GET['title'];
+            $_SESSION['Class'] = 'a';
 
             $_SESSION['Student'] = null;
             
             include './SectionTemplate/header_2.php';
 
             include './MinorTemplate/search_tab.php';
+            (isset($_GET['year']))? $_SESSION['year'] = $_GET['year'] : '' ;
+            (isset($_GET['section']))? $_SESSION['section'] = $_GET['section'] : '' ;
+            (isset($_GET['id']))? $_SESSION['section_id'] = $_GET['id'] : '' ;
 
-            $title = $_GET['title'];
+            $idsection = $_SESSION['section_id'];
+
+            $edit = "./studentInfo_page_update.php?use=Add";
+            $title = 'BS Computer Science '.$_SESSION['year'].' - '.$_SESSION['section'];
             $button = 3;
             include './MinorTemplate/back_tab.php'
       ?>
@@ -28,33 +34,32 @@
       <section class="cardscss">
             <div class=" pb-5 mb-5">
                   <div id="app" class="container-fluid text-center">
-                        <?php for ($i=0; $i < 50; $i++) { ?>
-                                    <a href="./studentInfo_page.php?name=Aspiras, Carlo&id=19-2100&section=<?php echo $_GET['title'] ?>" class="border btn text-center rounded m-3 p-0">
-                                          <card data-image="./Assets/news/258538367_266892435276147_8137347319153813587_n.jpg" class="m-0">
-                                                <h2 slot="header" class="fs-3 pop">Aspiras, Carlo</h2>
-                                                <p slot="content">19-2100</p>
-                                          </card>
-                                    </a>
-                                    
-                                    <a href="./studentInfo_page.php?name=Calderon, Kathleen&id=19-2104&section=<?php echo $_GET['title'] ?>" class="border btn text-center rounded m-3 p-0">
-                                          <card data-image="./Assets/news/257415000_1975091092659522_9073753297819881679_n.jpg" class="m-0">
-                                                <h2 slot="header" class="fs-3 pop">Calderon, Kathleen</h2>
-                                                <p slot="content">19-2104</p>
-                                          </card>
-                                    </a>
-                                    <a href="./studentInfo_page.php?name=Dela Cruz, Andrei&id=19-2103&section=<?php echo $_GET['title'] ?>" class="border btn text-center rounded m-3 p-0">
-                                          <card data-image="./Assets/news/news3.jpg" class="m-0">
-                                                <h2 slot="header" class="fs-3 pop">Dela Cruz, Andrei</h2>
-                                                <p slot="content">19-2103</p>
-                                          </card>
-                                    </a>
-                                    <a href="./studentInfo_page.php?name=Valdez, Carl Xavier&id=19-2101&section=<?php echo $_GET['title'] ?>" class="border btn text-center rounded m-3 p-0">
-                                          <card data-image="./Assets/news/carl.jpg" class="m-0">
-                                                <h2 slot="header" class="fs-3 pop">Valdez, Carl Xavier</h2>
-                                                <p slot="content">19-2101</p>
-                                          </card>
-                                    </a>
-                        <?php }?>
+                  <?php
+                        $sql="SELECT studentbasic_tb.id, studentbasic_tb.family_name, studentbasic_tb.middle_name, studentbasic_tb.first_name, studentbasic_tb.suffix, studentschool_tb.studentid_no FROM studentbasic_tb INNER JOIN studentschool_tb ON studentbasic_tb.id=studentschool_tb.student_id WHERE studentschool_tb.yearsection_id='$idsection'"; 
+
+                        if ($res=mysqli_query($db->con, $sql)) :
+                              if (mysqli_num_rows($res)>0) {
+                                    $i = 0;
+                                    while ($rows=mysqli_fetch_assoc($res)) :
+                                          ++$i;
+                                          ?>
+                                                <a href="./studentInfo_page.php?id=<?php echo $rows['id'] ?>" class="border btn text-center rounded m-3 p-0">
+                                                      <card data-image="./Assets/news/258538367_266892435276147_8137347319153813587_n.jpg" class="m-0">
+                                                            <h2 slot="header" class="fs-3 pop"><?php echo $rows['family_name'].', '.$rows['first_name'].' '.$rows['middle_name'][0].'. '.$rows['suffix'] ?></h2>
+                                                            <p slot="content"><?php echo substr_replace($rows['studentid_no'], " - ".$rows['studentid_no'][2], 2, 0) ?></p>
+                                                      </card>
+                                                </a>
+                                          <?php
+                                    endwhile;
+                              }
+                              // Change this into card that display notification for no available yet
+                              else { 
+                              ?>
+
+                              <?php
+                              }
+                        endif;
+                  ?>
                   </div>
             </div>
       </section>

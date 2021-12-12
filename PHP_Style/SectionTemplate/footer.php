@@ -1,4 +1,4 @@
-<footer class="container-fluid bg-footer footer">
+<footer class="container-fluid bg-footer footer rounded-top">
       <div class="row align-items-start mt-3">
             <div class="col">
                   Copyright @ 2021 Computer Science Dept. ISU-E. All Rights Reserved

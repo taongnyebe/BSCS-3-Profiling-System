@@ -20,6 +20,7 @@
             include './SectionTemplate/header_2.php';
 
             $title = "Class List";
+            $edit = '';
             $button = 2;
             include './MinorTemplate/back_tab.php'
       ?>
@@ -36,7 +37,7 @@
                                           while ($rows=mysqli_fetch_assoc($res)) :
                                                 ++$i;
                                                 ?>
-                                                      <a href="./class_page.php?title=BS Computer Science <?php echo $rows['year'].' - '.$rows['section']?>" class="border btn text-center rounded m-3 p-0">
+                                                      <a href="./class_page.php?year=<?php echo $rows['year']?>&section=<?php echo $rows['section']?>&id=<?php echo $rows['id']?>" class="border btn text-center rounded m-3 p-0">
                                                             <card data-image="./Assets/logo/CSOrg.ico" class="m-0">
                                                                   <h2 slot="header" class="fs-1 text-dark">BSCS <br><?php echo $rows['year'].' - '.$rows['section']?></h2>
                                                                   <p slot="content"></p>

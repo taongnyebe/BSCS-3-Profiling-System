@@ -9,10 +9,10 @@ section {
 
 .header{
 
-      padding-bottom: 2%;
-      img {
-            float: left;
-            width: 10%;
+      padding-bottom: 3%;
+
+      img{
+            width: 10em;
             min-width: 5rem;
       }
 
@@ -38,7 +38,7 @@ section {
       float: right;
       margin-right: 1rem;
       line-height: 0;
-      margin-top: -3.5%;
+      margin-top: -2.5%;
 }
 
 .move-top{
@@ -56,6 +56,17 @@ section {
             height: 30rem;
             
       }
+}
+
+body{
+      display: flex;
+      flex-direction: column;
+      height:100vh; 
+      margin:0;
+}
+
+footer{
+      margin-top: auto;
 }
 
 .footer {

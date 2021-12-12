@@ -12,11 +12,14 @@
 <body>
 
       <?php 
-            $_SESSION['Subject'] = $_GET["title"];
+            $id = $_GET["id"];
+            $userdata=mysqli_fetch_assoc(mysqli_query($db->con,"SELECT * FROM subject_tb WHERE id='$id'"));
+            
+            $_SESSION['Subject'] = $userdata['code'].' - '.$userdata['name'] ;
             include './SectionTemplate/header_2.php';
 
-            $title = $_GET["title"];
-            $button = 2;
+            $title = $_SESSION['Subject'];
+            $button = 1;
             include './MinorTemplate/back_tab.php';
       ?>
 

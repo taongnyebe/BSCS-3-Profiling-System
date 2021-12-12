@@ -15,7 +15,8 @@
             $_SESSION['MainMenu'] = "research";
 
             include './SectionTemplate/header_2.php';
-
+            
+            $edit = '';
             $title = "Researches";
             $button = 2;
             include './MinorTemplate/back_tab.php';
@@ -23,18 +24,45 @@
 
       <section>
             <div class="wrapper-grid-research container-fluid pb-5 mb-5">
-                  <?php for ($i=0; $i < 50; $i++) { ?>
-                        <div class="card m-3">
-                              <a href="" class="btn btn-primary">
-                                    <div class="card-body">
-                                          <p>
-                                                <h3 class="card-title fw-bold" rows="4">Equity Risk Premium Puzzle and Investors' Behavioral Analysis: A Theoretical and Empirical Explanation from the Stock Markets in the U.S. & China</h3>
-                                                <h4 class="card-title">March 3, 2021</h4>
-                                          </p>
+                  <?php
+                        $sql="SELECT * FROM research_tb"; 
+
+                        if ($res=mysqli_query($db->con, $sql)) :
+                              if (mysqli_num_rows($res)>0) {
+                                    $i = 0;
+                                    while ($rows=mysqli_fetch_assoc($res)) :
+                                          ++$i;
+                                          ?>
+                                                <div class="card m-3">
+                                                      <a href="" class="btn btn-primary">
+                                                            <div class="card-body">
+                                                                  <p>
+                                                                        <h3 class="card-title fw-bold" rows="4"><?php echo $rows['title']?></h3>
+                                                                        <h4 class="card-title"><?php echo $rows['publish_date']?></h4>
+                                                                  </p>
+                                                            </div>
+                                                      </a>
+                                                </div>
+                                          <?php
+                                    endwhile;
+                              }
+                              // Change this into card that display notification for no available yet
+                              else { 
+                              ?>
+                                    <div class="card m-3">
+                                          <a href="" class="btn btn-primary">
+                                                <div class="card-body">
+                                                      <p>
+                                                            <h3 class="card-title fw-bold" rows="4">No Available</h3>
+                                                            <h4 class="card-title"></h4>
+                                                      </p>
+                                                </div>
+                                          </a>
                                     </div>
-                              </a>
-                        </div>
-                  <?php }?>
+                              <?php
+                              }
+                        endif;
+                  ?>
             </div>
       </section>
 

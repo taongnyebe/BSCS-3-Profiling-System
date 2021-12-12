@@ -19,7 +19,7 @@
             include './SectionTemplate/header_2.php';
 
             $title = "Activities";
-            $button = 2;
+            $button = 1;
             include './MinorTemplate/back_tab.php';
       ?>
       <section class="cardscss"> &emsp;

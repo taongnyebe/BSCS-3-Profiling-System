@@ -20,28 +20,41 @@
 
             include './MinorTemplate/search_tab.php';
 
+            $edit = '';
             $title = "Subject List";
             $button = 2;
             include './MinorTemplate/back_tab.php';
       ?>
 
       <section class="cardscss">
-            <div class=" pb-5 mb-5">
+            <div class="pb-5 mb-5">
                   <div id="app" class="container-fluid text-center">
-                        <?php for ($i=0; $i < 20; $i++) { ?>
-                              <a href="./subjectInfo_page.php?title=Assurance and information Security - CS 313A" class="border btn text-center rounded m-3 p-0">
-                                    <card data-image="https://thumbs.dreamstime.com/z/data-mining-concept-round-colorful-linear-vector-illustration-technology-modern-dark-background-198634754.jpg" class="mx-auto">
-                                          <h2 slot="header" class="fs-1 pop">CS 313A</h2>
-                                          <p slot="content">Assurance and information Security</p>
-                                    </card>
-                              </a>
-                              <a href="./subjectInfo_page.php?title=Theory and Automata - CS 311A" class="border btn text-center rounded m-3 p-0">
-                                    <card data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHNgU-Q5i1o3wltPBd8BK7gU2PGT6Z0NQvnA&usqp=CAU" class="m-0">
-                                          <h2 slot="header" class="fs-1 pop">CS 311A</h2>
-                                          <p slot="content" class="mx-auto">Theory and Automata</p>
-                                    </card>
-                              </a>
-                        <?php }?>
+                        <?php
+                              $sql="SELECT * FROM subject_tb"; 
+
+                              if ($res=mysqli_query($db->con, $sql)) :
+                                    if (mysqli_num_rows($res)>0) {
+                                          $i = 0;
+                                          while ($rows=mysqli_fetch_assoc($res)) :
+                                                ++$i;
+                                                ?>
+                                                      <a href="./subjectInfo_page.php?id=<?php echo $rows['id']?>" class="border btn text-center rounded m-3 p-0">
+                                                            <card data-image="https://thumbs.dreamstime.com/z/data-mining-concept-round-colorful-linear-vector-illustration-technology-modern-dark-background-198634754.jpg" class="mx-auto">
+                                                                  <h2 slot="header" class="fs-1 pop"><?php echo $rows['code']?></h2>
+                                                                  <p slot="content"><?php echo $rows['name']?></p>
+                                                            </card>
+                                                      </a>
+                                                <?php
+                                          endwhile;
+                                    }
+                                    // Change this into card that display notification for no available yet
+                                    else { 
+                                    ?>
+
+                                    <?php
+                                    }
+                              endif;
+                        ?>
                   </div>
             </div>
       </section>
