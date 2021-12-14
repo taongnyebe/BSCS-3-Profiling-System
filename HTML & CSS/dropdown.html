@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<style>
+$green: #91d36b
+$orange: #fc9b1b
+$lightGrey: #999
+$grey: #444
+$darkGrey: #333
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.menu
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 95%
+  margin: 0 auto
+  font-family: 'Orbitron', sans-serif
+  
+ol
+  display: flex
+  flex-wrap: wrap
+  align-items: center
+  justify-content: center
+  width: 100%
+  margin: 0 auto
+  padding: .5em 0
+  list-style: none
+  
+.menu-item
+  background: $grey
+  padding: 1em .5em
+  position: relative
+  border-bottom: 5px solid $lightGrey
+  margin: 0 .1em
+  transition: border-bottom .23s ease-in-out, background .23s linear
+  cursor: pointer
+  min-width: 8em
+  text-align: center
+  &[aria-haspopup="true"]
+    border-bottom-color: $orange
+  &:hover, &:focus-within
+    border-bottom-color: $green
+    background: $darkGrey
+    .sub-menu, .sub-menu:hover
+      visibility: visible
+      opacity: 1
+      display: flex
+      
+          
+.sub-menu
+  flex-direction: column
+  align-items: flex-start
+  position: absolute
+  left: 0
+  margin-top: 1em
+  visibility: hidden
+  display: none
+  opacity: 0
+  .menu-item
+    margin: .1em 0
+    padding: 1em
+    width: 10em
+    text-align: center
+    z-index: 2
+ 
+  
+a
+  color: #fff
+  text-decoration: none
+  text-transform: uppercase
+  &:focus
+    outline: none
+    
+@media (max-width: 690px)
+  .menu
+    width: 95%
+    font-size: 16px
+  .menu-item
+    margin: .1em
+    &:nth-child(1)
+      order: 0
+    &:nth-child(2)
+      order: 1
+    &:nth-child(3)
+      order: 3
+    &:nth-child(4)
+      order: 4
+    &:nth-child(5)
+      order: 2
+ 
+@media (max-width: 480px)
+  .menu
+    font-size: 12px
+
+</style>
+
+<body>
+<ul class="hList">
+  <li>
+    <a href="#click" class="menu">
+      <h2 class="menu-title">animals</h2>
+      <ul class="menu-dropdown">
+        <li>cat</li>
+        <li>dog</li>
+        <li>horse</li>
+        <li>cow</li>
+        <li>pig</li>
+      </ul>
+    </a>
+  </li>
+  <li>
+    <a href="#click" class="menu">
+      <h2 class="menu-title menu-title_2nd">names</h2>
+      <ul class="menu-dropdown">
+        <li>Kevin</li>
+        <li>Jim</li>
+        <li>Andy</li>
+      </ul>
+    </a>
+  </li>
+  <li>
+    <a href="#click" class="menu">
+      <h2 class="menu-title menu-title_3rd">things</h2>
+      <ul class="menu-dropdown">
+        <li>bench</li>
+        <li>pizza</li>
+        <li>Honda CB125</li>
+        <li>space</li>
+        <li>black matter</li>
+        <li>apple</li>
+        <li>philodendron</li>
+        <li>liver</li>
+        <li>brass</li>
+      </ul>
+    </a>
+  </li>
+  <li>
+    <a href="#click" class="menu">
+      <h2 class="menu-title menu-title_4th">Movies</h2>
+      <ul class="menu-dropdown">
+        <li>Godzilla</li>
+        <li>Man on Wire</li>
+        <li>Spirited Away</li>
+        <li>Interstellar</li>
+      </ul>
+    </a>
+  </li>
+</ul>  
+</body>
+
+</html>
