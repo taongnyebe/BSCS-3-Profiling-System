@@ -35,7 +35,7 @@
             <div class=" pb-5 mb-5">
                   <div id="app" class="container-fluid text-center">
                   <?php
-                        $sql="SELECT studentbasic_tb.id, studentbasic_tb.family_name, studentbasic_tb.middle_name, studentbasic_tb.first_name, studentbasic_tb.suffix, studentschool_tb.studentid_no FROM studentbasic_tb INNER JOIN studentschool_tb ON studentbasic_tb.id=studentschool_tb.student_id WHERE studentschool_tb.yearsection_id='$idsection'"; 
+                        $sql="SELECT studentbasic_tb.id, studentbasic_tb.family_name, studentbasic_tb.middle_name, studentbasic_tb.first_name, studentbasic_tb.suffix, studentschool_tb.studentid_no, studentbasic_tb.profile_filename, studentbasic_tb.gender FROM studentbasic_tb INNER JOIN studentschool_tb ON studentbasic_tb.id=studentschool_tb.student_id WHERE studentschool_tb.yearsection_id='$idsection'"; 
 
                         if ($res=mysqli_query($db->con, $sql)) :
                               if (mysqli_num_rows($res)>0) {
@@ -44,9 +44,12 @@
                                           ++$i;
                                           ?>
                                                 <a href="./studentInfo_page.php?id=<?php echo $rows['id'] ?>" class="border btn text-center rounded m-3 p-0">
-                                                      <card data-image="./Assets/news/258538367_266892435276147_8137347319153813587_n.jpg" class="m-0">
-                                                            <h2 slot="header" class="fs-3 pop"><?php echo $rows['family_name'].', '.$rows['first_name'].' '.$rows['middle_name'][0].'. '.$rows['suffix'] ?></h2>
-                                                            <p slot="content"><?php echo substr_replace($rows['studentid_no'], " - ".$rows['studentid_no'][2], 2, 0) ?></p>
+                                                      <card data-image="<?php echo ($rows['profile_filename'] != "")?
+                                                                  './Assets/profiles/'.$rows['profile_filename']:
+                                                                  './Assets/placeholders/'.(($rows['gender'])? 'placeholder_profile_male.jpg':'placeholder_profile_female.jpg')?>"
+                                                                  class="m-0">
+                                                            <h2 slot="header" class="fs-3 pop"><?php echo $rows['family_name'].', '.$rows['first_name'].' '.(($rows['middle_name'] != '')? $rows['middle_name'][0].'. ' : "" ).$rows['suffix'] ?></h2>
+                                                            <p slot="content"><?php echo substr_replace($rows['studentid_no'], " - ", 2, 0) ?></p>
                                                       </card>
                                                 </a>
                                           <?php

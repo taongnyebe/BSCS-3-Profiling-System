@@ -12,7 +12,7 @@
                   echo (isset($_SESSION['Class']))? '<a href="./section_page.php" class="btn btn-warning">Section Page</a> &emsp;' : "";
                   echo (isset($_SESSION['Student']))? '<a href="./class_page.php?title='.$_SESSION['Class'].'" class="btn btn-warning">Class Page</a> &emsp;' : "";
                   // set this to return back to the student info edited
-                  echo (isset($_SESSION['Edit']))? '<a href="studentInfo_page.php?name=Aspiras,%20Carlo&id=19-2100&section=BS%20Computer%20Science%201%20-%201" class="btn btn-warning">Student page</a> &emsp;' : "";
+                  echo (isset($_SESSION['Edit']))? '<a href="studentInfo_page.php?id='.$rows['id'].'" class="btn btn-warning">Student page</a> &emsp;' : "";
                   
                   echo (isset($_SESSION['Subject']))? '<a href="./subject_page.php" class="btn btn-warning">Subject Page</a> &emsp;' : "";
                   
