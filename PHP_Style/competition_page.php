@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="./CSS/.header_template1.css">'."\n"
+      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
             .'<link rel="stylesheet" href="./CSS/cardcss.css">'."\n";
       $titleName = "SIMS CS-Org - Competition";
 
