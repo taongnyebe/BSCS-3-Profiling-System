@@ -2,7 +2,7 @@
 <html lang="en">
 
 <?php
-ob_start();
+      ob_start();
       $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
             .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
       $titleName = "SIMS CS-Org - Section";
@@ -39,29 +39,23 @@ ob_start();
                                     foreach ($sch_year as $sch_year){
                                                 $section_data = $ys->getSectionData($sch_year['sch_year'], $sch_year['semester']);
                                     ?>
-                                                <!-- ///////////////////////////////// -->
-                                                <!-- Create design here -->
-                                                <!-- Design:
-                                                      1. Current and And Past school year title are different
-                                                      2. Elevated Level for Current -->
                                                 <div class="<?php if($current) {
                                                                         $current=false;
-                                                                        echo "bg-primary fw-bold";
+                                                                        echo "bg-primary rounded hover";
                                                                   }else
-                                                                        echo "bg-secondary fw-italic mx-5 mt-5";?>">
+                                                                        echo "bg-secondary mx-5 mt-5 rounded hover";?>">
                                                       <h3><?php echo $sch_year['sch_year']?></h3>
                                                       <h4><?php echo $sch_year['semester']?> Semester</h4>
                                                 </div>
                                     <?php 
                                                 foreach ($section_data as $section_data){
-                                                      $id = $section_data['id'];
-                                                      $count = mysqli_fetch_assoc(mysqli_query($db->con,"SELECT COUNT(id) AS count FROM studentschool_tb WHERE yearsection_id=$id"));
+                                                      $count = $ssd->countStudentSectionYear($section_data['id']);
                                     ?>
                                                 <a href="./a_s_class_page.php?year=<?php echo $section_data['year']?>&section=<?php echo $section_data['section']?>&id=<?php echo $section_data['id']?>" class="border btn text-center rounded m-3 p-0">
                                                       <card data-image="<?php echo (false /*change to file_name*/)? "" : 
                                                             "../Assets/placeholders/year/year".$section_data['year'].".png"?>" class="m-0">
                                                             <h2 slot="header" class="fs-1">BSCS <br><?php echo $section_data['year'].' - '.$section_data['section']?></h2>
-                                                            <p slot="content" ><?php echo $count['count']?></p>
+                                                            <p slot="content" ><?php echo $count['student_count']?></p>
                                                       </card>
                                                 </a>
                                                       

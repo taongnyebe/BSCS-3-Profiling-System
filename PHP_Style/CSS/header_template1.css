@@ -6,6 +6,16 @@ section {
   padding: 1%;
 }
 
+.student-data .p-1 img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.hover {
+  box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0;
+}
+
 .header {
   padding-bottom: 3%;
 }

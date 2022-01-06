@@ -1,8 +1,9 @@
 <?php
 
-class YearSection
+class YearSectionData
 {
       protected $db;
+      private $table = "yearsection_tb";
 
       public function __construct(Connection $db)
       {
@@ -12,57 +13,42 @@ class YearSection
 
       public function getSchYear()
       {
-            if ($connection = mysqli_query($this->db->con, "SELECT DISTINCT sch_year, semester FROM yearsection_tb ORDER BY sch_year DESC, semester DESC "))
-            {
-                  if (mysqli_num_rows($connection)>0)
-                  {
-                        $sch_year = array();
-
-                        while($item = mysqli_fetch_array($connection, MYSQLI_ASSOC))
-                        {
-                              $sch_year[] = $item;
-                        }
-
-                        return $sch_year;
-                        
-                  }else
-                        return 1;
-            }else
-                  return 2;
+            return $this->checker("SELECT DISTINCT sch_year, semester FROM $this->table 
+                                    WHERE active=1
+                                    ORDER BY sch_year DESC, semester DESC ");
       }
 
       public function getSectionData($sch_year, $semester)
       {
-            if ($connection = mysqli_query($this->db->con, "SELECT * FROM yearsection_tb WHERE sch_year='{$sch_year}' && semester='$semester'"))
-            {
-                  if (mysqli_num_rows($connection)>0)
-                  {
-                        $section_data = array();
-
-                        while($item = mysqli_fetch_array($connection, MYSQLI_ASSOC))
-                        {
-                              $section_data[] = $item;
-                        }
-                        return $section_data;
-                  }else
-                        return 1;
-            }else
-                  return 2;
+            return $this->checker("SELECT * FROM $this->table 
+                                    WHERE sch_year='$sch_year' AND semester='$semester' AND active=1
+                                    ORDER BY year, section");
       }
 
       public function getSectionlist()
       {
-            if ($connection = mysqli_query($this->db->con, "SELECT * FROM yearsection_tb"))
-            {
-                  if (mysqli_num_rows($connection)>0)
-                  {
-                        $section_data = array();
+            return $this->checker("SELECT * FROM $this->table");
+      }
 
-                        while($item = mysqli_fetch_array($connection, MYSQLI_ASSOC))
-                        {
-                              $section_data[] = $item;
+      public function getStudentYearSection($yearsection_id)
+      {
+            return $this->checker("SELECT * FROM $this->table 
+                                    WHERE id='$yearsection_id'");
+      }
+
+      private function checker($sql_c)
+      {
+            if($connection = mysqli_query($this->db->con, $sql_c))
+            {
+                  if(mysqli_num_rows($connection)>0)
+                  {
+                        $studentData = array();
+
+                        while ($item = mysqli_fetch_array($connection, MYSQLI_ASSOC)) {
+                              $studentData[]=$item;
                         }
-                        return $section_data;
+
+                        return $studentData;
                   }else
                         return 1;
             }else

@@ -29,7 +29,8 @@ class Login
 
       private function checkUser()
       {
-            if ($connection = mysqli_query($this->db->con,"SELECT * FROM user_tb WHERE username='$this->username'"))
+            if ($connection = mysqli_query($this->db->con,"SELECT * FROM user_tb 
+                                                            WHERE username='$this->username' AND active=1"))
             {
                   if ($userdata = mysqli_fetch_assoc($connection)) {
                         if ($userdata['password'] == $this->password) 
