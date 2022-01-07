@@ -1,0 +1,28 @@
+vision mission home page
+search specific word
+all menu search button
+filter button
+basic information id number
+latest year and section must be at the top and vice versa 
+follow up major objectives
+white text plain color
+data encode 
+risk assessment analysis =
+network model tatlo admin sub admin program chair 
+tatlong user program chair admin
+sub admin student leader
+student client
+
+star topology
+hardware specs yung minimum specs na ginagamit
+program chair student leader 
+
+video for presentation
+
+technical background(project framework)
+server applicatiopn layer
+data base data layer
+
+data layer
+request data 
+send data
