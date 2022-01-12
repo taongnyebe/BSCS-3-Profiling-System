@@ -26,7 +26,7 @@
                                                       <p class="mb-5 pb-lg-2"><a class="text-white-50" href="#!">Forgot password?</a></p>
 
                                                       <?php
-                                                            if(isset($_SESSION['error'])){
+                                                            if (isset($_SESSION['error'])) {
                                                                   echo $_SESSION['error'];
                                                                   unset($_SESSION['error']);
                                                             }

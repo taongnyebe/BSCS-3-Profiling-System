@@ -12,6 +12,28 @@ section {
   background-position: 50% 50%;
 }
 
+.checklists {
+  display: grid;
+  gap: 5px;
+  margin: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+  grid-auto-flow: row dense;
+  justify-items: center;
+}
+.checklists .name {
+  height: 80px;
+  overflow: hidden;
+}
+.checklists .checklist {
+  background: #7a7a7a;
+  margin: 3px;
+  width: 240px;
+  height: 230px;
+  padding: 5px;
+  align-self: center;
+}
+
 .hover {
   box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0;
 }

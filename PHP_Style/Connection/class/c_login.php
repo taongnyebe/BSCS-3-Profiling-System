@@ -38,9 +38,9 @@ class Login
                         else
                               $this->result = 1;
       
-                  }else
+                  } else
                         $this->result = 2;
-            }else
+            } else
                   $this->result = 502;   
       }
 }

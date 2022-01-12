@@ -25,13 +25,23 @@ class Delete
       
       public function deactivation($table, $id, $filename = null)
       {
-            $sql_c = "UPDATE $table SET active=0 
-                        WHERE id=$id";
-            $result = array();
-      
-            $result[0] = mysqli_query($this->db->con, $sql_c);
-            $result[1] = $this->fileUnlink($filename);
-      
+            $result = null;
+            if(isset($filename)) 
+            {
+                  $sql_c = "UPDATE $table SET active=0, profile_filename=''
+                  WHERE id=$id";
+                  $result = array();
+
+                  $result = mysqli_query($this->db->con, $sql_c);
+                  $this->fileUnlink($filename);
+            } else {
+                  $sql_c = "UPDATE $table SET active=0
+                  WHERE id=$id";
+                  $result = array();
+
+                  $result = mysqli_query($this->db->con, $sql_c);
+
+            }
             return $result;
 
       }

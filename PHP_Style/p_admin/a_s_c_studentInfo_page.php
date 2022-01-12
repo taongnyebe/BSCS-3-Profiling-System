@@ -25,7 +25,8 @@
             $title = "Student Informations";
             
             $add = "";
-            $edit = "./a_s_c_studentInfo_page_update.php?use=Update";
+            $edit = "./a_s_c_studentInfo_page_update_add.php?use=Update";
+            $datatypeDelete = 'Student';
             $add_btn = $search_input = false; $edit_btn = $delete_btn = true;
             include './templates/back_tab.php';
 

@@ -25,21 +25,25 @@
             $edit = "";
             $add_btn = $edit_btn = $search_input = $delete_btn = false;
             
-            $id = null;
-            $id = ($_GET['use'] == "Update")? $_SESSION['student_id'] : 0;
+            $id = $student_data = null;
             
-            $student_data = $sd->getFullStudentData($id);
+            if ($_GET['use'] == "Update"){
+                  $id = $_SESSION['student_id'];
+                  $student_data = $sd->getStudentData($id);
 
-            if($student_data != 1 && $student_data != 2)
+                  if($student_data != 1 && $student_data != 2)
                   {
                         foreach ($student_data as $student_data) {
                               include './templates/back_tab.php';
-                              include './templates/profile_card.php';
+                              include './templates/profile_card_form_update.php';
                         }
-                  }else{
-                        include './templates/back_tab.php';
-                        include './templates/profile_card_form.php';
                   }
+            }else{
+                  include './templates/back_tab.php';
+                  include './templates/profile_card_form_update.php';
+            }
+
+
             include './templates/footer.php';
 
 

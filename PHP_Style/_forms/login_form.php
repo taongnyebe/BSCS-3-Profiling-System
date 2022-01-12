@@ -2,7 +2,7 @@
       include_once '../Connection/caller.php';
       include_once '../MetaScript/_url.php';
 
-      if (isset($_POST['submit'])){
+      if (isset($_POST['submit'])) {
             switch ($login->getUserPassword($_POST['username'],$_POST['password']))
             {
             case 0:
