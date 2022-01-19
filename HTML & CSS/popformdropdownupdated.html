@@ -1,0 +1,695 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    
+  ></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 35%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+/**/
+
+.radio-button {
+  position: relative;
+  margin: 20px 0;
+}
+
+.radio-button input {
+  position: absolute;
+  margin: 5px;
+  padding: 0;
+  visibility: hidden;
+}
+.radio-button .label-visible {
+  margin-left: 2em;
+  margin-bottom: 0;
+}
+
+.fake-radiobutton {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid slategray;
+  background-color: white;
+}
+.fake-radiobutton:after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: navy;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.fake-radiobutton { border-radius: 50%; }
+.fake-radiobutton:after { border-radius: 50%; }
+
+input[type="radio"]:checked + span .fake-radiobutton:after { display: block; }
+
+#Ass {
+  visibility:hidden;
+}
+
+
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+</head>
+<body>
+    <select id="select">
+<option value="">-----</option>
+    <option value="2">111</option>
+    <option value="2">222</option>
+    <option value="2">333</option>
+</select>
+
+<select id="alert" style="display:none">
+<option value="">-----</option>
+    <option value="2">111</option>
+    <option value="2">222</option>
+    <option value="2">333</option>
+</select>
+
+<select id="warning" style="display:none">
+<option value="">-----</option>
+    <option value="1">111</option>
+    <option value="2">222</option>
+    <option value="3">333</option>
+</select>
+
+
+<div id="warning" style="display:none">NO!!!</div>
+
+<h1>Popup/Modal Windows without JavaScript</h1>
+<div class="box">
+	<a class="button" href="#popup1">Let me Pop up</a>
+</div>
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<a class="close" href="#">&times;</a>
+		<div class="container">
+    
+  <form>
+  
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+		  <option value="">---Choose One---</option>
+          <option value="1">Australia</option>
+          <option value="2">Canada</option>
+          <option value="3">USA</option>
+        </select>
+      </div>
+    </div>
+	
+
+	   <div class="row">
+      <div class="col-75">
+      <div id ="australiacities" style="display:none">
+       Cities
+      </div>
+      <select id="australia" name="austrialia" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="1">Sdyney</option>
+          <option value="2">Melbourne</option>
+          <option value="3">Newcastle</option>
+        </select>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-75">
+       <div id ="neighborhood1" style="display:none">
+      Neighborhoods 1
+      </div>
+   <select id="neighborhood11" name="neighborhood1" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Strawberry Hills</option>
+          <option value="canada">Circular Quay</option>
+          <option value="usa">King's Cross</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+        <div id ="neighborhood2" style="display:none">
+      Neighborhoods 2
+      </div>
+   <select id="neighborhood22" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Cliffton Gardens</option>
+          <option value="canada">Collaroy Beach</option>
+          <option value="usa">Ben Buckler</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+        <div id ="neighborhood3" style="display:none">
+      Neighborhoods 3
+      </div>
+   <select id="neighborhood33" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Thai Town</option>
+          <option value="canada">Blues Point</option>
+          <option value="usa">Gore Hill</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+      <div id ="candanaprovinces" style="display:none">
+      Provinces
+      </div>
+      <select id="canada" name="provinces" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="1">Ontario</option>
+          <option value="2">Alberta</option>
+          <option value="3">Manitoba</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+      <div id ="ontario" style="display:none">
+      City of Ontario
+      </div>
+   <select id="cityontario" name="city" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Toronto</option>
+          <option value="canada">Sudbury</option>
+          <option value="usa">Ottawa</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+      <div id ="alberta" style="display:none">
+      City of Alberta
+      </div>
+   <select id="cityalberta" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Calgary</option>
+          <option value="canada">Edmonton</option>
+          <option value="usa">Lethbridge</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+      <div id ="manitoba" style="display:none">
+      City of Manitoba
+      </div>
+   <select id="citymanitoba" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Winnipeg</option>
+          <option value="canada">Brandon</option>
+          <option value="usa">Steinbach</option>
+        </select>
+      </div>
+    </div>
+    
+      <div class="row">
+      <div class="col-75">
+       <div id ="usastates" style="display:none">
+      States
+      </div>
+      <select id="usa" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="1">Texas</option>
+		   <option value="2">California</option>
+          <option value="3">Washington</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-75">
+       <div id ="texas" style="display:none">
+     Cities of Texas
+      </div>
+   <select id="citytexas" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Houston</option>
+          <option value="canada">Dallas</option>
+          <option value="usa">San Antinio</option>
+        </select>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="col-75">
+      <div id ="california" style="display:none">
+      Cities of California
+      </div>
+   <select id="citycalifornia" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Los Angeles</option>
+          <option value="canada">San Diego</option>
+          <option value="usa">San Francisco</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+      <div id ="washington" style="display:none">
+      Cities of Washington
+      </div>
+   <select id="citywashington" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Seattle</option>
+          <option value="canada">Vancouver</option>
+          <option value="usa">Kent</option>
+        </select>
+      </div>
+    </div>
+	
+	<br>
+	<div class="col-25">
+        <label for="country">Country</label>
+      </div>
+<label class="radio-button">
+  <input type="radio" name="radio" checked="checked">
+  <span class="label-visible">
+    <span class="fake-radiobutton"></span>
+    Radio
+  </span>
+</label>
+
+<label class="radio-button">
+  <input type="radio" name="radio">
+  <span class="label-visible">
+    <span class="fake-radiobutton"></span>
+    Button
+  </span>
+</label>
+
+<br>
+<br>
+
+	<div class="row">
+	 <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+	<br>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">//<![CDATA[
+
+
+$(function() {
+  $('#select').change(function() {
+    if ($(this).val() == "2") {
+      $('#alert').show();
+    } else {
+      $('#alert').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#alert').change(function() {
+    if ($(this).val() == "2") {
+      $('#warning').show();
+    } else {
+      $('#warning').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#country').change(function() {
+    if ($(this).val() == "1") {
+	
+      $('#australia').show();
+      $('#canada').hide();
+      $('#usa').hide();
+      
+      $('#australiacities').show();
+	  $('#candanaprovinces').hide();
+      $('#usastates').hide();
+      
+      $('#ontario').hide();
+      $('#alberta').hide();
+      $('#manitoba').hide();
+	  
+	  $('#cityontario').hide();
+      $('#cityalberta').hide();
+      $('#citymanitoba').hide();
+      
+      $('#texas').hide();
+	  $('#california').hide();
+      $('#washington').hide();
+      
+      $('#citytexas').hide();
+      $('#citycalifornia').hide();
+	  $('#citywashington').hide();
+          
+    } else if ($(this).val() == "2") {
+      $('#canada').show();
+      $('#australia').hide();
+      $('#usa').hide();
+      
+      $('#candanaprovinces').show();
+      $('#australiacities').hide();
+      $('#usastates').hide();
+      
+      $('#neighborhood1').hide();
+      $('#neighborhood2').hide();
+      $('#neighborhood3').hide();
+	  
+	  $('#neighborhood11').hide();
+      $('#neighborhood22').hide();
+      $('#neighborhood33').hide();
+      
+      $('#texas').hide();
+      $('#california').hide();
+	  $('#washington').hide();
+      
+      $('#citytexas').hide();
+      $('#citycalifornia').hide();
+      $('#citywashington').hide();
+      
+    } else if ($(this).val() == "3") {
+      $('#usa').show();
+      $('#australia').hide();
+      $('#canada').hide();
+      
+      	$('#usastates').show();
+      	$('#australiacities').hide();
+      	$('#candanaprovinces').hide();
+        
+        $('#neighborhood11').hide();
+        $('#neighborhood22').hide();
+        $('#neighborhood33').hide();
+		
+		$('#neighborhood1').hide();
+        $('#neighborhood2').hide();
+        $('#neighborhood3').hide();
+        
+        $('#ontario').hide();
+      	$('#alberta').hide();
+      	$('#manitoba').hide();
+      
+     	$('#cityontario').hide();
+      	$('#cityalberta').hide();
+      	$('#citymanitoba').hide();
+        
+    } else {
+      $('#australia').hide();
+      $('#canada').hide();
+      $('#usa').hide();
+      
+      	$('#australiacities').hide();
+        $('#neighborhood11').hide();
+        $('#neighborhood22').hide();
+        $('#neighborhood33').hide();
+		$('#neighborhood1').hide();
+        $('#neighborhood2').hide();
+        $('#neighborhood3').hide();
+        
+        $('#candanaprovinces').hide();
+        $('#cityontario').hide();
+        $('#cityalberta').hide();
+        $('#citymanitoba').hide();
+		$('#ontario').hide();
+        $('#alberta').hide();
+        $('#manitoba').hide();
+        
+        $('#usastates').hide();
+        $('#texas').hide();
+      	$('#california').hide();
+      	$('#washington').hide();
+		$('#citytexas').hide();
+		$('#citycalifornia').hide();
+		$('#citywashington').hide();
+			
+    }
+  });
+});
+
+$(function() {
+  $('#australia').change(function() {
+    if ($(this).val() == "1") {
+      $('#neighborhood11').show();
+      $('#neighborhood22').hide();
+      $('#neighborhood33').hide();
+      	$('#neighborhood1').show();
+        $('#neighborhood2').hide();
+        $('#neighborhood3').hide();
+
+    } else if ($(this).val() == "2") {
+      $('#neighborhood22').show();
+      $('#neighborhood11').hide();
+      $('#neighborhood33').hide();
+      	$('#neighborhood2').show();
+        $('#neighborhood1').hide();
+        $('#neighborhood3').hide();
+
+    } else if ($(this).val() == "3") {
+      $('#neighborhood33').show();
+      $('#neighborhood11').hide();
+      $('#neighborhood22').hide();
+      	$('#neighborhood3').show();
+        $('#neighborhood2').hide();
+        $('#neighborhood1').hide();
+
+    } else {
+      $('#neighborhood11').hide();
+      $('#neigborhood22').hide();
+      $('#neighborhood33').hide();
+        $('#neighborhood1').hide();
+        $('#neighborhood2').hide();
+        $('#neighborhood3').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#canada').change(function() {
+    if ($(this).val() == "1") {
+      $('#cityontario').show();
+      $('#cityalberta').hide();
+      $('#citymanitoba').hide();
+      	$('#ontario').show();
+        $('#alberta').hide();
+        $('#manitoba').hide();
+    } else if ($(this).val() == "2") {
+      $('#cityalberta').show();
+      $('#cityontario').hide();
+      $('#citymanitoba').hide();
+      	$('#alberta').show();
+        $('#ontario').hide();
+        $('#manitoba').hide();
+    } else if ($(this).val() == "3") {
+      $('#citymanitoba').show();
+      $('#cityontario').hide();
+      $('#cityalberta').hide();
+      	$('#manitoba').show();
+        $('#ontario').hide();
+        $('#alberta').hide();
+    } else {
+      $('#cityontario').hide();
+      $('#cityalberta').hide();
+      $('#citymanitoba').hide();
+      	$('#ontario').hide();
+        $('#alberta').hide();
+        $('#manitoba').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#usa').change(function() {
+    if ($(this).val() == "1") {
+      $('#citytexas').show();
+      $('#citycalifornia').hide();
+      $('#citywashington').hide();
+      	$('#texas').show();
+      	$('#california').hide();
+      	$('#washington').hide();
+    } else if ($(this).val() == "2") {
+      $('#citycalifornia').show();
+      $('#citytexas').hide();
+      $('#citywashington').hide();
+      	$('#california').show();
+      	$('#texas').hide();
+      	$('#washington').hide();
+    } else if ($(this).val() == "3") {
+      $('#citywashington').show();
+      $('#citytexas').hide();
+      $('#citycalifornia').hide();
+      	$('#washington').show();
+      	$('#texas').hide();
+      	$('#california').hide();
+    } else {
+      $('#citytexas').hide();
+      $('#citycalifornia').hide();
+      $('#citywashington').hide();
+      	$('#texas').hide();
+      	$('#california').hide();
+      	$('#washington').hide();
+    }
+  });
+});
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "8fgtnvau"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body>
+</html>
