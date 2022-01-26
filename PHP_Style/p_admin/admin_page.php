@@ -21,9 +21,8 @@
             include './templates/header_1.php';
 
             $title = "Main Menu";
-            $add = "";
-            $edit = "";
-            $add_btn = $edit_btn = $search_input = $delete_btn = false;
+            $setting_url = "";     // place Setting Site, here
+            $add_btn = $edit_btn = $search_input = $delete_btn = false; $setting = true;
             include './templates/back_tab.php'
       ?>
 
@@ -33,10 +32,10 @@
                         <?php 
                               $cardName = array("Year &<br> Section", "Subject", "Research", "Activities");
                               $cardSite = array("./a_section_page.php", "./a_subject_page.php", "./research_page.php", "./activities_page.php");
-                              $cardIcon = array("../Assets/icons/section_icon.png",
-                                                '../Assets/icons/subject_icon.png',
-                                                '../Assets/icons/research_icon.png',
-                                                '../Assets/icons/activities_icon.png');
+                              $cardIcon = array("../Assets/icons/main_menu/section_icon.png",
+                                                '../Assets/icons/main_menu/subject_icon.png',
+                                                '../Assets/icons/main_menu/research_icon.png',
+                                                '../Assets/icons/main_menu/activities_icon.png');
                               $content = array("Collection of Friendly and Very Good Estudakes!",
                                                 "Very Good Tool For Breaking Students Mind",
                                                 "Student Knowledge From K1 To College",

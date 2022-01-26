@@ -1,14 +1,27 @@
 <?php
 
-class StudentSchoolData
+class StudentSchoolData extends multi_functions
 {
       protected $db;
-      private $table = "studentschool_tb";
+      protected $table = "studentschool_tb";
+
+      protected $sql_t = "CREATE TABLE `studentschool_tb` (
+                                    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                                    `yearsection_id` int(11) NOT NULL,
+                                    `regular` varchar(255) NOT NULL,
+                                    `student_status` varchar(255) NOT NULL,
+                                    `student_id` int(11) NOT NULL,
+                                    `current` binary(1) NOT NULL,
+                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    PRIMARY KEY (`id`)
+                              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {
             if(!isset($db->con)) return null;
             $this->db = $db;
+
+            $this->tablechecker();
       }
 
       public function getStudentSchoolDataCurrent($student_id)
@@ -31,37 +44,6 @@ class StudentSchoolData
                                           INNER JOIN studentbasic_tb
                                           ON studentbasic_tb.id=$this->table.student_id
                                           WHERE $this->table.yearsection_id=$yearsection_id AND studentbasic_tb.active=1");
-      }
-
-      private function checker($sql_c)
-      {
-            if ($connection = mysqli_query($this->db->con, $sql_c)) {
-                  if (mysqli_num_rows($connection)>0) {
-                        $studentData = array();
-
-                        while ($item = mysqli_fetch_array($connection, MYSQLI_ASSOC)) {
-                              $studentData[]=$item;
-                        }
-
-                        return $studentData;
-                  } else
-                        return 1;
-            } else
-                  return 2;
-      }
-
-      private function singlechecker($sql_c)
-      {
-            if ($connection = mysqli_query($this->db->con, $sql_c)) {
-                  if (mysqli_num_rows($connection)>0) {
-                        while ($item = mysqli_fetch_assoc($connection)) {
-                              return $item;
-                        }
-
-                  } else
-                        return 1;
-            } else
-                  return 2;
       }
 
       public function setStudentSchoolData($yearsection, $standing, $status, $studentbasic_id, $id)

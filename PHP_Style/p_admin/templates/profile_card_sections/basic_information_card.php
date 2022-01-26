@@ -18,7 +18,7 @@
                                     <img src="<?php echo ($student_data['profile_filename'] != "")?
                                                 '../Assets/profiles/'.$_SESSION['filename']=$student_data['profile_filename']:
                                                 "https://avatars.dicebear.com/api/".(($student_data['gender'])? "male": "female")."/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg"?>"
-                                          alt="" class="profile rounded border border-3" style="width: 300px; height: 400px" >
+                                          alt="" class="profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
                               </div>
                         </div>
 
@@ -28,7 +28,6 @@
                         
                                           <div class="row mb-2">
                                                       <h3 class="fw-bold col">Basic Informations</h3>
-                                                      <a href="'.$edit.'" class="btn bg-dark col-md-1"><img src="../Assets/icons/EDIT_ICON.png" alt="" class="extra" ></a>
                                                 </div>
                                                 <div class="border border-2 rounded p-3">
                                                       <div class="row">

@@ -1,14 +1,26 @@
 <?php
 
-class YearSectionData
+class YearSectionData extends multi_functions
 {
       protected $db;
-      private $table = "yearsection_tb";
+      protected $table = "yearsection_tb";
+
+      protected $sql_t = "CREATE TABLE `yearsection_tb` (
+                                    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                                    `year` int(11) NOT NULL,
+                                    `section` int(11) NOT NULL,
+                                    `semester` varchar(255) NOT NULL,
+                                    `sch_year` varchar(255) NOT NULL,
+                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    PRIMARY KEY (`id`)
+                              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {
             if (!isset($db->con)) return null;
             $this->db = $db;
+
+            $this->tablechecker();
       }
 
       public function getSchYear()
@@ -49,23 +61,6 @@ class YearSectionData
       {
             return $this->checker("SELECT * FROM $this->table 
                                     WHERE id='$yearsection_id'");
-      }
-
-      private function checker($sql_c)
-      {
-            if ($connection = mysqli_query($this->db->con, $sql_c)) {
-                  if(mysqli_num_rows($connection)>0) {
-                        $studentData = array();
-
-                        while ($item = mysqli_fetch_array($connection, MYSQLI_ASSOC)) {
-                              $studentData[]=$item;
-                        }
-
-                        return $studentData;
-                  } else
-                        return 1;
-            } else
-                  return 2;
       }
 
       public function setYearSection($year, $section, $sch_year, $semester, $id)

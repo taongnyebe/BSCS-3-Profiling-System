@@ -1,27 +1,49 @@
 <?php
 
-class StudentData
+class StudentData extends multi_functions
 {
       protected $db;
-      private $table = "studentbasic_tb";
+      protected $table = "studentbasic_tb";
+
+      protected $sql_t = "CREATE TABLE `studentbasic_tb` (
+                                    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                                    `family_name` varchar(255) NOT NULL,
+                                    `middle_name` varchar(255) DEFAULT NULL,
+                                    `first_name` varchar(255) NOT NULL,
+                                    `suffix` varchar(255) DEFAULT NULL,
+                                    `gender` binary(1) NOT NULL,
+                                    `date_of_birth` date NOT NULL,
+                                    `contact_number` varchar(255) DEFAULT NULL,
+                                    `email` varchar(255) DEFAULT NULL,
+                                    `student_id` int(11) NOT NULL,
+                                    `fb_name` varchar(255) DEFAULT NULL,
+                                    `home` varchar(255) DEFAULT NULL,
+                                    `boarding` varchar(255) DEFAULT NULL,
+                                    `profile_filename` varchar(255) DEFAULT NULL,
+                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    PRIMARY KEY (`id`)
+                              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {
             if(!isset($db->con)) return null;
             $this->db = $db;
+
+            $this->tablechecker();
       }
 
       public function getDisplayCardData($idsection)
       {
-            return $this->checker("SELECT studentbasic_tb.id, studentbasic_tb.family_name, 
+            $sql_c = "SELECT studentbasic_tb.id, studentbasic_tb.family_name, 
                               studentbasic_tb.middle_name, studentbasic_tb.first_name, 
                               studentbasic_tb.suffix, studentbasic_tb.student_id, 
                               studentbasic_tb.profile_filename, studentbasic_tb.gender
-                        FROM $this->table 
-                        INNER JOIN studentschool_tb 
-                        ON studentbasic_tb.id=studentschool_tb.student_id 
-                        WHERE studentschool_tb.yearsection_id='$idsection' AND active=1
-                        ORDER BY studentbasic_tb.family_name");
+                              FROM $this->table 
+                              INNER JOIN studentschool_tb 
+                              ON studentbasic_tb.id=studentschool_tb.student_id 
+                              WHERE studentschool_tb.yearsection_id='$idsection' AND studentbasic_tb.active=1
+                              ORDER BY studentbasic_tb.family_name";
+            return $this->checker($sql_c);
       }
 
       public function getStudentData($id)
@@ -45,37 +67,6 @@ class StudentData
                                           WHERE family_name='$family_name' && middle_name='$middle_name' && 
                                           first_name='$first_name' && suffix='$suffix' && gender='$gender' 
                                           && date_of_birth='$birthdate' && contact_number='$contact' && email='$email'");
-      }
-
-      private function checker($sql_c)
-      {
-            if($connection = mysqli_query($this->db->con, $sql_c)) {
-                  if(mysqli_num_rows($connection)>0) {
-                        $studentData = array();
-
-                        while ($item = mysqli_fetch_array($connection, MYSQLI_ASSOC)) {
-                              $studentData[]=$item;
-                        }
-
-                        return $studentData;
-                  } else
-                        return 1;
-            } else
-                  return 2;
-      }
-
-      private function singlechecker($sql_c)
-      {
-            if ($connection = mysqli_query($this->db->con, $sql_c)) {
-                  if (mysqli_num_rows($connection)>0) {
-                        while ($item = mysqli_fetch_assoc($connection)) {
-                              return $item;
-                        }
-
-                  } else
-                        return 1;
-            } else
-                  return 2;
       }
 
       public function setStudentData($family_name, $middle_name, $first_name, $suffix, $gender, $birthdate, $contact, $email, $student_id, $fb_name, $home, $boarding, $studentbasic_id)

@@ -2,7 +2,6 @@
       <br>
       <div class="row mb-2">
             <h3 class="fw-bold col">Parent/Guardian Informations</h3>
-            <a href="'.$edit.'" class="btn bg-dark col-md-1"><img src="../Assets/icons/EDIT_ICON.png" alt="" class="extra" ></a>
       </div>
 <?php
 

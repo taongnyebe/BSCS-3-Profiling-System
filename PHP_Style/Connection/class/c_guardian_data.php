@@ -1,37 +1,35 @@
 <?php
 
-class GuardianData
+class GuardianData extends multi_functions
 {
       protected $db;
-      private $table = "guardian_tb";
+      protected $table = "guardian_tb";
+
+      protected $sql_t = "CREATE TABLE `guardian_tb` (
+                              `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                              `family_name` varchar(255) NOT NULL,
+                              `middle_name` varchar(255) DEFAULT NULL,
+                              `first_name` varchar(255) NOT NULL,
+                              `suffix` varchar(255) DEFAULT NULL,
+                              `connection` varchar(255) NOT NULL,
+                              `contact` varchar(255) DEFAULT NULL,
+                              `student_id` int(11) NOT NULL,
+                              `active` binary(1) NOT NULL DEFAULT '1',
+                              PRIMARY KEY (`id`)
+                        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {
             if(!isset($db->con)) return null;
             $this->db = $db;
+
+            $this->tablechecker();
       }
 
       public function getGuardianData($student_id)
       {
             return $this->checker("SELECT * FROM $this->table 
                                     WHERE student_id=$student_id");
-      }
-
-      private function checker($sql_c)
-      {
-            if($connection = mysqli_query($this->db->con, $sql_c)) {
-                  if(mysqli_num_rows($connection)>0) {
-                        $studentData = array();
-
-                        while ($item = mysqli_fetch_array($connection, MYSQLI_ASSOC)) {
-                              $studentData[]=$item;
-                        }
-
-                        return $studentData;
-                  } else
-                        return 1;
-            } else
-                  return 2;
       }
 
       public function setGuardianData($family_name, $middle_name, $first_name, $suffix, $connection, $contact, $studentbasic_id, $id)

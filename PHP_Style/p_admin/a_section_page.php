@@ -76,7 +76,7 @@
                               }else { 
                               ?>
                                     <div class="border btn text-center rounded m-3 p-0">
-                                          <card data-image="./Assets/placeholders/placeholder_profile_male.jpg" class="m-0">
+                                          <card data-image="../Assets/placeholders/no_available_file.png" class="m-0">
                                                 <h2 slot="header" class="fs-3 pop">No Available Class!</h2>
                                                 <p slot="content"></p>
                                           </card>

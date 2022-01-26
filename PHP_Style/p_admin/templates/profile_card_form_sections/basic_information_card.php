@@ -14,7 +14,7 @@
                               echo '../Assets/placeholders/starting_profile.png';
                         }
                         ?>" 
-                  id='image' alt="" class="profile rounded border border-3" style="width: 300px; height: 400px" >
+                  id='image' alt="" class="profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
       </div>
       <div class="p-1 text-center">
             <input type="file" name="profile_img" onchange="readURL(this);" accept=".png,.jpg">

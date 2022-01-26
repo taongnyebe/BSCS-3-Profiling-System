@@ -40,25 +40,26 @@
                                           echo "https://avatars.dicebear.com/api/identicon/initial.svg";
                                     }
                                     ?>" 
-                              id='image' alt="" class="profile rounded border border-3" style="width: 300px; height: 400px" >
+                              id='image' alt="" class="profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
                   </div>
                   <div class="p-1 text-center">
                         <input type="file" name="profile_img" onchange="readURL(this);" accept=".png,.jpg">
                   </div>
 
+                  <br>
                   <div class="text-center">
-                        <h1><?php echo 'Bachelor of Science in Computer Science'?></h1>
+                        <h1>Bachelor of Science in Computer Science</h1>
                   </div>
 
                   <div class="border rounded container w-100 mx-auto p-5 mb-3">
                         <div class="row">
                               <div class="col">
                                     <div class="row text-center">
-                                          <h4>College Year Level</h4>
+                                          <h3>College Year Level</h3>
                                     </div>
                                     <div class="row">
                                           <div class="col text-center">
-                                                <select name="year" id="0" required>
+                                                <select name="year" id="0" class="w-50 text-center h5" style="height: 100%" required>
                                                       <option value='1'>1st Year</option>";
                                                       <option value='2'>2nd Year</option>";
                                                       <option value='3'>3rd Year</option>";
@@ -70,65 +71,54 @@
                               </div>
                               <div class="col">
                                     <div class="row text-center">
-                                          <h4>Section Number</h4>
+                                          <h3>Section Number</h3>
                                     </div>
                                     <div class="row">
                                           <div class="col text-center">
                                                 <input type="number" name="section" required
-                                                      class="text-center"
-                                                      placeholder=" Input Section Number" 
-                                                max="1" />
+                                                      class="text-center h5 p-1 w-50"
+                                                      placeholder=" Input Section Number" />
                                           </div>
                                     </div>
                               </div>
                         </div>
 
-                        <div class="row mt-3">
-                              <div class="col text-center">
-                                    <h4>School Year</h4>
-                              </div>
-                        </div>
                         <div class="row">
-                              <div class="col text-center">
-                                    <label>Start</label>
+                              <div class="col">
+                                    <div class="row text-center">
+                                          <h3>School Year</h3>
+                                    </div>
+                                    <div class="row">
+                                          <div class="col text-center">
+                                                <input type="number" name="sch_year_start"
+                                                class="text-center h5 p-1 w-50" required
+                                                placeholder=" Input Section Number" 
+                                                value="" id="year-start"/>
+                                          </div>
+                                    </div>
                               </div>
-                              <div class="col text-center">
-                                    <label>End</label>
-                              </div>
-                        </div>
-                        <div class="row mb-5">
-                              <div class="col text-center">
-                                    <input type="number" name="sch_year_start"
-                                          class="text-center" required
-                                          placeholder=" Input Section Number" 
-                                          value="" id="year-start"/>
-                              </div>
-                              <div class="col text-center">
-                                    <input type="number" name="sch_year_end"
-                                          class="text-center" required
-                                          placeholder=" Input Section Number" 
-                                          value="" id="year-end"/>
+                              <div class="col">
+                                    <div class="row text-center">
+                                          <h3>Semester</h3>
+                                    </div>
+                                    <div class="row">
+                                          <div class="col text-center">
+                                                <select name="semester" id="0" class="h5 w-50 text-center" style="height: 100%">
+                                                      <option value='1'>1st Semester</option>";
+                                                      <option value='2'>2nd Semester</option>";
+                                                      <option value='3'>Mid Semester</option>";
+                                                </select>
+                                          </div>
+                                    </div>
                               </div>
                         </div>
                         <script type="text/javascript">
                               var date = new Date();
                               var fullYear = date.getFullYear();
                               document.getElementById("year-start").setAttribute('value',fullYear);
-                              document.getElementById("year-end").setAttribute('value',++fullYear);
                         </script>
 
-                        <div class="row text-center">
-                              <h4>Semester</h4>
-                        </div>
-                        <div class="row">
-                              <div class="col text-center">
-                                    <select name="semester" id="0">
-                                          <option value='1'>1st Semester</option>";
-                                          <option value='2'>2nd Semester</option>";
-                                          <option value='3'>Mid Semester</option>";
-                                    </select>
-                              </div>
-                        </div>
+                        
 
                         <div class="text-center mt-5">
                               <button class="btn btn-outline-dark btn-lg px-5" type="submit" name="submit">Submit</button>

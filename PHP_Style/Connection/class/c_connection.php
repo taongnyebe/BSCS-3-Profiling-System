@@ -5,7 +5,7 @@ class Connection
       protected $host = 'localhost';
       protected $user = 'root';
       protected $password = '';
-      protected $database = 'cs-sims';
+      protected $database = 'cs_sims';
 
       public $con = null;
 

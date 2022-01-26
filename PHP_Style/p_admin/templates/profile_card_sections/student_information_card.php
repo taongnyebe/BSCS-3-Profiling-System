@@ -2,7 +2,6 @@
                               <br>
                               <div class="row mb-2">
                                     <h3 class="fw-bold col">Student Informations</h3>
-                                    <a href="'.$edit.'" class="btn bg-dark col-md-1"><img src="../Assets/icons/add_icon.png" alt="" class="extra" ></a>
                               </div>
                               <small>Current</small>
 <?php 
@@ -40,7 +39,7 @@
                                                                               break;
                                                                         }
                                                                         ?> Semester</h4></div>
-                                          <a href="'.$edit.'" class="btn bg-dark col-md-1"><img src="../Assets/icons/EDIT_ICON.png" alt="" class="extra" ></a>
+                                          <a href="'.$edit.'" class="btn col-md-1"><i class="fa-solid fa-pen-to-square fa-2x"></i></a>
                                     </div>
                                     <div class="row">
                                           <div class="col-2 pr-0"><h4>Status:</h4></div>        

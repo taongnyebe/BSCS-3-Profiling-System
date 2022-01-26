@@ -7,7 +7,7 @@
 
             $year = $_POST['year'];
             $section = $_POST['section'];
-            $sch_year = $_POST['sch_year_start']." - ".$_POST['sch_year_end'];
+            $sch_year = $_POST['sch_year_start']." - ".++$_POST['sch_year_start'];
             $semester = $_POST['semester'];
 
             echo $profile_img = $_FILES['profile_img']['name'];

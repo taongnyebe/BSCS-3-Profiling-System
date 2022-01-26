@@ -88,7 +88,10 @@
                         "<div class='text-error'>Fail to ".$_GET['use']." Guardian Data</div>";
             }
 
-            header("location:http://localhost/PHP-Codes/BSCS-3-Profiling-System/PHP_Style/p_admin/".(($_GET['use'] == "Add")? "a_s_c_studentInfo_page.php?id=".$result['id'] :"a_s_c_studentInfo_page.php?id=".$studentbasic_id));
       }
+
+      echo $address = $homeurl."p_admin/".(($_GET['use'] == "Add")? "a_s_c_studentInfo_page.php?id=".$result['id'] :"a_s_c_studentInfo_page.php?id=".$studentbasic_id);
+      echo "<script type='text/javascript'>document.location.href='{$address}';</script>";
+      echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $address . '">';
 
 ?>

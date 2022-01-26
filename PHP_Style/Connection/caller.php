@@ -1,8 +1,10 @@
 <?php
 
-$homedir = "C:\x"."ampp\htdocs\PHP-Codes\BSCS-3-Profiling-System\PHP_Style";
+$homedir = "D:\Softwares\x"."ampp\htdocs\code\BSCS-3-Profiling-System\PHP_Style";
 
 session_start();
+
+require $homedir.'\Connection\class\multi_functions.php';
 
 require $homedir.'\Connection\class\c_connection.php';
 require $homedir.'\Connection\class\c_login.php';

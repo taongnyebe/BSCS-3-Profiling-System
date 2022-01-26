@@ -19,8 +19,12 @@
                   $_SESSION['error'] = "<p class='error'>User Not Registered</p>";
                   header("Location:".$homeurl."/login_page.php");
                   break;
-                  case 502:
+            case 502:
                   $_SESSION['error'] = "<p class='error'>Connection Error</p>";
+                  header("Location:".$homeurl."/login_page.php");
+                  break;
+            case 10:
+                  $_SESSION['error'] = "<p class='error'>SQL Missing</p>";
                   header("Location:".$homeurl."/login_page.php");
                   break;
             default:
