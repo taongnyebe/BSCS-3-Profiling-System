@@ -30,3 +30,7 @@
                   "<div class='text-error'>Fail to ".$_GET['use']." Student Basic Data</div>";
 
       }
+
+      echo $address = $homeurl."p_admin/a_section_page.php";
+      echo "<script type='text/javascript'>document.location.href='{$address}';</script>";
+      echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $address . '">';

@@ -33,7 +33,7 @@
             
             $datatypeDelete = 'Section';
             $add = "./a_s_c_studentinfo_page_update_add.php?use=Add";
-            $edit = "./a_s_class_page_update.php?use=Update";
+            $edit = "./a_s_class_page_update.php?use=Update&id=".$_GET['id'];
             $add_btn = $edit_btn = $search_input = $delete_btn = true;
             include './templates/back_tab.php';
             

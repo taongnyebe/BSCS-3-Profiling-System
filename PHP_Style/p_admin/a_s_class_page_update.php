@@ -24,16 +24,16 @@
             $add_btn = $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';
 
+            if($_GET['use'] == "Update") $yearsection = $ys->getSpecificSchYear($_GET['id']);
 ?>
       <section>
             <form action="../_forms/update_add_sections_form.php?use=<?php echo $_GET['use']?>&id=<?php echo $_SESSION['section_id'] ?? 0 ?>" method="post" enctype="multipart/form-data">
                   <div class=" p-1 text-center">
                         <img src="<?php
-                                    if($_GET['use'] == "UPDATE"){
-                                          $_SESSION['image_name'] = $student_data['profile_filename'];
-                                          echo ($_SESSION['image'])?
-                                                '../Assets/profiles/'.$student_data['profile_filename']:
-                                                "https://avatars.dicebear.com/api/avatars-identicon-sprites/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg";
+                                    if($_GET['use'] == "Update"){
+                                          echo (isset($yearsection['filename']))?
+                                                '../Assets/profiles/'.$yearsection['filename']:
+                                                "https://avatars.dicebear.com/api/identicon/".$yearsection['year'].$yearsection['semester'].$yearsection['section'].".svg";
                                     }
                                     else{
                                           unset($_SESSION['image'], $_SESSION['image_name']);
@@ -60,11 +60,11 @@
                                     <div class="row">
                                           <div class="col text-center">
                                                 <select name="year" id="0" class="w-50 text-center h5" style="height: 100%" required>
-                                                      <option value='1'>1st Year</option>";
-                                                      <option value='2'>2nd Year</option>";
-                                                      <option value='3'>3rd Year</option>";
-                                                      <option value='4'>4th Year</option>";
-                                                      <option value='5'>Extended</option>";
+                                                      <option value='1' <?php if($_GET['use'] == "Update" && $yearsection['year'] == 1) echo 'selected'?>>1st Year</option>";
+                                                      <option value='2' <?php if($_GET['use'] == "Update" && $yearsection['year'] == 2) echo 'selected'?>>2nd Year</option>";
+                                                      <option value='3' <?php if($_GET['use'] == "Update" && $yearsection['year'] == 3) echo 'selected'?>>3rd Year</option>";
+                                                      <option value='4' <?php if($_GET['use'] == "Update" && $yearsection['year'] == 4) echo 'selected'?>>4th Year</option>";
+                                                      <option value='5' <?php if($_GET['use'] == "Update" && $yearsection['year'] == 5) echo 'selected'?>>Extended</option>";
                                                 </select>
                                           </div>
                                     </div>
@@ -77,7 +77,8 @@
                                           <div class="col text-center">
                                                 <input type="number" name="section" required
                                                       class="text-center h5 p-1 w-50"
-                                                      placeholder=" Input Section Number" />
+                                                      placeholder=" Input Section Number" 
+                                                      value="<?php if($_GET['use'] == "Update") echo $yearsection['section']?>"/>
                                           </div>
                                     </div>
                               </div>
@@ -93,7 +94,7 @@
                                                 <input type="number" name="sch_year_start"
                                                 class="text-center h5 p-1 w-50" required
                                                 placeholder=" Input Section Number" 
-                                                value="" id="year-start"/>
+                                                value="<?php if($_GET['use'] == "Update") echo substr($yearsection['sch_year'], 0,4)?>" <?php if($_GET['use'] == "Add") echo 'id="year-start"'?>/>
                                           </div>
                                     </div>
                               </div>
@@ -104,9 +105,9 @@
                                     <div class="row">
                                           <div class="col text-center">
                                                 <select name="semester" id="0" class="h5 w-50 text-center" style="height: 100%">
-                                                      <option value='1'>1st Semester</option>";
-                                                      <option value='2'>2nd Semester</option>";
-                                                      <option value='3'>Mid Semester</option>";
+                                                      <option value='1' <?php if($_GET['use'] == "Update" && $yearsection['semester'] == 1) echo 'selected'?>>1st Semester</option>";
+                                                      <option value='2' <?php if($_GET['use'] == "Update" && $yearsection['semester'] == 2) echo 'selected'?>>2nd Semester</option>";
+                                                      <option value='3' <?php if($_GET['use'] == "Update" && $yearsection['semester'] == 3) echo 'selected'?>>Mid Semester</option>";
                                                 </select>
                                           </div>
                                     </div>

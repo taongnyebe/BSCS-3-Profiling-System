@@ -11,6 +11,7 @@ class YearSectionData extends multi_functions
                                     `section` int(11) NOT NULL,
                                     `semester` varchar(255) NOT NULL,
                                     `sch_year` varchar(255) NOT NULL,
+                                    `filename` varchar(255) DEFAULT NULL,
                                     `active` binary(1) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`)
                               ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
@@ -28,6 +29,11 @@ class YearSectionData extends multi_functions
             return $this->checker("SELECT DISTINCT sch_year, semester FROM $this->table 
                                     WHERE active=1
                                     ORDER BY sch_year DESC, semester DESC ");
+      }
+
+      public function getSpecificSchYear($id)
+      {
+            return $this->singlechecker("SELECT * FROM $this->table WHERE id=$id");
       }
 
       public function getSectionData($sch_year, $semester)

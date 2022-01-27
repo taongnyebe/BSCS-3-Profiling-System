@@ -31,7 +31,7 @@
                   <div id="app" class="container-fluid text-center">
                         <?php 
                               $cardName = array("Year &<br> Section", "Subject", "Research", "Activities");
-                              $cardSite = array("./a_section_page.php", "./a_subject_page.php", "./research_page.php", "./activities_page.php");
+                              $cardSite = array("./a_section_page.php", "./a_subject_page.php", "./a_research_page.php", "./activities_page.php");
                               $cardIcon = array("../Assets/icons/main_menu/section_icon.png",
                                                 '../Assets/icons/main_menu/subject_icon.png',
                                                 '../Assets/icons/main_menu/research_icon.png',

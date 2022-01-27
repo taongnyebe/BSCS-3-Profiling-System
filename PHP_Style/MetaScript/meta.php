@@ -11,7 +11,6 @@
       <!-- Database Connection -->
       <?php 
             require './Connection/caller.php';
-            require './MetaScript/_url.php';
       ?>
       <!-- CSS tags -->
       <?php echo $css ?>
