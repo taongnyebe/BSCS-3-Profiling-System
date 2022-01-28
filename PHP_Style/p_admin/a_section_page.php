@@ -74,7 +74,7 @@
                                                                   $count = $ssd->countStudentSectionYear($section_data['id']);
 
 ?>
-                                                                  <a href="./a_s_class_page.php?id=" class="border btn text-center rounded m-3 p-0">
+                                                                  <a href="./a_s_class_page.php?id=<?php echo $section_data['id'] ?>" class="border btn text-center rounded m-3 p-0">
                                                                         <card data-image="<?php echo (false /*change to file_name*/)? "" : 
                                                                               "../Assets/placeholders/year/year".$section_data['year'].".png"?>" class="m-0">
                                                                               <h2 slot="header" class="fs-1">BSCS <br><?php echo $section_data['year'].' - '.$section_data['section']?></h2>

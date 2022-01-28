@@ -36,11 +36,11 @@ class StudentData extends multi_functions
       {
             $sql_c = "SELECT studentbasic_tb.id, studentbasic_tb.family_name, 
                               studentbasic_tb.middle_name, studentbasic_tb.first_name, 
-                              studentbasic_tb.suffix, studentbasic_tb.student_id, 
-                              studentbasic_tb.profile_filename, studentbasic_tb.gender
+                              studentbasic_tb.suffix, studentbasic_tb.student_id_no, 
+                              studentbasic_tb.profile_filename, studentbasic_tb.sex
                               FROM $this->table 
                               INNER JOIN studentschool_tb 
-                              ON studentbasic_tb.id=studentschool_tb.student_id 
+                              ON studentbasic_tb.id=studentschool_tb.studentbasic_id 
                               WHERE studentschool_tb.yearsection_id='$idsection' AND studentbasic_tb.active=1
                               ORDER BY studentbasic_tb.family_name";
             return $this->checker($sql_c);

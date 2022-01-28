@@ -30,8 +30,9 @@ class GuardianData extends multi_functions
 
       public function getGuardianData($student_id)
       {
-            return $this->checker("SELECT * FROM $this->table 
-                                    WHERE student_id=$student_id");
+            $sql_c = "SELECT * FROM $this->table 
+                                    WHERE studentbasic_id=$student_id";
+            return $this->checker($sql_c);
       }
 
       public function setGuardianData($family_name, $middle_name, $first_name, $suffix, $connection, $contact, $studentbasic_id, $id)

@@ -55,10 +55,10 @@ class YearSectionData extends multi_functions
       }
 
       
-      public function getSectionYearSenesterSchYear($sch_year, $sem, $year)
+      public function getSection_YearSemesterSchYear($id, $year)
       {
-            $sql_c = "SELECT * FROM $this->table 
-                        WHERE sch_year='$sch_year' AND semester='$sem' AND year=$year AND active=1";
+            echo $sql_c = "SELECT * FROM $this->table 
+                        WHERE schyearsemester_id='$id' AND year=$year AND active=1";
             return $this->checker($sql_c);
       }
       
@@ -82,6 +82,13 @@ class YearSectionData extends multi_functions
             $sql_c = "SELECT * FROM $this->table 
                         WHERE id='$yearsection_id'";
             return $this->checker($sql_c);
+      }
+
+      public function getSpecificSchoolYear($id)
+      {
+            $sql_c = "SELECT schyearsemester_id FROM $this->table 
+                        WHERE id=$id";
+            return $this->singlechecker($sql_c);
       }
 
       public function setYearSection($year, $section, $sch_year, $semester, $id)

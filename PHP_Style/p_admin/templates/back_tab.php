@@ -11,11 +11,11 @@
                               : "";
 
                   echo (isset($_SESSION['Class']))? 
-                              '<a href="./a_section_page.php" class="btn btn-warning">Section Page</a> &emsp;' 
+                              '<a href="./a_section_page.php?page=0" class="btn btn-warning">Section Page</a> &emsp;' 
                               : "";
 
                   echo (isset($_SESSION['Student']))? 
-                              '<a href="./a_s_class_page.php?title='.$_SESSION['Class'].'" class="btn btn-warning">Class Page</a> &emsp;' 
+                              '<a href="./a_s_class_page.php?id='.$_SESSION['section_id'].'" class="btn btn-warning">Class Page</a> &emsp;' 
                               : "";
 
                   echo (isset($_SESSION['Edit']))? 

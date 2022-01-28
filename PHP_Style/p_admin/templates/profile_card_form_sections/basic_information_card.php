@@ -6,7 +6,7 @@
                               $_SESSION['image_name'] = $student_data['profile_filename'];
                               echo ($_SESSION['image'])?
                                     '../Assets/profiles/'.$student_data['profile_filename']:
-                                    "https://avatars.dicebear.com/api/".(($student_data['gender'])? "male": "female")."/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg";
+                                    "https://avatars.dicebear.com/api/".(($student_data['sex'])? "male": "female")."/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg";
                         }
                         else {
                               $_SESSION['image'] = null;
@@ -39,10 +39,10 @@
                         <div class="col-3"><input style="width: 100%" type="text" name="suffix" placeholder="ex. Jr., Sr. III" value="<?php if($id) echo $student_data['suffix']?>"></div>
                   </div>
                   <div class="row">
-                        <div class="col-2 pr-0"><h4>Gender : <small class="text-danger">*</small></h4></div>               
+                        <div class="col-2 pr-0"><h4>Sex : <small class="text-danger">*</small></h4></div>               
                         <div class="col-5">
-                              <input type="radio" name="gender" value=1 <?php if($id && $student_data['gender'] == 1) echo "checked"; ?> required>Male
-                              <input type="radio" name="gender" value=0 <?php if($id && $student_data['gender'] == 0) echo "checked"; ?>>Female
+                              <input type="radio" name="sex" value=1 <?php if($id && $student_data['sex'] == 1) echo "checked"; ?> required>Male
+                              <input type="radio" name="sex" value=0 <?php if($id && $student_data['sex'] == 0) echo "checked"; ?>>Female
                         </div>
                         <div class="col-2 pr-0"><h4>Birthdate : <small class="text-danger">*</small></h4></div>     
                         <div class="col-3"><input type="date" id="date_of_birth" name="date_of_birth" value="<?php if($id) echo date($student_data['date_of_birth']);?>" required></div>
@@ -56,7 +56,7 @@
                                                 style="width: 100%" 
                                                 type="number" name="student_id" 
                                                 maxlength="6" minlength=6 placeholder="ex. no dash and space" 
-                                                value="<?php if($id) echo $student_data['student_id'] ?>" required>
+                                                value="<?php if($id) echo $student_data['student_id_no'] ?>" required>
                         </div>
                   </div>
                   <div class="row">
@@ -83,8 +83,8 @@
                   </div>
                   <div class="row">
                         <div class="col-2 pr-0"><h4>Home : <small class="text-danger">*</small></h4></div>               
-                        <div class="col-5"><input style="width: 100%" type="text" name="home" placeholder="ex. south west" value="<?php if($id) echo $student_data['home']?>" required></div>
+                        <div class="col-5"><input style="width: 100%" type="text" name="home" placeholder="ex. south west" value="<?php if($id) echo $student_data['permanent_address']?>" required></div>
                         <div class="col-2 pr-0"><h4>Boarding :</h4></div>     
-                        <div class="col-3"><input style="width: 100%" type="text" name="boarding" placeholder="ex. isabela" value="<?php if($id) echo $student_data['boarding']?>"></div>
+                        <div class="col-3"><input style="width: 100%" type="text" name="boarding" placeholder="ex. isabela" value="<?php if($id) echo $student_data['current_address']?>"></div>
                   </div>
             </div>

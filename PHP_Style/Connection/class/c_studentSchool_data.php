@@ -31,16 +31,16 @@ class StudentSchoolData extends multi_functions
 
       public function getStudentSchoolDataCurrent($student_id)
       {
-            return $this->checker("SELECT * FROM $this->table 
-                                    WHERE student_id=$student_id AND current=1");
+            $sql_c =  "SELECT * FROM $this->table 
+                                    WHERE studentbasic_id=$student_id AND current=1";
+            return $this->singlechecker($sql_c);
       }
+
       public function getStudentSchoolDataHistory($student_id)
       {
-            return $this->checker("SELECT $this->table.* FROM $this->table 
-                                    INNER JOIN yearsection_tb
-                                    ON yearsection_tb.id=$this->table.yearsection_id
-                                    WHERE student_id=$student_id AND current=0
-                                    ORDER BY yearsection_tb.year DESC, yearsection_tb.semester ASC");
+            $sql_c =  "SELECT * FROM $this->table 
+                                    WHERE studentbasic_id=$student_id AND current=0";
+            return $this->singlechecker($sql_c);
       }
 
       public function countStudentSectionYear($yearsection_id)
