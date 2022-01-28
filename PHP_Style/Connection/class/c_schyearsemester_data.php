@@ -1,6 +1,6 @@
 <?php
 
-class Seminar extends multi_functions
+class SchYearSem extends multi_functions
 {
       protected $db;
       protected $table = "schyearsemester_tb";
@@ -19,5 +19,11 @@ class Seminar extends multi_functions
             $this->db = $db;
 
             $this->tablechecker();
+      }
+
+      public function getAllSchYearSemester()
+      {
+            $sql_c = "";
+            return $this->checker($sql_c);
       }
 }

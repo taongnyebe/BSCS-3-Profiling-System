@@ -43,6 +43,13 @@ class Login extends multi_functions
             return $this->result;
       }
 
+      public function getUserType($username)
+      {
+            $sql_c = "SELECT user_type FROM $this->table
+                        WHERE username='$username'";
+            return $this->singlechecker($sql_c);
+      }
+
       private function checkUser()
       {
             if ($connection = mysqli_query($this->db->con, "SELECT * FROM $this->table 

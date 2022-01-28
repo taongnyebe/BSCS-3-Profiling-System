@@ -1,6 +1,6 @@
 <?php
 
-class Seminar extends multi_functions
+class SecurityRetrival extends multi_functions
 {
       protected $db;
       protected $table = "securityretrival_tb";

@@ -12,6 +12,15 @@ require $homedir.'\Connection\class\c_user_data.php';
 require $homedir.'\Connection\class\c_delete_data.php';
 
 require $homedir.'\Connection\class\c_yearsection_data.php';
+require $homedir.'\Connection\class\c_award_data.php';
+require $homedir.'\Connection\class\c_awardstudent_data.php';
+require $homedir.'\Connection\class\c_competition_data.php';
+require $homedir.'\Connection\class\c_competitionstudent_data.php';
+require $homedir.'\Connection\class\c_schyearsemester_data.php';
+require $homedir.'\Connection\class\c_securityretrival_data.php';
+require $homedir.'\Connection\class\c_seminar_data.php';
+require $homedir.'\Connection\class\c_seminarstudent_data.php';
+require $homedir.'\Connection\class\c_subjectstudent_data.php';
 require $homedir.'\Connection\class\c_student_data.php';
 require $homedir.'\Connection\class\c_studentSchool_data.php';
 require $homedir.'\Connection\class\c_guardian_data.php';

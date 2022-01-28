@@ -8,8 +8,16 @@
             case 0:
                   $_SESSION['login']= "<p class='success'>Login Successfully</p>";
                   $_SESSION['user'] = $_POST['username'];
+                  $_SESSION['user']."   ";
 
-                  header("Location:".$adminurl."admin_page.php");
+                  $login->getUserType($_SESSION['user'])['user_type'];
+                  if ($login->getUserType($_SESSION['user'])['user_type']) {
+                        header("Location:".$adminurl."admin_page.php");
+                        echo "  Admin";
+                  }
+                  else
+                        echo "  Sub Admin";
+
                   break;
             case 1:
                   $_SESSION['error'] = "<p class='error'>Wrong Password</p>";

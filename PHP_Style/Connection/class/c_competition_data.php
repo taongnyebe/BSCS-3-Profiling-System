@@ -1,6 +1,6 @@
 <?php
 
-class Seminar extends multi_functions
+class Competition extends multi_functions
 {
       protected $db;
       protected $table = "competition_tb";
