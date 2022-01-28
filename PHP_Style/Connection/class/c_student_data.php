@@ -6,19 +6,19 @@ class StudentData extends multi_functions
       protected $table = "studentbasic_tb";
 
       protected $sql_t = "CREATE TABLE `studentbasic_tb` (
-                                    `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+                                    `id` int(11) NOT NULL AUTO_INCREMENT,
                                     `family_name` varchar(255) NOT NULL,
                                     `middle_name` varchar(255) DEFAULT NULL,
                                     `first_name` varchar(255) NOT NULL,
                                     `suffix` varchar(255) DEFAULT NULL,
-                                    `gender` binary(1) NOT NULL,
+                                    `sex` binary(1) NOT NULL,
                                     `date_of_birth` date NOT NULL,
-                                    `contact_number` varchar(255) DEFAULT NULL,
+                                    `contact_number` int(11) DEFAULT NULL,
                                     `email` varchar(255) DEFAULT NULL,
-                                    `student_id` int(11) NOT NULL,
                                     `fb_name` varchar(255) DEFAULT NULL,
-                                    `home` varchar(255) DEFAULT NULL,
-                                    `boarding` varchar(255) DEFAULT NULL,
+                                    `student_id_no` int(10) unsigned NOT NULL,
+                                    `permanent_address` varchar(255) DEFAULT NULL,
+                                    `current_address` varchar(255) DEFAULT NULL,
                                     `profile_filename` varchar(255) DEFAULT NULL,
                                     `active` binary(1) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`)

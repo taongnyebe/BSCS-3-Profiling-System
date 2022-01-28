@@ -6,17 +6,19 @@ class GuardianData extends multi_functions
       protected $table = "guardian_tb";
 
       protected $sql_t = "CREATE TABLE `guardian_tb` (
-                              `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-                              `family_name` varchar(255) NOT NULL,
-                              `middle_name` varchar(255) DEFAULT NULL,
-                              `first_name` varchar(255) NOT NULL,
-                              `suffix` varchar(255) DEFAULT NULL,
-                              `connection` varchar(255) NOT NULL,
-                              `contact` varchar(255) DEFAULT NULL,
-                              `student_id` int(11) NOT NULL,
-                              `active` binary(1) NOT NULL DEFAULT '1',
-                              PRIMARY KEY (`id`)
-                        ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
+                                    `id` int(11) NOT NULL AUTO_INCREMENT,
+                                    `studentbasic_id` int(11) NOT NULL,
+                                    `family_name` varchar(255) NOT NULL,
+                                    `middle_name` varchar(255) DEFAULT NULL,
+                                    `first_name` varchar(255) NOT NULL,
+                                    `suffix` varchar(255) DEFAULT NULL,
+                                    `connection` varchar(255) NOT NULL,
+                                    `contact` varchar(255) DEFAULT NULL,
+                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    PRIMARY KEY (`id`),
+                                    KEY `student_id` (`studentbasic_id`),
+                                    CONSTRAINT `guardian_tb_ibfk_1` FOREIGN KEY (`studentbasic_id`) REFERENCES `studentbasic_tb` (`id`)
+                              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {
