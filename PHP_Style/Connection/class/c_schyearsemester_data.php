@@ -21,9 +21,17 @@ class SchYearSem extends multi_functions
             $this->tablechecker();
       }
 
-      public function getAllSchYearSemester()
+      public function getSelectedSchYear($page)
       {
-            $sql_c = "";
+            $sql_c = "SELECT DISTINCT sch_year FROM $this->table 
+                              WHERE active=1 
+                              ORDER BY sch_year DESC LIMIT $page,1";
+            return $this->singlechecker($sql_c);
+      }
+
+      public function getAllSemeter_Schyear($year)
+      {
+            $sql_c = "SELECT * FROM $this->table WHERE sch_year='$year' ORDER BY semester DESC";
             return $this->checker($sql_c);
       }
 }

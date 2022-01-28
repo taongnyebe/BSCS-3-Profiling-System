@@ -45,10 +45,9 @@ class StudentSchoolData extends multi_functions
 
       public function countStudentSectionYear($yearsection_id)
       {
-            return $this->singlechecker("SELECT COUNT($this->table.id) AS student_count FROM $this->table
-                                          INNER JOIN studentbasic_tb
-                                          ON studentbasic_tb.id=$this->table.student_id
-                                          WHERE $this->table.yearsection_id=$yearsection_id AND studentbasic_tb.active=1");
+            $sql_c = "SELECT COUNT(id) AS student_count FROM $this->table
+                                          WHERE active=1 AND yearsection_id=$yearsection_id";
+            return $this->singlechecker($sql_c);
       }
 
       public function setStudentSchoolData($yearsection, $standing, $status, $studentbasic_id, $id)

@@ -46,10 +46,10 @@ class YearSectionData extends multi_functions
             return $this->singlechecker($sql_c);
       }
 
-      public function getSectioninYearSemester($sch_year, $semester)
+      public function getSectionCard_YearSemester($schsem_id)
       {
-            $sql_c = "SELECT * FROM $this->table 
-                                    WHERE sch_year='$sch_year' AND semester='$semester' AND active=1
+            $sql_c = "SELECT year, section, id FROM $this->table 
+                                    WHERE schyearsemester_id='$schsem_id' AND active=1
                                     ORDER BY year, section";
             return $this->checker($sql_c);
       }

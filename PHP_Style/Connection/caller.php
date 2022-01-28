@@ -31,6 +31,8 @@ $login = new Login($db);
 $d = new Delete($db);
 
 $ys = new YearSectionData($db);
+$award = new Award($db);
+$schyearsem = new SchYearSem($db);
 $sd = new StudentData($db);
 $ssd = new StudentSchoolData($db);
 $gd = new GuardianData($db);
