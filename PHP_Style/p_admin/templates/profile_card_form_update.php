@@ -10,25 +10,30 @@
 
             if($student_Sdata != 1 && $student_Sdata != 2)
             {
-                  $_SESSION['student_Sid']=$student_Sdata['id'];
-
-                  $yearSection_data = $ys->getSpecificSchYearData($student_Sdata['yearsection_id']);
-                  $sch_data = $schyearsem->getDesignatedSchYear($yearSection_data['schyearsemester_id']);
-                  if($yearSection_data != 1 && $yearSection_data != 2)
+                  foreach ($student_Sdata as $student_Sdata)
                   {
-                        $_SESSION['return']="class_page.php?year=".$yearSection_data['year']."&section=".$yearSection_data['section'];
-                        $count++;
+                        $_SESSION['student_Sid']=$student_Sdata['id'];
+
+                        $yearSection_data = $ys->getStudentYearSection($student_Sdata['yearsection_id']);
+                        if($student_Sdata != 1 && $student_Sdata != 2)
+                        {
+                              foreach ($yearSection_data as $yearSection_data) 
+                              {
+                                    $_SESSION['return']="class_page.php?year=".$yearSection_data['year']."&section=".$yearSection_data['section'];
+                                    $count++;
 ?>
 
-                        <br>
-                        <div class="row mb-2">
-                              <h3 class="fw-bold">Student Informations</h3>
-                        </div>
-                        <small>Current</small>
-                        
+                                    <br>
+                                    <div class="row mb-2">
+                                          <h3 class="fw-bold">Student Informations</h3>
+                                    </div>
+                                    <small>Current</small>
+                                    
 
 <?php
-                        include './templates/profile_card_form_sections/student_information_card.php';
+                                    include './templates/profile_card_form_sections/student_information_card.php';
+                              }
+                        }
                   }
             }
       } else {

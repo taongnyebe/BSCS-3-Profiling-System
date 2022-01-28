@@ -44,7 +44,7 @@ class GuardianData extends multi_functions
                               suffix='$suffix', connection='$connection', contact='$contact'
                               WHERE id=$id";
             } else {
-                  $sql_c = "INSERT INTO $this->table
+                  echo $sql_c = "INSERT INTO $this->table
                               SET family_name='$family_name', middle_name='$middle_name', first_name='$first_name',
                               suffix='$suffix', connection='$connection', contact='$contact', studentbasic_id='$studentbasic_id'";
             }

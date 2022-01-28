@@ -40,7 +40,7 @@ class StudentSchoolData extends multi_functions
       {
             $sql_c =  "SELECT * FROM $this->table 
                                     WHERE studentbasic_id=$student_id AND current=0";
-            return $this->singlechecker($sql_c);
+            return $this->checker($sql_c);
       }
 
       public function countStudentSectionYear($yearsection_id)

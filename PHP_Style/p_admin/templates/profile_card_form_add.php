@@ -29,6 +29,7 @@
       for ($i=1; $i <= 2; $i++) { 
             $id =false;
             include './templates/profile_card_form_sections/guardian_card.php';
+            $count++;
       }      
 ?>
 <input type="hidden" name="g-count" value="<?php echo $count ?>">
