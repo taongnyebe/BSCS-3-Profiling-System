@@ -61,29 +61,29 @@ class StudentData extends multi_functions
                                     ORDER BY studentbasic_tb.family_name");
       }
 
-      public function getNewStudentDataID($family_name, $middle_name, $first_name, $suffix, $gender, $birthdate, $contact, $email)
+      public function getNewStudentDataID($family_name, $middle_name, $first_name, $suffix, $sex, $birthdate, $contact, $email)
       {
             return $this->singlechecker("SELECT id FROM $this->table 
                                           WHERE family_name='$family_name' && middle_name='$middle_name' && 
-                                          first_name='$first_name' && suffix='$suffix' && gender='$gender' 
+                                          first_name='$first_name' && suffix='$suffix' && sex='$sex' 
                                           && date_of_birth='$birthdate' && contact_number='$contact' && email='$email'");
       }
 
-      public function setStudentData($family_name, $middle_name, $first_name, $suffix, $gender, $birthdate, $contact, $email, $student_id, $fb_name, $home, $boarding, $studentbasic_id)
+      public function setStudentData($family_name, $middle_name, $first_name, $suffix, $sex, $birthdate, $contact, $email, $student_id_no, $fb_name, $permanent_address, $current_address, $studentbasic_id)
       {
 
             if ($studentbasic_id != "") {
                   $sql_c = "UPDATE $this->table 
                               SET family_name='$family_name', middle_name='$middle_name', first_name='$first_name', suffix='$suffix', 
-                              gender='$gender', date_of_birth='$birthdate', contact_number='$contact', email='$email', student_id='$student_id',
-                              fb_name='$fb_name', home='$home', boarding='$boarding '
+                              sex='$sex', date_of_birth='$birthdate', contact_number='$contact', email='$email', student_id_no='$student_id_no',
+                              fb_name='$fb_name', permanent_address='$permanent_address', current_address='$current_address '
                               WHERE id='$studentbasic_id'";
                   return mysqli_query($this->db->con, $sql_c);
             } else {
                   $sql_c = "INSERT INTO $this->table 
                               SET family_name='$family_name', middle_name='$middle_name', first_name='$first_name', suffix='$suffix', 
-                              gender='$gender', date_of_birth='$birthdate', contact_number='$contact', email='$email', student_id='$student_id',
-                              fb_name='$fb_name', home='$home', boarding='$boarding'";
+                              sex='$sex', date_of_birth='$birthdate', contact_number='$contact', email='$email', student_id_no='$student_id_no',
+                              fb_name='$fb_name', permanent_address='$permanent_address', current_address='$current_address'";
                   return mysqli_query($this->db->con, $sql_c);
             }
             

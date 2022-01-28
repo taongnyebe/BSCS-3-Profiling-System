@@ -61,7 +61,7 @@ class StudentSchoolData extends multi_functions
             } else {
                   $sql_c = "INSERT INTO $this->table 
                               SET yearsection_id='$yearsection', regular='$standing', 
-                              student_status='$status', student_id='$studentbasic_id'";
+                              student_status='$status', studentbasic_id='$studentbasic_id'";
                   return mysqli_query($this->db->con, $sql_c);
             }
       }

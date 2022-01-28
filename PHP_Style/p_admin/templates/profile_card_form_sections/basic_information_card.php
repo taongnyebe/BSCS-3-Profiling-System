@@ -82,9 +82,9 @@
                         <h5 class="fw-bold">Address</h5>
                   </div>
                   <div class="row">
-                        <div class="col-2 pr-0"><h4>Home : <small class="text-danger">*</small></h4></div>               
-                        <div class="col-5"><input style="width: 100%" type="text" name="home" placeholder="ex. south west" value="<?php if($id) echo $student_data['permanent_address']?>" required></div>
-                        <div class="col-2 pr-0"><h4>Boarding :</h4></div>     
-                        <div class="col-3"><input style="width: 100%" type="text" name="boarding" placeholder="ex. isabela" value="<?php if($id) echo $student_data['current_address']?>"></div>
+                        <div class="col-2 pr-0"><h4>Permanent : <small class="text-danger">*</small></h4></div>               
+                        <div class="col-5"><input style="width: 100%" type="text" name="permanent_address" placeholder="ex. south west" value="<?php if($id) echo $student_data['permanent_address']?>" required></div>
+                        <div class="col-2 pr-0"><h4>Current :</h4></div>     
+                        <div class="col-3"><input style="width: 100%" type="text" name="current_address" placeholder="ex. isabela" value="<?php if($id) echo $student_data['current_address']?>"></div>
                   </div>
             </div>

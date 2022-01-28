@@ -19,6 +19,7 @@
                   $sch_data = $schyearsem->getDesignatedSchYear($yearsection['schyearsemester_id']);
                   include './templates/profile_card_form_sections/student_information_card.php';
 ?>
+<input type="hidden" name="ssd-count" value="<?php echo $count ?>">
                         <br>
                         <div class="row mb-2">
                               <h3 class="fw-bold">Parent/Guardian Informations</h3>
@@ -30,6 +31,7 @@
             include './templates/profile_card_form_sections/guardian_card.php';
       }      
 ?>
+<input type="hidden" name="g-count" value="<?php echo $count ?>">
                         </div>
                   </div>
                   <br>
