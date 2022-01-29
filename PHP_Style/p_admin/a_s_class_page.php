@@ -12,7 +12,7 @@
 <body>
 
 <?php 
-            $_SESSION['Class'] = 'a';
+            $_SESSION['Class'] = 'true';
 
             $_SESSION['Student'] = null;
 
@@ -23,13 +23,11 @@
             
             include './templates/header_2.php';
 
-            (isset($_GET['year']))? $_SESSION['year'] = $_GET['year'] : '' ;
-            (isset($_GET['section']))? $_SESSION['section'] = $_GET['section'] : '' ;
-            (isset($_GET['sch_year']))? $_SESSION['sch_year'] = $_GET['sch_year'] : '' ;
-            (isset($_GET['id']))? $_SESSION['section_id'] = $_GET['id'] : '' ;
-            (isset($_GET['semester']))? $_SESSION['semester'] = $_GET['semester'] : '' ;
+            $yearsection = $ys->getSpecificSchYearData($_GET['id']);
 
-            $title = 'BS Computer Science '.$_SESSION['year'].' - '.$_SESSION['section'];
+            (isset($_GET['id']))? $_SESSION['section_id'] = $_GET['id'] : '' ;
+
+            $title = 'BS Computer Science '.$yearsection['year'].' - '.$yearsection['section'];
             
             $datatypeDelete = 'Section';
             $add = "./a_s_c_studentinfo_page_update_add.php?use=Add";
@@ -58,10 +56,10 @@
                                           <a href="./a_s_c_studentInfo_page.php?id=<?php echo $student_data['id'] ?>" class="border btn text-center rounded m-3 p-0">
                                                 <card data-image="<?php echo ($student_data['profile_filename'] != "")?
                                                             '../Assets/profiles/'.$student_data['profile_filename']:
-                                                            "https://avatars.dicebear.com/api/".(($student_data['gender'])? "male": "female")."/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg"?>"
+                                                            "https://avatars.dicebear.com/api/".(($student_data['sex'])? "male": "female")."/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg"?>"
                                                             class="m-0">
                                                       <h2 slot="header" class="fs-3 pop"><?php echo $student_data['family_name'].', '.$student_data['first_name'].' '.(($student_data['middle_name'] != '')? $student_data['middle_name'][0].'. ' : "" ).$student_data['suffix'] ?></h2>
-                                                      <p slot="content" style="color:black"><?php echo substr_replace($student_data['student_id'], " - ", 2, 0) ?></p>
+                                                      <p slot="content" style="color:black"><?php echo substr_replace($student_data['student_id_no'], " - ", 2, 0) ?></p>
                                                 </card>
                                           </a>
 <?php

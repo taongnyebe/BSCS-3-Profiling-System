@@ -9,14 +9,14 @@
             $middle_name = ucwords($_POST['middle_name']);
             $family_name = ucwords($_POST['family_name']);
             $suffix = ucwords($_POST['suffix']);
-            $gender = $_POST['gender'];
+            $sex = $_POST['sex'];
             $birthdate = $_POST['date_of_birth'];
             $contact = $_POST['contact'];
             $email = $_POST['email'];
             $student_id = $_POST['student_id'];
             $fb_name = $_POST['fb_name'];
-            $home = $_POST['home'];
-            $boarding = $_POST['boarding'];
+            $permanent_address = $_POST['permanent_address'];
+            $current_address = $_POST['current_address'];
             
             $profile_img = $_FILES['profile_img']['name'];
             
@@ -35,13 +35,13 @@
 
             }
 
-            echo ($sd->setStudentData($family_name, $middle_name, $first_name, $suffix, $gender, $birthdate, $contact, $email, $student_id, $fb_name, $home, $boarding, $studentbasic_id))?
+            echo ($sd->setStudentData($family_name, $middle_name, $first_name, $suffix, $sex, $birthdate, $contact, $email, $student_id, $fb_name, $permanent_address, $current_address, $studentbasic_id))?
                   "<div class='text-success'>Student Basic Data ".$_GET['use']." Successfully</div>":
                   "<div class='text-error'>Fail to ".$_GET['use']." Student Basic Data</div>";
 
 
             if ($_GET['use'] == "Add"){
-                  $result = $sd->getNewStudentDataID($family_name, $middle_name, $first_name, $suffix, $gender, $birthdate, $contact, $email);
+                  $result = $sd->getNewStudentDataID($family_name, $middle_name, $first_name, $suffix, $sex, $birthdate, $contact, $email);
                   $result['id'].'<br>';
 
                   if ($profile_img != ""){

@@ -14,11 +14,11 @@
 
                         <!-- Profile Image -->
                         <div class="mb-5">
-                              <div class=" p-1 text-center">
+                              <div class="p-1 text-center">
                                     <img src="<?php echo ($student_data['profile_filename'] != "")?
                                                 '../Assets/profiles/'.$_SESSION['filename']=$student_data['profile_filename']:
-                                                "https://avatars.dicebear.com/api/".(($student_data['gender'])? "male": "female")."/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg"?>"
-                                          alt="" class="profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
+                                                "https://avatars.dicebear.com/api/".(($student_data['sex'])? "male": "female")."/".preg_replace('/\s+/', '_', $student_data['first_name']).".svg"?>"
+                                          alt="" class="p-3 profile rounded border border-3 shadow" style="width: 300px; height: 400px; object-fit: cover;" >
                               </div>
                         </div>
 
@@ -41,14 +41,14 @@
                                                                                     ?></h4></div>
                                                       </div>
                                                       <div class="row">
-                                                            <div class="col-2 pr-0"><h4>Gender :</h4></div>               
-                                                            <div class="col-5"><h4><?php echo ($student_data['gender'])? 'Male' : 'Female' ?></h4></div>
+                                                            <div class="col-2 pr-0"><h4>Sex :</h4></div>               
+                                                            <div class="col-5"><h4><?php echo ($student_data['sex'])? 'Male' : 'Female' ?></h4></div>
                                                             <div class="col-2 pr-0"><h4>Birthdate :</h4></div>     
                                                             <div class="col-3"><h4><?php echo $date ?></h4></div>
                                                       </div>
                                                       <div class="row">
                                                             <div class="col-2 pr-0"><h4>I.D. No :</h4></div>     
-                                                            <div class="col-4"><h4><?php echo substr_replace($student_data['student_id'], " - ", 2, 0) ?></h4></div>
+                                                            <div class="col-4"><h4><?php echo substr_replace($student_data['student_id_no'], " - ", 2, 0) ?></h4></div>
                                                       </div>
                                                       <div class="row text-center mt-2">
                                                             <h5 class="fw-bold col">Contact Informations</h5>
@@ -72,10 +72,10 @@
                                                             <h5 class="fw-bold">Address</h5>
                                                       </div>
                                                       <div class="row">
-                                                            <div class="col-2 pr-0"><h4>Home :</h4></div>               
-                                                            <div class="col-5"><h4><?php echo $student_data['home'] ?></h4></div>
-                                                            <div class="col-2 pr-0"><h4>Boarding :</h4></div>     
-                                                            <div class="col-3"><h4><?php echo $student_data['boarding'] ?></h4></div>
+                                                            <div class="col-2 pr-0"><h4>Permanent :</h4></div>               
+                                                            <div class="col-5"><h4><?php echo $student_data['permanent_address'] ?></h4></div>
+                                                            <div class="col-2 pr-0"><h4>Current :</h4></div>     
+                                                            <div class="col-3"><h4><?php echo $student_data['current_address'] ?></h4></div>
                                                       </div>
                                                 </div>
 <?php 

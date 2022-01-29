@@ -40,7 +40,7 @@
                   }
             }else{
                   include './templates/back_tab.php';
-                  include './templates/profile_card_form_update.php';
+                  include './templates/profile_card_form_add.php';
             }
 
 
