@@ -27,7 +27,7 @@
                               : "";
                   
                   echo (isset($_SESSION['Activities']))? 
-                              '<a href="./activities_page.php" class="btn btn-warning">Activities Page</a> &emsp;' 
+                              '<a href="./a_activities_page.php" class="btn btn-warning">Activities Page</a> &emsp;' 
                               : "";
                   ?>
 

@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
-            .'<link rel="stylesheet" href="./CSS/a.css">'."\n";
+      $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
+            .'<link rel="stylesheet" href="../CSS/a.css">'."\n";
       $titleName = "SIMS CS-Org - Webinars";
 
       include_once './MetaScript/meta.php'
@@ -14,14 +14,14 @@
       <?php 
             $_SESSION['Activities'] = "Seminar";
 
-            include './SectionTemplate/header_2.php';
+            include './templates/header_2.php';
 
-            include './MinorTemplate/search_tab.php';
+            $title = "Seminars";
 
-            $edit = '';
-            $title = "Seminars and Webinars";
-            $button = 2;
-            include './MinorTemplate/back_tab.php';
+            $add = "";
+            $edit = "";
+            $add_btn = $edit_btn = $search_input = $delete_btn = false;
+            include './templates/back_tab.php';
       ?>
 
       <section>
@@ -70,7 +70,7 @@
       </section>
 
       <?php
-            include './SectionTemplate/footer.php';
+            include './templates/footer.php';
 
 
             include_once './MetaScript/script.php';
