@@ -16,11 +16,13 @@
       
             include './templates/header_2.php';
 
+            unset($_SESSION['competition']);
+
             $title = "Competitions";
 
             $add = "";
             $edit = "";
-            $add_btn = $edit_btn = $search_input = $delete_btn = false;
+            $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';
       ?>
 
@@ -36,12 +38,11 @@
                                           while ($rows=mysqli_fetch_assoc($res)) :
                                                 ++$i;
                                                 ?>
-                                                      <a href="" class="border btn rounded m-3 p-0">
-                                                            <card data-image="" class="m-0">
-                                                                  <h4 slot="header" class="fw-bold pop pb-2 cardshadow-h2"><?php echo $rows['title']?></h4><br>
+                                                      <a href="./a_act_comp_competitionInfo_page.php?id=<?php echo $rows['id'] ?>" class="border btn rounded m-3 p-0">
+                                                            <card data-image="https://avatars.dicebear.com/api/identicon/<?php echo preg_replace('/\s+/', '_', $rows['id']) ?>.svg" class="m-0">
+                                                                  <h4 slot="header" class="fw-bold pop pb-2"><?php echo $rows['title']?></h4><br>
                                                                   <p slot="content" class="cardblack">
-                                                                        <small>Event Name </small><br>
-                                                                        <small><?php echo $rows['date_start']?></small>
+                                                                        <small><?php if (isset($rows['event_title']) && $rows['event_title'] != '') echo $rows['event_title']?> </small><br>
                                                                   </p>
                                                             </card>
                                                       </a>

@@ -29,6 +29,22 @@
                   echo (isset($_SESSION['Activities']))? 
                               '<a href="./a_activities_page.php" class="btn btn-warning">Activities Page</a> &emsp;' 
                               : "";
+
+                  echo (isset($_SESSION['research']))?
+                              '<a href="./a_research_page.php" class="btn btn-warning">Research Page</a> &emsp;'
+                              : "";
+                  
+                  echo (isset($_SESSION['awards']))?
+                              '<a href="./a_act_awards_page.php" class="btn btn-warning">Awards Page</a> &emsp;'
+                              : "";
+
+                  echo (isset($_SESSION['seminar']))?
+                              '<a href="./a_act_webinar_page.php" class="btn btn-warning">Seminar Page</a> &emsp;'
+                              : "";
+
+                  echo (isset($_SESSION['competition']))?
+                              '<a href="./a_act_competition_page.php" class="btn btn-warning">Competition Page</a> &emsp;'
+                              : "";
                   ?>
 
       </div>

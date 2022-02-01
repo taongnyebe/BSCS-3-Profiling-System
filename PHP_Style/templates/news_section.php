@@ -11,7 +11,7 @@
             <div class="carousel-inner">
                   <?php 
                         for ($i=0; $i < $count; $i++) { 
-                              $image = '';
+                              $image = ['./Assets/Vision.png', './Assets/Mission.png', './Assets/Core_Value.png'];
                               $alternative_name = '';
                               $caption_title = '';
                               $caption_description = '';

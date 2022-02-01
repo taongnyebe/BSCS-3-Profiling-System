@@ -14,13 +14,15 @@
       <?php 
             $_SESSION['Activities'] = "Seminar";
 
+            unset($_SESSION['seminar']);
+
             include './templates/header_2.php';
 
             $title = "Seminars";
 
             $add = "";
             $edit = "";
-            $add_btn = $edit_btn = $search_input = $delete_btn = false;
+            $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';
       ?>
 
@@ -36,21 +38,11 @@
                                           ++$i;
                                           ?>
                                                 <div class="card m-3">
-                                                      <a href="" class="btn <?php switch ($rows['level']) {
-                                                            case 1:
-                                                                  echo 'btn-primary';
-                                                                  break;
-                                                            case 2:
-                                                                  echo 'btn-warning';
-                                                                  break;
-                                                            case 3:
-                                                                  echo 'btn-danger';
-                                                                  break;
-                                                      } ?>">
+                                                      <a href="./a_act_web_webInfo_page.php?id=<?php echo $rows['id'] ?>" class="btn btn-primary">
                                                             <div class="card-body">
                                                                   <p>
                                                                         <h3 class="card-title fw-bold" rows="4"><?php echo $rows['title'] ?></h3>
-                                                                        <h4 class="card-title"><?php echo $rows['date_start'].(($rows['date_end'] != '')? ' : '.$rows['date_end']:'') ?></h4>
+                                                                        <h4 class="card-title"></h4>
                                                                   </p>
                                                             </div>
                                                       </a>

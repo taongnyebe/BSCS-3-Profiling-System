@@ -11,7 +11,7 @@ class StudentData extends multi_functions
                                     `middle_name` varchar(255) DEFAULT NULL,
                                     `first_name` varchar(255) NOT NULL,
                                     `suffix` varchar(255) DEFAULT NULL,
-                                    `sex` binary(1) NOT NULL,
+                                    `sex` int(11) NOT NULL,
                                     `date_of_birth` date NOT NULL,
                                     `contact_number` int(11) DEFAULT NULL,
                                     `email` varchar(255) DEFAULT NULL,
@@ -20,7 +20,7 @@ class StudentData extends multi_functions
                                     `permanent_address` varchar(255) DEFAULT NULL,
                                     `current_address` varchar(255) DEFAULT NULL,
                                     `profile_filename` varchar(255) DEFAULT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`)
                               ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 

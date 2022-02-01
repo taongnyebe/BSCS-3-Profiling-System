@@ -9,7 +9,7 @@ class AwardStudent extends multi_functions
                                     `id` int(11) NOT NULL AUTO_INCREMENT,
                                     `award_id` int(11) NOT NULL,
                                     `studentschool_id` int(11) NOT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`),
                                     KEY `award_id` (`award_id`),
                                     KEY `studentschool_id` (`studentschool_id`),

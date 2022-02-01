@@ -38,7 +38,7 @@
                                           ++$i;
                                           ?>
                                                 <a href="./a_su_subjectInfo_page.php?id=<?php echo $subject['id']?>" class="border btn text-center rounded m-3 p-0">
-                                                      <card data-image="https://thumbs.dreamstime.com/z/data-mining-concept-round-colorful-linear-vector-illustration-technology-modern-dark-background-198634754.jpg" class="m-auto">
+                                                      <card data-image="../Assets/general_subject.png" class="m-auto">
                                                             <h2 slot="header" class="fs-1 pop"><?php echo $subject['code']?></h2>
                                                             <p slot="content"><?php echo $subject['title']?></p>
                                                       </card>

@@ -13,6 +13,7 @@
 
       <?php 
             $_SESSION['MainMenu'] = "research";
+            unset($_SESSION['research']);
 
             include './templates/header_2.php';
             
@@ -20,7 +21,7 @@
 
             $add = "";
             $edit = "";
-            $add_btn = $edit_btn = $search_input = $delete_btn = false;
+            $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';
       ?>
 
@@ -36,7 +37,7 @@
                                           ++$i;
                                           ?>
                                                 <div class="card m-3">
-                                                      <a href="" class="btn btn-primary">
+                                                      <a href="./a_researchInfo_page.php?id=<?php echo $rows['id']?>" class="btn btn-primary">
                                                             <div class="card-body">
                                                                   <p>
                                                                         <h3 class="card-title fw-bold" rows="4"><?php echo $rows['title']?></h3>

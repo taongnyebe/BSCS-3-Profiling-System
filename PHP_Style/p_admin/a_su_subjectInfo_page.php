@@ -48,7 +48,7 @@
             <br>
             <div class="p-5 mx-auto container shadow">
                   <div class="row text-center">
-                        <h2>Proffesors In charge</h2>
+                        <h2>Professor/s In charge</h2>
                   </div>
                   <br>
                   <div class="row">
@@ -76,6 +76,117 @@
             <?php 
                   }
             ?>
+
+            <br><br>
+
+            <div class="row container mx-auto  shadow border">
+                  <div class="row m-3">
+                        <div class="col">
+                              <h4>Students</h4>
+                        </div>
+                        <div class="grid-container grid-container--fit">
+                              <?php for ($i=0; $i < 5; $i++) { ?>
+                              <a href="" class="btn btn-primary m-3 border" style="height: 250px;">
+                                    <img src="https://avatars.dicebear.com/api/avataaars/<?php echo rand() ?>.svg" alt="" class="rounded-circle bg-light mx-auto mt-3" style="height: 100px; width: 100px">
+                                          
+                                    </img>
+                                    <div class="grid-element text-center h3 mb-0">
+                                          <script type='text/javascript'>
+                                                consonnants = [
+                                                      'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 
+                                                      'n', 'p', 'r', 's', 't', 'th', 'v', 'x', 'z'];
+                                                vowels = ['a', 'au', 'e', 'i', 'o', 'ou', 'u', 'y'];
+      
+                                                name = "";
+                                                length = Math.floor(Math.random() * 3) + 2; 
+                                                for (i = 0; i < length; i++)
+                                                      name += (consonnants[Math.floor(Math.random()*consonnants.length)]
+                                                                  + vowels[Math.floor(Math.random()*vowels.length)]);
+                                                name = name.charAt(0).toUpperCase() + name.slice(1);
+                                                document.write("<p id='name'>" + name + "</p>"); 
+                                          </script>
+                                    </div>
+                              </a>
+                              <?php } ?>
+                        </div>
+                        <div class="grid-container grid-container--fit">
+                              <?php for ($i=0; $i < 5; $i++) { ?>
+                              <a href="" class="btn btn-primary m-3 border" style="height: 250px;">
+                                    <img src="https://avatars.dicebear.com/api/avataaars/<?php echo rand() ?>.svg" alt="" class="rounded-circle bg-light mx-auto mt-3" style="height: 100px; width: 100px">
+                                          
+                                    </img>
+                                    <div class="grid-element text-center h3 mb-0">
+                                          <script type='text/javascript'>
+                                                consonnants = [
+                                                      'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 
+                                                      'n', 'p', 'r', 's', 't', 'th', 'v', 'x', 'z'];
+                                                vowels = ['a', 'au', 'e', 'i', 'o', 'ou', 'u', 'y'];
+      
+                                                name = "";
+                                                length = Math.floor(Math.random() * 3) + 2; 
+                                                for (i = 0; i < length; i++)
+                                                      name += (consonnants[Math.floor(Math.random()*consonnants.length)]
+                                                                  + vowels[Math.floor(Math.random()*vowels.length)]);
+                                                name = name.charAt(0).toUpperCase() + name.slice(1);
+                                                document.write("<p id='name'>" + name + "</p>"); 
+                                          </script>
+                                    </div>
+                              </a>
+                              <?php } ?>
+                        </div>
+                        <div class="grid-container grid-container--fit">
+                              <?php for ($i=0; $i < 5; $i++) { ?>
+                              <a href="" class="btn btn-primary m-3 border" style="height: 250px;">
+                                    <img src="https://avatars.dicebear.com/api/avataaars/<?php echo rand() ?>.svg" alt="" class="rounded-circle bg-light mx-auto mt-3" style="height: 100px; width: 100px">
+                                          
+                                    </img>
+                                    <div class="grid-element text-center h3 mb-0">
+                                          <script type='text/javascript'>
+                                                consonnants = [
+                                                      'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 
+                                                      'n', 'p', 'r', 's', 't', 'th', 'v', 'x', 'z'];
+                                                vowels = ['a', 'au', 'e', 'i', 'o', 'ou', 'u', 'y'];
+      
+                                                name = "";
+                                                length = Math.floor(Math.random() * 3) + 2; 
+                                                for (i = 0; i < length; i++)
+                                                      name += (consonnants[Math.floor(Math.random()*consonnants.length)]
+                                                                  + vowels[Math.floor(Math.random()*vowels.length)]);
+                                                name = name.charAt(0).toUpperCase() + name.slice(1);
+                                                document.write("<p id='name'>" + name + "</p>"); 
+                                          </script>
+                                    </div>
+                              </a>
+                              <?php } ?>
+                        </div>
+                        <div class="grid-container grid-container--fit">
+                              <?php for ($i=0; $i < 5; $i++) { ?>
+                              <a href="" class="btn btn-primary m-3 border" style="height: 250px;">
+                                    <img src="https://avatars.dicebear.com/api/avataaars/<?php echo rand() ?>.svg" alt="" class="rounded-circle bg-light mx-auto mt-3" style="height: 100px; width: 100px">
+                                          
+                                    </img>
+                                    <div class="grid-element text-center h3 mb-0">
+                                          <script type='text/javascript'>
+                                                consonnants = [
+                                                      'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 
+                                                      'n', 'p', 'r', 's', 't', 'th', 'v', 'x', 'z'];
+                                                vowels = ['a', 'au', 'e', 'i', 'o', 'ou', 'u', 'y'];
+      
+                                                name = "";
+                                                length = Math.floor(Math.random() * 3) + 2; 
+                                                for (i = 0; i < length; i++)
+                                                      name += (consonnants[Math.floor(Math.random()*consonnants.length)]
+                                                                  + vowels[Math.floor(Math.random()*vowels.length)]);
+                                                name = name.charAt(0).toUpperCase() + name.slice(1);
+                                                document.write("<p id='name'>" + name + "</p>"); 
+                                          </script>
+                                    </div>
+                              </a>
+                              <?php } ?>
+                        </div>
+
+                  </div>
+            </div>
       </section>
 
       <?php

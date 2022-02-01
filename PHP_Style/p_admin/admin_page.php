@@ -12,11 +12,9 @@
 <body>
 
       <?php 
-            $_SESSION['MainMenu'] = null;
-            $_SESSION['Class'] = null;
-            $_SESSION['Student'] = null;
-            $_SESSION['Subject'] = null;
-            $_SESSION['Activities'] = null;
+            unset($_SESSION['MainMenu'], $_SESSION['research'], $_SESSION['Class'],
+            $_SESSION['Student'], $_SESSION['Subject'], $_SESSION['Activities'],
+            $_SESSION['awards'], $_SESSION['seminar']);
 
             include './templates/header_1.php';
 

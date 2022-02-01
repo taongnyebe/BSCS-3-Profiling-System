@@ -9,7 +9,7 @@ class SeminarStudent extends multi_functions
                                     `id` int(11) NOT NULL AUTO_INCREMENT,
                                     `studentschool_id` int(11) NOT NULL,
                                     `seminar_id` int(11) NOT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`),
                                     KEY `studentschool_id` (`studentschool_id`),
                                     KEY `seminar_id` (`seminar_id`),

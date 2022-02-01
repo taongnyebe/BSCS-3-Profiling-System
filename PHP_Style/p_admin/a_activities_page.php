@@ -14,7 +14,8 @@
       <?php 
             $_SESSION['MainMenu'] = "activities";
 
-            $_SESSION['Activities'] = null;
+
+            unset($_SESSION['Activities'], $_SESSION['research'], $_SESSION['awards'], $_SESSION['seminar'], $_SESSION['competition']);
 
             include './templates/header_2.php';
 

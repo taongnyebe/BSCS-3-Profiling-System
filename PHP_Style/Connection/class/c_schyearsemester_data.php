@@ -9,7 +9,7 @@ class SchYearSem extends multi_functions
                                     `id` int(11) NOT NULL AUTO_INCREMENT,
                                     `semester` varchar(255) DEFAULT NULL,
                                     `sch_year` varchar(255) DEFAULT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`)
                               ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 

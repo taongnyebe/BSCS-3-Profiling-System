@@ -11,7 +11,7 @@ class YearSectionData extends multi_functions
                                     `year` int(11) NOT NULL,
                                     `section` int(11) NOT NULL,
                                     `filename` varchar(255) DEFAULT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`),
                                     KEY `schyearsemester_id` (`schyearsemester_id`),
                                     CONSTRAINT `yearsection_tb_ibfk_1` FOREIGN KEY (`schyearsemester_id`) REFERENCES `schyearsemester_tb` (`id`)
