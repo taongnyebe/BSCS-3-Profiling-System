@@ -1,0 +1,39 @@
+.backdiv {
+  display: inline-flex;                              
+  background-color: blue;
+  height:7.5%;
+  width: 100%;
+}
+
+.backdiv a {
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 200%;
+  padding: 10px;
+
+}
+
+.backdiv i{
+	float: right;
+}
+
+.backCPdiv {
+  display: inline-flex;                              
+  background-color: blue;
+  height:7.5%;
+  width: 100%;
+}
+
+.backCPdiv a {
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 200%;
+  padding: 10px;
+
+}
+
+.backCPdiv i{
+	float: right;
+}

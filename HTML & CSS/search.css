@@ -1,0 +1,19 @@
+.sdiv{
+	border: 3px outset red;
+	float: right;
+	background-color:blue;
+	text-align:center;
+	padding: 3px;
+	width: 15%;
+}
+
+.sdiv a{
+  float: center;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 34px;
+  padding: 2px;
+  height:10px;
+  
+}

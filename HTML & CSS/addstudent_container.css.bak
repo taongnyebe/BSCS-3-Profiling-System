@@ -1,0 +1,23 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  flex: 0 0 calc(22% - 20px);
+  background: teal;
+  padding: 12px;
+  width: 50%;
+  margin: 0.75%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a{
+	text-align: center;
+	font-size: 155%;
+	display:block;
+}

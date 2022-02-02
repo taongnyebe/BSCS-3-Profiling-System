@@ -1,0 +1,29 @@
+#buttonContainer1 {
+      position: relative;
+      top: 3%;
+	  left: 15.5%;
+      transform: translateY(-50%);
+	  height: 100px;
+    }
+    button{
+         display: block;
+         margin: 30px;
+         background-color: #262b2b;
+         border-style: solid;
+         color: white;
+         font-family: Open Sans, sans-serif;
+		 font-size: 30px;
+         border-radius: 5px;
+		 height: 380px;
+		 width: 250px;
+		 cursor: pointer;
+
+    }
+
+    .lvlButton1{
+         padding-bottom: .1em;
+         padding-top:.1em;
+         float: left;
+
+    }
+	

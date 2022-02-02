@@ -1,0 +1,697 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title></title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script
+    type="text/javascript"
+    src="http://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    
+  ></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+
+
+  <style id="compiled-css" type="text/css">
+      h1 {
+  text-align: center;
+  font-family: Tahoma, Arial, sans-serif;
+  color: #06D85F;
+  margin: 80px 0;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.2);
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.button {
+  font-size: 1em;
+  padding: 10px;
+  color: #fff;
+  border: 2px solid #06D85F;
+  border-radius: 20px/50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.button:hover {
+  background: #06D85F;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+}
+.overlay:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  margin: 70px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 5px;
+  width: 30%;
+  height: 35%;
+  position: relative;
+  transition: all 5s ease-in-out;
+}
+
+.popup h2 {
+  margin-top: 0;
+  color: #333;
+  font-family: Tahoma, Arial, sans-serif;
+}
+.popup .close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+}
+.popup .close:hover {
+  color: #06D85F;
+}
+.popup .content {
+  max-height: 30%;
+  overflow: auto;
+}
+
+@media screen and (max-width: 700px){
+  .box{
+    width: 70%;
+  }
+  .popup{
+    width: 70%;
+  }
+}
+
+/**/
+
+.radio-button {
+  position: relative;
+  margin: 20px 0;
+}
+
+.radio-button input {
+  position: absolute;
+  margin: 5px;
+  padding: 0;
+  visibility: hidden;
+}
+.radio-button .label-visible {
+  margin-left: 2em;
+  margin-bottom: 0;
+}
+
+.fake-radiobutton {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid slategray;
+  background-color: white;
+}
+.fake-radiobutton:after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  background: navy;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.fake-radiobutton { border-radius: 50%; }
+.fake-radiobutton:after { border-radius: 50%; }
+
+input[type="radio"]:checked + span .fake-radiobutton:after { display: block; }
+
+#Ass {
+  visibility:hidden;
+}
+
+
+
+    /* EOS */
+  </style>
+
+  <script id="insert"></script>
+
+
+</head>
+<body>
+    <select id="select">
+<option value="">-----</option>
+    <option value="2">111</option>
+    <option value="2">222</option>
+    <option value="2">333</option>
+</select>
+
+<select id="alert" style="display:none">
+<option value="">-----</option>
+    <option value="2">111</option>
+    <option value="2">222</option>
+    <option value="2">333</option>
+</select>
+
+<select id="warning" style="display:none">
+<option value="">-----</option>
+    <option value="1">111</option>
+    <option value="2">222</option>
+    <option value="3">333</option>
+</select>
+
+
+<div id="warning" style="display:none">NO!!!</div>
+
+<h1>Popup/Modal Windows without JavaScript</h1>
+<div class="box">
+	<a class="button" href="#popup1">Let me Pop up</a>
+</div>
+
+<div id="popup1" class="overlay">
+	<div class="popup">
+		<a class="close" href="#">&times;</a>
+		<div class="container">
+    
+  <form>
+  
+    <div class="row">
+      <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+		  <option value="">---Choose One---</option>
+          <option value="1">Australia</option>
+          <option value="2">Canada</option>
+          <option value="3">USA</option>
+        </select>
+      </div>
+    </div>
+	
+
+	   <div class="row">
+      <div class="col-75">
+      <div id ="oni" style="display:none">
+       Test 1
+      </div>
+      <select id="location" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="1">A1</option>
+          <option value="2">A2</option>
+          <option value="3">A3</option>
+        </select>
+      </div>
+    </div>
+	
+	<div class="row">
+      <div class="col-75">
+       <div id ="one" style="display:none">
+      A
+      </div>
+   <select id="destination1" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 19</option>
+          <option value="canada">Test 20</option>
+          <option value="usa">Test 21</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+        <div id ="two" style="display:none">
+      B
+      </div>
+   <select id="destination2" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 22</option>
+          <option value="canada">Test 23</option>
+          <option value="usa">Test 24</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+        <div id ="three" style="display:none">
+      C
+      </div>
+   <select id="destination3" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 25</option>
+          <option value="canada">Test 26</option>
+          <option value="usa">Test 27</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+      <div id ="oni2" style="display:none">
+      Test 2
+      </div>
+      <select id="bayan" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="1">Bayan 1</option>
+          <option value="2">Bayan 2</option>
+          <option value="3">Bayan 3</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+      <div id ="four" style="display:none">
+      F
+      </div>
+   <select id="bayan1" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 10</option>
+          <option value="canada">Test 11</option>
+          <option value="usa">Test 12</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+      <div id ="five" style="display:none">
+      G
+      </div>
+   <select id="bayan2" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 13</option>
+          <option value="canada">Test 14</option>
+          <option value="usa">Test 15</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+      <div id ="six" style="display:none">
+      H
+      </div>
+   <select id="bayan3" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 16</option>
+          <option value="canada">Test 17</option>
+          <option value="usa">Test 18</option>
+        </select>
+      </div>
+    </div>
+    
+      <div class="row">
+      <div class="col-75">
+       <div id ="oni3" style="display:none">
+      Test 3
+      </div>
+      <select id="state" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="1">Oregon</option>
+          <option value="2">New York</option>
+          <option value="3">California</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+       <div id ="seven" style="display:none">
+      I
+      </div>
+   <select id="state1" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 1</option>
+          <option value="canada">Test 2</option>
+          <option value="usa">Test 3</option>
+        </select>
+      </div>
+    </div>
+    
+    	<div class="row">
+      <div class="col-75">
+      <div id ="eight" style="display:none">
+      J
+      </div>
+   <select id="state2" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 4</option>
+          <option value="canada">Test 5</option>
+          <option value="usa">Test 6</option>
+        </select>
+      </div>
+    </div>
+    
+     <div class="row">
+      <div class="col-75">
+      <div id ="nine" style="display:none">
+      K
+      </div>
+   <select id="state3" name="country" style="display:none">
+		  <option value="">---Choose One---</option>
+          <option value="australia">Test 7</option>
+          <option value="canada">Test 8</option>
+          <option value="usa">Test 9</option>
+        </select>
+      </div>
+    </div>
+	
+	<br>
+	<div class="col-25">
+        <label for="country">Country</label>
+      </div>
+<label class="radio-button">
+  <input type="radio" name="radio" checked="checked">
+  <span class="label-visible">
+    <span class="fake-radiobutton"></span>
+    Radio
+  </span>
+</label>
+
+<label class="radio-button">
+  <input type="radio" name="radio">
+  <span class="label-visible">
+    <span class="fake-radiobutton"></span>
+    Button
+  </span>
+</label>
+
+<br>
+<br>
+
+	<div class="row">
+	 <div class="col-25">
+        <label for="country">Country</label>
+      </div>
+      <div class="col-75">
+        <select id="country" name="country">
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+        </select>
+      </div>
+    </div>
+	<br>
+    <div class="row">
+      <input type="submit" value="Submit">
+    </div>
+  </form>
+</div>
+</div>
+</div>
+
+    <script type="text/javascript">//<![CDATA[
+
+
+$(function() {
+  $('#select').change(function() {
+    if ($(this).val() == "2") {
+      $('#alert').show();
+    } else {
+      $('#alert').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#alert').change(function() {
+    if ($(this).val() == "2") {
+      $('#warning').show();
+    } else {
+      $('#warning').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#country').change(function() {
+    if ($(this).val() == "1") {
+      $('#location').show();
+      $('#bayan').hide();
+      $('#state').hide();
+      
+      $('#oni').show();
+			$('#oni2').hide();
+      $('#oni3').hide();
+      
+      $('#four').hide();
+      $('#five').hide();
+      $('#six').hide();
+      
+      $('#seven').hide();
+      $('#eight').hide();
+      $('#nine').hide();
+      
+      $('#bayan1').hide();
+      $('#bayan2').hide();
+      $('#bayan3').hide();
+      
+      $('#state1').hide();
+      $('#state2').hide();
+      $('#state3').hide();
+          
+    } else if ($(this).val() == "2") {
+      $('#bayan').show();
+      $('#location').hide();
+      $('#state').hide();
+      
+      $('#oni2').show();
+     	$('#oni').hide();
+      $('#oni3').hide();
+      
+      $('#one').hide();
+      $('#two').hide();
+      $('#three').hide();
+      
+      $('#seven').hide();
+      $('#eight').hide();
+      $('#nine').hide();
+      
+      $('#destination1').hide();
+      $('#destination2').hide();
+      $('#destination3').hide();
+      
+      $('#state1').hide();
+      $('#state2').hide();
+      $('#state3').hide();
+      
+    } else if ($(this).val() == "3") {
+      $('#state').show();
+      $('#location').hide();
+      $('#bayan').hide();
+      
+      	$('#oni3').show();
+      	$('#oni').hide();
+      	$('#oni2').hide();
+        
+        $('#one').hide();
+      	$('#two').hide();
+      	$('#three').hide();
+        
+        $('#four').hide();
+      	$('#five').hide();
+      	$('#six').hide();
+        
+        $('#destination1').hide();
+      	$('#destination2').hide();
+      	$('#destination3').hide();
+      
+     	 	$('#bayan1').hide();
+      	$('#bayan2').hide();
+      	$('#bayan3').hide();
+        
+    } else {
+      $('#location').hide();
+      $('#bayan').hide();
+      $('#state').hide();
+      
+      $('#destination1').hide();
+      $('#destination2').hide();
+      $('#destination3').hide();
+      
+      $('#bayan1').hide();
+      $('#bayan2').hide();
+      $('#bayan3').hide();
+      
+      $('#state1').hide();
+      $('#state2').hide();
+      $('#state3').hide();
+      
+      	$('#oni').hide();
+        $('#one').hide();
+        $('#two').hide();
+        $('#three').hide();
+        
+        $('#oni2').hide();
+        $('#four').hide();
+        $('#five').hide();
+        $('#six').hide();
+        
+        $('#oni3').hide();
+        $('#seven').hide();
+      	$('#eight').hide();
+      	$('#nine').hide();
+			
+    }
+  });
+});
+
+$(function() {
+  $('#location').change(function() {
+    if ($(this).val() == "1") {
+      $('#destination1').show();
+      $('#destination2').hide();
+      $('#destination3').hide();
+      	$('#one').show();
+        $('#two').hide();
+        $('#three').hide();
+
+    } else if ($(this).val() == "2") {
+      $('#destination2').show();
+      $('#destination1').hide();
+      $('#destination3').hide();
+      	$('#two').show();
+        $('#one').hide();
+        $('#three').hide();
+
+    } else if ($(this).val() == "3") {
+      $('#destination3').show();
+      $('#destination1').hide();
+      $('#destination2').hide();
+      	$('#three').show();
+        $('#two').hide();
+        $('#one').hide();
+
+    } else {
+      $('#destination1').hide();
+      $('#destination2').hide();
+      $('#destination3').hide();
+        $('#one').hide();
+        $('#two').hide();
+        $('#three').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#bayan').change(function() {
+    if ($(this).val() == "1") {
+      $('#bayan1').show();
+      $('#bayan2').hide();
+      $('#bayan3').hide();
+      	$('#four').show();
+        $('#five').hide();
+        $('#six').hide();
+    } else if ($(this).val() == "2") {
+      $('#bayan2').show();
+      $('#bayan1').hide();
+      $('#bayan3').hide();
+      	$('#five').show();
+        $('#four').hide();
+        $('#six').hide();
+    } else if ($(this).val() == "3") {
+      $('#bayan3').show();
+      $('#bayan1').hide();
+      $('#bayan2').hide();
+      	$('#six').show();
+        $('#five').hide();
+        $('#four').hide();
+    } else {
+      $('#bayan1').hide();
+      $('#bayan2').hide();
+      $('#bayan3').hide();
+      	$('#four').hide();
+        $('#five').hide();
+        $('#six').hide();
+    }
+  });
+});
+
+$(function() {
+  $('#state').change(function() {
+    if ($(this).val() == "1") {
+      $('#state1').show();
+      $('#state2').hide();
+      $('#state3').hide();
+      	$('#seven').show();
+      	$('#eight').hide();
+      	$('#nine').hide();
+    } else if ($(this).val() == "2") {
+      $('#state2').show();
+      $('#state1').hide();
+      $('#state3').hide();
+      	$('#eight').show();
+      	$('#seven').hide();
+      	$('#nine').hide();
+    } else if ($(this).val() == "3") {
+      $('#state3').show();
+      $('#state1').hide();
+      $('#state2').hide();
+      	$('#nine').show();
+      	$('#seven').hide();
+      	$('#eight').hide();
+    } else {
+      $('#state1').hide();
+      $('#state2').hide();
+      $('#state3').hide();
+      	$('#seven').hide();
+      	$('#eight').hide();
+        $('nine').hide();
+    }
+  });
+});
+
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "8fgtnvau"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+
+</body>
+</html>

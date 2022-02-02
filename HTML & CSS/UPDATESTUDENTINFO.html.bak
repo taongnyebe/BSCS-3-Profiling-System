@@ -1,0 +1,154 @@
+<!DOCTYPE>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="header.css">
+<link rel="stylesheet" href="topnav.css">
+<link rel="stylesheet" href="footer.css">
+<link rel="stylesheet" href="back.css">
+<script src="https://kit.fontawesome.com/a11b1e5760.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="updatestudentinfo.css">
+<link rel="stylesheet" href="textinput.css">
+ 
+<center>
+<div class="header">	
+		<img src = "CSORG.png" style="float:left; width:140px; height:140px;">		
+		<h2>STUDENT INFORMATION MANAGEMENT SYSTEM</h2>
+		<h3>ISABELA STATE UNIVERSITY - ECHAGUE CAMPUS</h3>
+		<h4>Bachelor of Science in Computer Science</h4>
+</div>
+</center>
+</head>
+
+<body>
+
+<div class = "backdiv">
+
+	<a href = "#" style = "float: left;">
+		Back
+	</a>
+	
+    <a style = "margin-left: 40%;">
+		<center>
+			ASPIRAS,CARLO
+		</center>
+	</a>
+    </div>
+	
+<div id="container" contentEditable="true">
+
+		<div id = name class="item">
+				<a>NAME:</a>
+				<a>Dela Cruz, Jedidiah Andrei V.</a>
+		</div>
+  
+		<div class="item">
+				<a>ID NUMBER:</a>
+				<a>19-2100</a>
+		</div>
+  
+		<div class="item">
+				<a>GUARDIAN:</a>
+				<a>Aspiras, Carlo John C.</a>
+		</div>
+  
+		<div class="item">
+				<a>GENDER:</a>
+				<a>Unknown for Specific Reasons</a>
+		</div>
+  
+		<div class="item">
+				<a>DATE OF BIRTH:</a>
+				<a>January 12, Every Year</a>
+		</div>
+  
+		<div class="item">
+				<a>EMERGENCY NUMBER:</a>
+				<a>+639 911 8080 822</a>
+		</div>
+  
+		<div class="item">
+				<a>CP NUMBER:</a>
+				<a>096 666 999 6969</a>
+		</div>
+  
+		<div class="item">
+				<a>EMAILS:</a>
+				<a>jackholeen69@gmail.com</a>
+		</div>		
+</div>
+
+<div id ="container">
+
+		<div class ="item">
+			<a>STANDING</a>
+		</div>
+	
+</div>
+
+<div id = "verticalcontainer">
+
+		<div class="vertitem">
+				<a>Active</a>
+		</div>
+		
+		<div class="vertitem">
+				<a>Transferee</a>
+		</div>
+		
+		<div class="vertitem">
+				<a>Shiftee</a>
+		</div>
+		
+		<div class="vertitem">
+				<a>Dropped</a>
+		</div>
+</div>
+
+<div id ="container">
+
+		<div class ="item">
+			<a>STATUS</a>
+		</div>
+	
+</div>
+
+<div id = "verticalcontainer">
+
+		<div class="vertitem">
+				<a>Regular</a>
+		</div>
+		
+		<div class="vertitem">
+				<a>Irregular</a>
+		</div>
+</div>
+
+<script>
+	
+	var content = document.getElementById('container');
+
+		document.addEventListener('keydown', function(event) 
+		{
+			if (event.keyCode === 17) 
+				{
+					content.contentEditable = false;
+				}
+		}, false);
+
+		document.addEventListener('keyup', function(event)
+		{
+			if (event.keyCode === 17) 
+			{
+					content.contentEditable = true;
+			}
+		}, false);
+  
+</script>	
+</body>
+
+<div class = "footer">
+	<a href="#">About Developers</a>
+</div>
+
+</html>

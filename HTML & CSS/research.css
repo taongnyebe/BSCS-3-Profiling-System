@@ -1,0 +1,43 @@
+.btn2 {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn2:hover {
+  background-color: RoyalBlue;
+}
+
+.grid-container2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+	margin-left: 38%;
+}
+
+.researchdiv button {
+  background-color: #04AA6D; 
+  border: none; 
+  color: white; 
+  padding: 16px 20px;
+  cursor: pointer; 
+  float: left;
+  margin-bottom: 1px;
+}
+.researchdiv a{
+	float: right;
+	padding-right: 10px;
+}
+
+.researchdiv button:not(:last-child) {
+  border-right: none; 
+}
+
+
+.researchdiv:after {
+  content: "";
+  clear: both;
+  display: table;
+}

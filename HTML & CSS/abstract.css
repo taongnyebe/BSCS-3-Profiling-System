@@ -1,0 +1,36 @@
+.box{
+  background-color: lightgrey;
+  width: 97%;
+  border: 5px solid green;
+  padding: 2.5%;
+  margin: 1%;
+}
+
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  flex: 0 0 calc(45% - 10px);
+  background: teal;
+  color: white;
+  padding: 5px;
+  width: 50%;
+  margin: 0.25%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a{
+	text-align: center;
+	font-size: 155%;
+	display:block;
+}
+
+.item a:hover{
+	cursor: pointer;
+}
