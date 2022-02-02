@@ -20,7 +20,7 @@
 
             $title = "Awards";
 
-            $add = "";
+            $add = "a_act_awd_awardsInfo_update_page.php";
             $edit = "";
             $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';
@@ -30,7 +30,7 @@
             <div class="mb-5">
                   <div id="app" class="container-fluid text-center">
                         <?php
-                              $sql="SELECT * FROM award_tb;"; 
+                              $sql="SELECT * FROM award_tb ORDER BY date_awarded;"; 
 
                               if ($res=mysqli_query($db->con, $sql)) :
                                     if (mysqli_num_rows($res)>0) {

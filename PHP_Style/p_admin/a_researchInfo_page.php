@@ -21,7 +21,7 @@
             $title = $_SESSION['research'];
             
             $add = "";
-            $edit = "";
+            $edit = "./a_researchInfo_update_page.php?id=".$id;
             $datatypeDelete = 'research' ;
             $add_btn = $search_input = false; $edit_btn = $delete_btn = true;
             include './templates/back_tab.php';

@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-            .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
+      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
+            .'<link rel="stylesheet" href="./CSS/cardcss.css">'."\n";
       $titleName = "SIMS CS-Org - Subjects";
 
       include_once './MetaScript/meta.php'
@@ -12,17 +12,13 @@
 <body>
 
       <?php 
-            $_SESSION['MainMenu'] = "Subject";
-
             $_SESSION['Subject'] = null;
 
             include './templates/header_2.php';
 
             $title = "Subject List";
             
-            $add = "./a_su_subjectInfo_page_update.php?use=Add";
-            $edit = "";
-            $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
+            $search_input = true;
             include './templates/back_tab.php';
       ?>
 
@@ -35,9 +31,9 @@
 ?>
                               <!-- Header And Page Controls -->
                               <div class="row mb-3">
-                                    <?php echo ($_GET['page'] > 0)? '<a href="./a_subject_page.php?page='. --$page .'" class="col-1 btn btn-primary">Prev</a>' : '<div class="col-1"></div>' ?>
+                                    <?php echo ($_GET['page'] > 0)? '<a href="./subject_page.php?page='. --$page .'" class="col-1 btn btn-primary">Prev</a>' : '<div class="col-1"></div>' ?>
                                     <h3 class="col" ><?php if ($year != 1 && $year != 2) echo $year['sch_year']?></h3>
-                                    <?php echo ($year != 1 && $year != 2)? '<a href="./a_subject_page.php?page='.++$_GET['page'].'" class="col-1 btn btn-primary">Next</a>' : '<div class="col-1"></div>'?>
+                                    <?php echo ($year != 1 && $year != 2)? '<a href="./subject_page.php?page='.++$_GET['page'].'" class="col-1 btn btn-primary">Next</a>' : '<div class="col-1"></div>'?>
                               </div>
 <?php
                               if ($year != 1 && $year != 2) {
@@ -75,8 +71,8 @@
                                                       foreach ($subject as $subject) :
                                                             ++$i;
 ?>
-                                                                  <a href="./a_su_subjectInfo_page.php?id=<?php echo $subject['id']?>" class="border btn text-center rounded m-3 p-0">
-                                                                        <card data-image="../Assets/general_subject.png" class="m-auto">
+                                                                  <a href="./su_subjectInfo_page.php?id=<?php echo $subject['id']?>" class="border btn text-center rounded m-3 p-0">
+                                                                        <card data-image="./Assets/general_subject.png" class="m-auto">
                                                                               <h2 slot="header" class="fs-1 pop"><?php echo $subject['code']?></h2>
                                                                               <p slot="content"><?php echo $subject['title']?></p>
                                                                         </card>

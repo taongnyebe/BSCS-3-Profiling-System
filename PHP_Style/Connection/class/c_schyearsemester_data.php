@@ -36,6 +36,13 @@ class SchYearSem extends multi_functions
             return $this->singlechecker($sql_c);
       }
 
+      public function getID_SchYearSem($sch_year, $sem)
+      {
+            $sql_c = "SELECT id FROM $this->table 
+                        WHERE sch_year='$sch_year' AND semester='$sem'";
+            return $this->singlechecker($sql_c);
+      }
+
       public function getAllSemeter_Schyear($year)
       {
             $sql_c = "SELECT * FROM $this->table 

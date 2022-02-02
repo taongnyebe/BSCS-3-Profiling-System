@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-            .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
+      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
+            .'<link rel="stylesheet" href="./CSS/cardcss.css">'."\n";
       $titleName = "SIMS CS-Org - Competition";
 
       include_once './MetaScript/meta.php'
@@ -20,9 +20,7 @@
 
             $title = "Competitions";
 
-            $add = "./a_act_comp_competitionInfo_update_page.php";
-            $edit = "";
-            $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
+            $search_input = true;
             include './templates/back_tab.php';
       ?>
 
@@ -38,7 +36,7 @@
                                           while ($rows=mysqli_fetch_assoc($res)) :
                                                 ++$i;
                                                 ?>
-                                                      <a href="./a_act_comp_competitionInfo_page.php?id=<?php echo $rows['id'] ?>" class="border btn rounded m-3 p-0">
+                                                      <a href="./comp_competitionInfo_page.php?id=<?php echo $rows['id'] ?>" class="border btn rounded m-3 p-0">
                                                             <card data-image="https://avatars.dicebear.com/api/identicon/<?php echo preg_replace('/\s+/', '_', $rows['id']) ?>.svg" class="m-0">
                                                                   <h4 slot="header" class="fw-bold pop pb-2"><?php echo $rows['title']?></h4><br>
                                                                   <p slot="content" class="cardblack">

@@ -14,10 +14,11 @@
             <h1 class="text-white">Welcome!</h1>
             <div class="row">
                   <div class="col">
-                        <a href="<?php $homeurl ?>"><button type="button" class="btn btn-warning">Researches</button></a>
-                        <a href="<?php $homeurl ?>"><button type="button" class="btn btn-warning">Awards</button></a>
-                        <a href="<?php $homeurl ?>"><button type="button" class="btn btn-warning">Competitions</button></a>
-                        <a href="<?php $homeurl ?>"><button type="button" class="btn btn-warning">Webinars / Seminars</button></a>
+                        <a href="./subject_page.php?page=0"><button type="button" class="btn btn-warning">Subjects</button></a>
+                        <a href="./research_page.php"><button type="button" class="btn btn-warning">Researches</button></a>
+                        <a href="./awards_page.php"><button type="button" class="btn btn-warning">Awards</button></a>
+                        <a href="./competition_page.php"><button type="button" class="btn btn-warning">Competitions</button></a>
+                        <a href="./webinar_page.php"><button type="button" class="btn btn-warning">Webinars / Seminars</button></a>
                   </div>
             </div>
 

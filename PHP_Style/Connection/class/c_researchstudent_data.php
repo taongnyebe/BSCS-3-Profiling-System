@@ -14,7 +14,7 @@ class ResearchStudent extends multi_functions
                                     `publish_date` date NOT NULL,
                                     `active` int(11) NOT NULL DEFAULT 1,
                                     PRIMARY KEY (`id`)
-                              ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;";
+                              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {

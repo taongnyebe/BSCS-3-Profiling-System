@@ -15,7 +15,7 @@ class YearSectionData extends multi_functions
                                     PRIMARY KEY (`id`),
                                     KEY `schyearsemester_id` (`schyearsemester_id`),
                                     CONSTRAINT `yearsection_tb_ibfk_1` FOREIGN KEY (`schyearsemester_id`) REFERENCES `schyearsemester_tb` (`id`)
-                              ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;";
+                              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {
@@ -49,8 +49,8 @@ class YearSectionData extends multi_functions
       public function getSectionCard_YearSemester($schsem_id)
       {
             $sql_c = "SELECT year, section, id FROM $this->table 
-                                    WHERE schyearsemester_id='$schsem_id' AND active=1
-                                    ORDER BY year, section";
+                              WHERE schyearsemester_id='$schsem_id' AND active=1
+                              ORDER BY year, section";
             return $this->checker($sql_c);
       }
 
@@ -91,18 +91,16 @@ class YearSectionData extends multi_functions
             return $this->singlechecker($sql_c);
       }
 
-      public function setYearSection($year, $section, $sch_year, $semester, $id)
+      public function setYearSection($year, $section, $schyearsemester_id, $id)
       {
             if ($id != "") {
                   $sql_c = "UPDATE $this->table
-                              SET year='$year', section='$section', sch_year='$sch_year',
-                              semester='$semester'
+                              SET year='$year', section='$section', schyearsemester_id=$schyearsemester_id
                               WHERE id=$id";
                   return mysqli_query($this->db->con, $sql_c);
             } else {
                   $sql_c = "INSERT INTO $this->table
-                              SET year='$year', section='$section', sch_year='$sch_year',
-                              semester='$semester'";
+                              SET year='$year', section='$section', schyearsemester_id=$schyearsemester_id, active=1";
                   return mysqli_query($this->db->con, $sql_c);
             }
       }

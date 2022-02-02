@@ -3,7 +3,9 @@
 
 <?php
       $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-                  .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
+                  .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n"
+                  .'<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>'."\n"
+                  .'<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>';
       $titleName = "SIMS CS-Org - Subject";
 
       include_once './MetaScript/meta.php'
@@ -29,24 +31,25 @@
 
       <section >
             <form action="" method="post">
-                  
-                  <div class=" p-1 text-center">
-                        <img src="<?php
-                                    if ($id || isset($_GET['s_id'])) {
-                                          echo (isset($subject['filename']))?
-                                                '../Assets/profiles/'.$subject['filename']:
-                                                "https://avatars.dicebear.com/api/initials/".$subject['title'].".svg";
-                                    }
-                                    else {
-                                          $_SESSION['image'] = null;
-                                          $_SESSION['image_name'] = null;
-                                          echo '../Assets/placeholders/starting_profile.png';
-                                    }
-                                    ?>" 
-                              id='image' alt="" class="profile rounded border border-3 shadow" style="width: 300px; height: 400px; object-fit: cover;" >
-                  </div>
-                  <div class="p-1 text-center">
-                        <input type="file" name="profile_img" onchange="readURL(this);" accept=".png,.jpg">
+                  <div class="mb-5">
+                        <div class=" p-1 text-center">
+                              <img src="<?php
+                                          if ($id || isset($_GET['s_id'])) {
+                                                echo (isset($subject['filename']))?
+                                                      '../Assets/profiles/'.$subject['filename']:
+                                                      "https://avatars.dicebear.com/api/initials/".$subject['title'].".svg";
+                                          }
+                                          else {
+                                                $_SESSION['image'] = null;
+                                                $_SESSION['image_name'] = null;
+                                                echo '../Assets/placeholders/starting_profile.png';
+                                          }
+                                          ?>" 
+                                    id='image' alt="" class="profile rounded border border-3 shadow" style="width: 300px; height: 400px; object-fit: cover;" >
+                        </div>
+                        <div class="p-1 text-center">
+                              <input type="file" name="profile_img" onchange="readURL(this);" accept=".png,.jpg">
+                        </div>
                   </div>
                   <br>
                   <div class="shadow container mx-auto">
@@ -78,10 +81,10 @@
                               </div>
                               <div class="row text-center">
                                     <div class="col">
-                                          <input class="w-50 text-center h4" type="text" name="sch_year" value="<?php if (isset($_GET['s_id'])) echo $subject['title'] ?>">
+                                          <input class="w-50 text-center h4" type="text" name="sch_year" value="<?php echo 1 ?>">
                                     </div>
                                     <div class="col">
-                                          <input class="w-50 text-center h4" type="text" name="semester" value="<?php if (isset($_GET['s_id'])) echo $subject['code'] ?>">
+                                          <input class="w-50 text-center h4" type="text" name="semester" value="<?php echo 1 ?>">
                                     </div>
                               </div>
                               <div class="row text-center">

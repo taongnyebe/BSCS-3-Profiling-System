@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-                  .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
+      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
+                  .'<link rel="stylesheet" href="./CSS/cardcss.css">'."\n";
       $titleName = "SIMS CS-Org - Webinars";
 
       include_once './MetaScript/meta.php'
@@ -20,10 +20,7 @@
 
             $title = $_SESSION['competition'];
             
-            $add = "";
-            $edit = "./a_act_comp_competitionInfo_update_page.php?id=".$id;
-            $datatypeDelete = 'research' ;
-            $add_btn = $search_input = false; $edit_btn = $delete_btn = true;
+            $search_input = false;
             include './templates/back_tab.php';
       ?>
 
@@ -32,7 +29,7 @@
             <div class="mb-2">
                   <div class=" p-1 text-center">
                         <img src="<?php echo (isset($awarddata['profile_filename']))?
-                                    '../Assets/profiles/'.$_SESSION['filename']=$awarddata['profile_filename']:
+                                    './Assets/profiles/'.$_SESSION['filename']=$awarddata['profile_filename']:
                                     "https://avatars.dicebear.com/api/bottts/".preg_replace('/\s+/', '', $awarddata['title']).".svg"?>"
                               alt="" class="shadow p-3 profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
                   </div>

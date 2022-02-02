@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-            .'<link rel="stylesheet" href="../CSS/a.css">'."\n";
+      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
+            .'<link rel="stylesheet" href="./CSS/a.css">'."\n";
       $titleName = "SIMS CS-Org - Webinars";
 
       include_once './MetaScript/meta.php'
@@ -20,9 +20,7 @@
 
             $title = "Seminars";
 
-            $add = "./a_act_web_webInfo_update_page.php";
-            $edit = "";
-            $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
+            $search_input = true;
             include './templates/back_tab.php';
       ?>
 
@@ -38,7 +36,7 @@
                                           ++$i;
                                           ?>
                                                 <div class="card m-3">
-                                                      <a href="./a_act_web_webInfo_page.php?id=<?php echo $rows['id'] ?>" class="btn" style="background-image: url('https://cdn.pixabay.com/photo/2020/04/25/10/15/illustration-5090161_1280.jpg');">
+                                                      <a href="./web_webInfo_page.php?id=<?php echo $rows['id'] ?>" class="btn" style="background-image: url('https://cdn.pixabay.com/photo/2020/04/25/10/15/illustration-5090161_1280.jpg');">
                                                             <div class="card-body">
                                                                   <p>
                                                                         <h3 class="card-title fw-bold" rows="4"><?php echo $rows['title'] ?></h3>

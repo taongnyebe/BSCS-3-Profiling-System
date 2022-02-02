@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-                  .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
+      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
+                  .'<link rel="stylesheet" href="./CSS/cardcss.css">'."\n";
       $titleName = "SIMS CS-Org - Webinars";
 
       include_once './MetaScript/meta.php'
@@ -13,17 +13,14 @@
 
       <?php 
             $id = $_GET["id"];
-            $awarddata=mysqli_fetch_assoc(mysqli_query($db->con, "SELECT * FROM seminar_tb WHERE id=$id")); 
+            $subject=$subj->getSubjectCardDataSpecific($id);
             
-            $_SESSION['seminar'] = $awarddata['title'] ;
+            $_SESSION['Subject'] = $subject['code'].' - '.$subject['title'] ;
             include './templates/header_2.php';
 
-            $title = $_SESSION['seminar'];
+            $title = $_SESSION['Subject'];
             
-            $add = "";
-            $edit = "./a_act_web_webInfo_update_page.php?id=".$id;
-            $datatypeDelete = 'research' ;
-            $add_btn = $search_input = false; $edit_btn = $delete_btn = true;
+            $search_input = false;
             include './templates/back_tab.php';
       ?>
 
@@ -31,40 +28,59 @@
 
             <div class="mb-2">
                   <div class=" p-1 text-center">
-                        <img src="<?php echo (isset($awarddata['profile_filename']))?
-                                    '../Assets/profiles/'.$_SESSION['filename']=$awarddata['profile_filename']:
-                                    "https://avatars.dicebear.com/api/bottts/".preg_replace('/\s+/', '', $awarddata['title']).".svg"?>"
-                              alt="" class="shadow p-3 profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
+                        <img src="<?php
+                                    if ($id || isset($_GET['s_id'])) {
+                                          echo (isset($subject['filename']))?
+                                                '../Assets/profiles/'.$student_data['profile_filename']:
+                                                "https://avatars.dicebear.com/api/initials/".$subject['title'].".svg";
+                                    }
+                                    else {
+                                          $_SESSION['image'] = null;
+                                          $_SESSION['image_name'] = null;
+                                          echo '../Assets/placeholders/starting_profile.png';
+                                    }
+                                    ?>"
+                              alt="" class="profile rounded shadow" style="width: 300px; height: 400px; object-fit: cover;" >
                   </div>
-            </div>
-
-            <div class="p-5 mx-auto container shadow">
-                  <div class="row text-center">
-                        <h3><?php echo $awarddata['host'] ?></h3>
-                  </div>
-                  <div class="row">
-                        <div class="col m-3 mb-0 ">
-                              <h4>Date: <?php echo "January 4, 2021" ?></h4>
-                        </div>
-                        <div class="col m-2">
-                        </div>
-                  </div>
-                  <div class="row text-center">
-                        <h3>Description</h3>
-                  </div>
-                  <br>
-                  <div class="row m-5">
-                        <td style="display: block; height: 100px; overflow-y: auto"><?php
-                              echo $awarddata['description'];
-                              ?></td>
-                  </div>
-                  
             </div>
             <br>
+            <div class="p-5 mx-auto container shadow">
+                  <div class="row text-center">
+                        <h2>Professor/s In charge</h2>
+                  </div>
+                  <br>
+                  <div class="row">
+                        <td style="display: block; height: 100px; overflow-y: auto">
+                        <?php echo $subject['description'] ?>
+                        </td>
+                  </div>
+            </div>
+            <?php
+                  if (isset($subject['prerequisite']) && $subject['prerequisite'] != "") {
+            ?>
+            <br>
+            <div class="row container mx-auto">
+                  <div class="col shadow border m-2">
+                        <div class="row">
+                              <h4>Pre-requisite</h4>
+                        </div>
+                        <div class="row">
+                              <h5><?php echo $subject['prerequisite']?></h5>
+                        </div>
+                  </div>
+                  <div class="col m-2">
+                  </div>
+            </div>
+            <?php 
+                  }
+            ?>
+
+            <br><br>
+
             <div class="row container mx-auto  shadow border">
                   <div class="row m-3">
                         <div class="col">
-                              <h4>Participants</h4>
+                              <h4>Students</h4>
                         </div>
                         <div class="grid-container grid-container--fit">
                               <?php for ($i=0; $i < 5; $i++) { ?>
@@ -169,18 +185,14 @@
 
                   </div>
             </div>
-            
       </section>
 
-      <div class="row w-100">
-
-            <?php
-                  include './templates/footer.php';
+      <?php
+            include './templates/footer.php';
 
 
-                  include_once './MetaScript/script.php';
-            ?>
-      </div>
+            include_once './MetaScript/script.php';
+      ?>
 
 </body>
 </html>     

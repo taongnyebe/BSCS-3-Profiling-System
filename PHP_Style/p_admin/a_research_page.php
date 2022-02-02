@@ -19,7 +19,7 @@
             
             $title = "Researches";
 
-            $add = "";
+            $add = "./a_researchInfo_update_page.php";
             $edit = "";
             $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';
@@ -28,7 +28,7 @@
       <section>
             <div class="wrapper-grid-research container-fluid pb-5 mb-5">
                   <?php
-                        $sql="SELECT * FROM research_tb"; 
+                        $sql="SELECT * FROM research_tb ORDER BY publish_date DESC, title"; 
 
                         if ($res=mysqli_query($db->con, $sql)) :
                               if (mysqli_num_rows($res)>0) {
@@ -37,7 +37,7 @@
                                           ++$i;
                                           ?>
                                                 <div class="card m-3">
-                                                      <a href="./a_researchInfo_page.php?id=<?php echo $rows['id']?>" class="btn btn-primary">
+                                                      <a href="./a_researchInfo_page.php?id=<?php echo $rows['id']?>" class="btn" style="background-image: url('https://cdn.pixabay.com/photo/2020/04/25/10/15/illustration-5090161_1280.jpg');">
                                                             <div class="card-body">
                                                                   <p>
                                                                         <h3 class="card-title fw-bold" rows="4"><?php echo $rows['title']?></h3>

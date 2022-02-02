@@ -2,8 +2,8 @@
 <html lang="en">
 
 <?php
-      $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-                  .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
+      $css = '<link rel="stylesheet" href="./CSS/header_template1.css">'."\n"
+                  .'<link rel="stylesheet" href="./CSS/cardcss.css">'."\n";
       $titleName = "SIMS CS-Org - Webinars";
 
       include_once './MetaScript/meta.php'
@@ -13,17 +13,14 @@
 
       <?php 
             $id = $_GET["id"];
-            $awarddata=mysqli_fetch_assoc(mysqli_query($db->con, "SELECT * FROM competition_tb WHERE id=$id")); 
+            $awarddata=mysqli_fetch_assoc(mysqli_query($db->con, "SELECT * FROM award_tb WHERE id=$id")); 
             
-            $_SESSION['competition'] = $awarddata['title'] ;
+            $_SESSION['awards'] = $awarddata['title'] ;
             include './templates/header_2.php';
 
-            $title = $_SESSION['competition'];
+            $title = $_SESSION['awards'];
             
-            $add = "";
-            $edit = "./a_act_comp_competitionInfo_update_page.php?id=".$id;
-            $datatypeDelete = 'research' ;
-            $add_btn = $search_input = false; $edit_btn = $delete_btn = true;
+            $search_input = false;
             include './templates/back_tab.php';
       ?>
 
@@ -44,7 +41,7 @@
                   </div>
                   <div class="row m-3">
                         <div class="col">
-                              <h4>Participants</h4>
+                              <h4>Winners</h4>
                         </div>
                         <div class="grid-container grid-container--fit">
                               <?php for ($i=0; $i < 5; $i++) { ?>
@@ -78,7 +75,7 @@
             <div class="row container mx-auto  shadow border">
                   <div class="row">
                         <div class="col m-3 mb-0 ">
-                              <h4>Date: <?php echo "January 4, 2021" ?></h4>
+                              <h4>Date: <?php echo $awarddata['date_awarded'] ?></h4>
                         </div>
                         <div class="col m-2">
                         </div>
@@ -88,9 +85,11 @@
                   </div>
                   <br>
                   <div class="row m-5">
-                        <td style="display: block; height: 100px; overflow-y: auto"><?php
-                              echo $awarddata['description'];
-                              ?></td>
+                        <td style="display: block; height: 100px; overflow-y: auto">
+                              <?php
+                                    echo $awarddata['description'];
+                              ?>
+                        </td>
                   </div>
             </div>
             

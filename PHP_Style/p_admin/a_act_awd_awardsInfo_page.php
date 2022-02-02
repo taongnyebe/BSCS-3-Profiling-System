@@ -21,7 +21,7 @@
             $title = $_SESSION['awards'];
             
             $add = "";
-            $edit = "";
+            $edit = "a_act_awd_awardsInfo_update_page.php?id=".$id;
             $datatypeDelete = 'research' ;
             $add_btn = $search_input = false; $edit_btn = $delete_btn = true;
             include './templates/back_tab.php';
@@ -78,7 +78,7 @@
             <div class="row container mx-auto  shadow border">
                   <div class="row">
                         <div class="col m-3 mb-0 ">
-                              <h4>Date: <?php echo "January 4, 2021" ?></h4>
+                              <h4>Date: <?php echo $awarddata['date_awarded'] ?></h4>
                         </div>
                         <div class="col m-2">
                         </div>
@@ -88,9 +88,11 @@
                   </div>
                   <br>
                   <div class="row m-5">
-                        <td style="display: block; height: 100px; overflow-y: auto"><?php
-                              echo $awarddata['description'];
-                              ?></td>
+                        <td style="display: block; height: 100px; overflow-y: auto">
+                              <?php
+                                    echo $awarddata['description'];
+                              ?>
+                        </td>
                   </div>
             </div>
             
