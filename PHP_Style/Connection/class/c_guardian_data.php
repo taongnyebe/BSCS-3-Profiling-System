@@ -14,7 +14,7 @@ class GuardianData extends multi_functions
                                     `suffix` varchar(255) DEFAULT NULL,
                                     `connection` varchar(255) NOT NULL,
                                     `contact` varchar(255) DEFAULT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`),
                                     KEY `student_id` (`studentbasic_id`),
                                     CONSTRAINT `guardian_tb_ibfk_1` FOREIGN KEY (`studentbasic_id`) REFERENCES `studentbasic_tb` (`id`)
@@ -44,7 +44,7 @@ class GuardianData extends multi_functions
                               suffix='$suffix', connection='$connection', contact='$contact'
                               WHERE id=$id";
             } else {
-                  $sql_c = "INSERT INTO $this->table
+                  echo $sql_c = "INSERT INTO $this->table
                               SET family_name='$family_name', middle_name='$middle_name', first_name='$first_name',
                               suffix='$suffix', connection='$connection', contact='$contact', studentbasic_id='$studentbasic_id'";
             }

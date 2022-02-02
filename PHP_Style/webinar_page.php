@@ -14,14 +14,14 @@
       <?php 
             $_SESSION['Activities'] = "Seminar";
 
-            include './SectionTemplate/header_2.php';
+            unset($_SESSION['seminar']);
 
-            include './MinorTemplate/search_tab.php';
+            include './templates/header_2.php';
 
-            $edit = '';
-            $title = "Seminars and Webinars";
-            $button = 2;
-            include './MinorTemplate/back_tab.php';
+            $title = "Seminars";
+
+            $search_input = true;
+            include './templates/back_tab.php';
       ?>
 
       <section>
@@ -36,21 +36,11 @@
                                           ++$i;
                                           ?>
                                                 <div class="card m-3">
-                                                      <a href="" class="btn <?php switch ($rows['level']) {
-                                                            case 1:
-                                                                  echo 'btn-primary';
-                                                                  break;
-                                                            case 2:
-                                                                  echo 'btn-warning';
-                                                                  break;
-                                                            case 3:
-                                                                  echo 'btn-danger';
-                                                                  break;
-                                                      } ?>">
+                                                      <a href="./web_webInfo_page.php?id=<?php echo $rows['id'] ?>" class="btn" style="background-image: url('https://cdn.pixabay.com/photo/2020/04/25/10/15/illustration-5090161_1280.jpg');">
                                                             <div class="card-body">
                                                                   <p>
                                                                         <h3 class="card-title fw-bold" rows="4"><?php echo $rows['title'] ?></h3>
-                                                                        <h4 class="card-title"><?php echo $rows['date_start'].(($rows['date_end'] != '')? ' : '.$rows['date_end']:'') ?></h4>
+                                                                        <h4 class="card-title"></h4>
                                                                   </p>
                                                             </div>
                                                       </a>
@@ -70,7 +60,7 @@
       </section>
 
       <?php
-            include './SectionTemplate/footer.php';
+            include './templates/footer.php';
 
 
             include_once './MetaScript/script.php';

@@ -74,7 +74,7 @@
                         "<div class='text-error'>Fail to ".$_GET['use']." Student School Data</div>";
             }
 
-            for ($i=1; $i <= $_POST['g-count']; $i++) { 
+            for ($i=1; $i < $_POST['g-count']; $i++) { 
                   $g_first_name = ucwords($_POST['g_first_name-'.$i]);
                   $g_middle_name = ucwords($_POST['g_middle_name-'.$i]);
                   $g_family_name = ucwords($_POST['g_family_name-'.$i]);

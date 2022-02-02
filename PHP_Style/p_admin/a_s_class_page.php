@@ -14,12 +14,7 @@
 <?php 
             $_SESSION['Class'] = 'true';
 
-            $_SESSION['Student'] = null;
-
-            $_SESSION['id_delete'] = null;
-            $_SESSION['table_delete'] = null;
-            $_SESSION['return'] = null;
-            $_SESSION['image_name'] = null;
+            unset($_SESSION['Student'], $_SESSION['id_delete'], $_SESSION['table_delete'], $_SESSION['return'], $_SESSION['image_name'], $_SESSION['Edit']);
             
             include './templates/header_2.php';
 

@@ -11,11 +11,11 @@ class Subject extends multi_functions
                                     `title` varchar(255) NOT NULL,
                                     `code` varchar(255) NOT NULL,
                                     `description` text DEFAULT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`),
                                     KEY `schyearsemester_id` (`schyearsemester_id`),
                                     CONSTRAINT `subject_tb_ibfk_1` FOREIGN KEY (`schyearsemester_id`) REFERENCES `schyearsemester_tb` (`id`)
-                              ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;";
+                              ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
       public function __construct(Connection $db)
       {
@@ -23,6 +23,14 @@ class Subject extends multi_functions
             $this->db = $db;
 
             $this->tablechecker();
+      }
+
+      public function getSubjectCard_YearSemester($schsem_id)
+      {
+            $sql_c = "SELECT id, title, code FROM $this->table
+                              WHERE schyearsemester_id='$schsem_id' AND active=1
+                              ORDER BY code";
+            return $this->checker($sql_c);
       }
 
       public function getSubjectCardData()

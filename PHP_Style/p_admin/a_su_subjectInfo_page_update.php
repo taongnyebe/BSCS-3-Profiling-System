@@ -3,10 +3,20 @@
 
 <?php
       $css = '<link rel="stylesheet" href="../CSS/header_template1.css">'."\n"
-                  .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n";
+                  .'<link rel="stylesheet" href="../CSS/cardcss.css">'."\n"
+                  .'<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>'."\n"
+                  .'<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>';
       $titleName = "SIMS CS-Org - Subject";
 
-      include_once './MetaScript/meta.php'
+      include_once './MetaScript/meta.php';
+
+      //delete this
+      if (isset($_POST['submit'])) {
+            echo $address = $homeurl.((isset($_GET['page']))? "p_admin/a_subject_page.php?page=".$_GET['page'] : "p_admin/a_su_subjectInfo_page.php?id=".$_GET["s_id"]);
+            echo "<script type='text/javascript'>document.location.href='{$address}';</script>";
+            echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $address . '">';
+      }
+
 ?>
 
 <body style="height: 100vh">
@@ -19,6 +29,8 @@
 
             $title = (isset($_GET["id"]))? $_SESSION['Subject'] : (($_GET['use'] == 'Add')? "Add Subject" : "Update Subject");
 
+            if (isset($_GET['page'])) $year = $schyearsem->getSelectedSchYear($_GET['page']);
+
             if (isset($_GET['s_id'])) $subject = $subj->getSubjectCardDataSpecific($_GET['s_id']);
             
             $add = "";
@@ -29,24 +41,25 @@
 
       <section >
             <form action="" method="post">
-                  
-                  <div class=" p-1 text-center">
-                        <img src="<?php
-                                    if ($id || isset($_GET['s_id'])) {
-                                          echo (isset($subject['filename']))?
-                                                '../Assets/profiles/'.$subject['filename']:
-                                                "https://avatars.dicebear.com/api/initials/".$subject['title'].".svg";
-                                    }
-                                    else {
-                                          $_SESSION['image'] = null;
-                                          $_SESSION['image_name'] = null;
-                                          echo '../Assets/placeholders/starting_profile.png';
-                                    }
-                                    ?>" 
-                              id='image' alt="" class="profile rounded border border-3 shadow" style="width: 300px; height: 400px; object-fit: cover;" >
-                  </div>
-                  <div class="p-1 text-center">
-                        <input type="file" name="profile_img" onchange="readURL(this);" accept=".png,.jpg">
+                  <div class="mb-5">
+                        <div class=" p-1 text-center">
+                              <img src="<?php
+                                          if ($id || isset($_GET['s_id'])) {
+                                                echo (isset($subject['filename']))?
+                                                      '../Assets/profiles/'.$subject['filename']:
+                                                      "https://avatars.dicebear.com/api/initials/".$subject['title'].".svg";
+                                          }
+                                          else {
+                                                $_SESSION['image'] = null;
+                                                $_SESSION['image_name'] = null;
+                                                echo '../Assets/placeholders/starting_profile.png';
+                                          }
+                                          ?>" 
+                                    id='image' alt="" class="profile rounded border border-3 shadow" style="width: 300px; height: 400px; object-fit: cover;" >
+                        </div>
+                        <div class="p-1 text-center">
+                              <input type="file" name="profile_img" onchange="readURL(this);" accept=".png,.jpg">
+                        </div>
                   </div>
                   <br>
                   <div class="shadow container mx-auto">
@@ -78,10 +91,14 @@
                               </div>
                               <div class="row text-center">
                                     <div class="col">
-                                          <input class="w-50 text-center h4" type="text" name="sch_year" value="<?php if (isset($_GET['s_id'])) echo $subject['title'] ?>">
+                                          <input class="w-50 text-center h4" type="text" name="sch_year" value="<?php echo ($_GET['use'] == 'Add')? $year['sch_year'] : "2020" ?>">
                                     </div>
                                     <div class="col">
-                                          <input class="w-50 text-center h4" type="text" name="semester" value="<?php if (isset($_GET['s_id'])) echo $subject['code'] ?>">
+                                          <select class="h3 w-50 text-center" name="semester" id="0">
+                                                <option value='1' <?php echo '' ?>>1st Semester</option>
+                                                <option value='2' <?php echo '' ?>>2nd Semester</option>
+                                                <option value='3' <?php echo '' ?>>Mid Semester</option>
+                                          </select>
                                     </div>
                               </div>
                               <div class="row text-center">

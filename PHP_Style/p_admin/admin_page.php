@@ -12,11 +12,9 @@
 <body>
 
       <?php 
-            $_SESSION['MainMenu'] = null;
-            $_SESSION['Class'] = null;
-            $_SESSION['Student'] = null;
-            $_SESSION['Subject'] = null;
-            $_SESSION['Activities'] = null;
+            unset($_SESSION['MainMenu'], $_SESSION['research'], $_SESSION['Class'],
+            $_SESSION['Student'], $_SESSION['Subject'], $_SESSION['Activities'],
+            $_SESSION['awards'], $_SESSION['seminar'], $_SESSION['competition'], $_SESSION['Edit']);
 
             include './templates/header_1.php';
 
@@ -31,7 +29,7 @@
                   <div id="app" class="container-fluid text-center">
                         <?php 
                               $cardName = array("Year &<br> Section", "Subject", "Research", "Activities");
-                              $cardSite = array("./a_section_page.php?page=0", "./a_subject_page.php", "./a_research_page.php", "./activities_page.php");
+                              $cardSite = array("./a_section_page.php?page=0", "./a_subject_page.php?page=0", "./a_research_page.php", "./a_activities_page.php");
                               $cardIcon = array("../Assets/icons/main_menu/section_icon.png",
                                                 '../Assets/icons/main_menu/subject_icon.png',
                                                 '../Assets/icons/main_menu/research_icon.png',

@@ -25,6 +25,8 @@ require $homedir.'\Connection\class\c_student_data.php';
 require $homedir.'\Connection\class\c_studentSchool_data.php';
 require $homedir.'\Connection\class\c_guardian_data.php';
 require $homedir.'\Connection\class\c_subject_data.php';
+require $homedir.'\Connection\class\c_research_data.php';
+require $homedir.'\Connection\class\c_researchstudent_data.php';
 
 $db = new Connection();
 $login = new Login($db);
@@ -37,3 +39,4 @@ $sd = new StudentData($db);
 $ssd = new StudentSchoolData($db);
 $gd = new GuardianData($db);
 $subj = new Subject($db);
+$research = new Research($db);

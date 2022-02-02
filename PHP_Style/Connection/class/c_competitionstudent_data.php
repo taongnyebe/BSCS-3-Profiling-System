@@ -9,7 +9,7 @@ class CompetitionStudent extends multi_functions
                                     `id` int(11) NOT NULL AUTO_INCREMENT,
                                     `studentschool_id` int(11) NOT NULL,
                                     `competition_id` int(11) NOT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`),
                                     KEY `studentschool_id` (`studentschool_id`),
                                     KEY `competition_id` (`competition_id`),

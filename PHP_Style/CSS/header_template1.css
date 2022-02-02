@@ -214,6 +214,19 @@ footer {
   display: none;
 }
 
+.grid-container {
+  display: grid;
+}
+
+.grid-container--fit {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+.grid-element {
+  padding: 20px;
+  color: #000;
+}
+
 @media screen and (max-width: 1950px) {
   .wrapper-grid-subject {
     grid-template-columns: repeat(2, 1fr);

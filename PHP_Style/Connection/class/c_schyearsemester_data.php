@@ -9,7 +9,7 @@ class SchYearSem extends multi_functions
                                     `id` int(11) NOT NULL AUTO_INCREMENT,
                                     `semester` varchar(255) DEFAULT NULL,
                                     `sch_year` varchar(255) DEFAULT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`)
                               ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;";
 
@@ -33,6 +33,13 @@ class SchYearSem extends multi_functions
       {
             $sql_c = "SELECT * FROM $this->table 
                         WHERE id='$id'";
+            return $this->singlechecker($sql_c);
+      }
+
+      public function getID_SchYearSem($sch_year, $sem)
+      {
+            $sql_c = "SELECT id FROM $this->table 
+                        WHERE sch_year='$sch_year' AND semester='$sem'";
             return $this->singlechecker($sql_c);
       }
 

@@ -10,7 +10,7 @@ class SecurityRetrival extends multi_functions
                                     `user_id` int(11) DEFAULT NULL,
                                     `question` varchar(255) DEFAULT NULL,
                                     `answer` varchar(255) DEFAULT NULL,
-                                    `active` binary(1) NOT NULL DEFAULT '1',
+                                    `active` int(11) NOT NULL DEFAULT '1',
                                     PRIMARY KEY (`id`),
                                     KEY `user_id` (`user_id`),
                                     CONSTRAINT `securityretrival_tb_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user_tb` (`id`)

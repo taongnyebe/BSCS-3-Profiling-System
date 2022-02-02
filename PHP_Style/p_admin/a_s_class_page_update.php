@@ -24,7 +24,8 @@
             $add_btn = $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';
 
-            if($_GET['use'] == "Update") $yearsection = $ys->getSpecificSchYear($_GET['id']);
+            if ($_GET['use'] == "Update") $yearsection = $ys->getSpecificSchYearData($_GET['id']);
+            if ($_GET['use'] == "Update") $sch_data = $schyearsem->getDesignatedSchYear($yearsection['schyearsemester_id']);
 ?>
       <section>
             <form action="../_forms/update_add_sections_form.php?use=<?php echo $_GET['use']?>&id=<?php echo $_SESSION['section_id'] ?? 0 ?>" method="post" enctype="multipart/form-data">
@@ -33,14 +34,14 @@
                                     if($_GET['use'] == "Update"){
                                           echo (isset($yearsection['filename']))?
                                                 '../Assets/profiles/'.$yearsection['filename']:
-                                                "https://avatars.dicebear.com/api/identicon/".$yearsection['year'].$yearsection['semester'].$yearsection['section'].".svg";
+                                                "https://avatars.dicebear.com/api/identicon/".$yearsection['year'].$yearsection['section'].".svg";
                                     }
                                     else{
                                           unset($_SESSION['image'], $_SESSION['image_name']);
                                           echo "https://avatars.dicebear.com/api/identicon/initial.svg";
                                     }
                                     ?>" 
-                              id='image' alt="" class="profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
+                              id='image' alt="" class="p-3 shadow profile rounded border border-3" style="width: 300px; height: 400px; object-fit: cover;" >
                   </div>
                   <div class="p-1 text-center">
                         <input type="file" name="profile_img" onchange="readURL(this);" accept=".png,.jpg">
@@ -94,7 +95,7 @@
                                                 <input type="number" name="sch_year_start"
                                                 class="text-center h5 p-1 w-50" required
                                                 placeholder=" Input Section Number" 
-                                                value="<?php if($_GET['use'] == "Update") echo substr($yearsection['sch_year'], 0,4)?>" <?php if($_GET['use'] == "Add") echo 'id="year-start"'?>/>
+                                                value="<?php if($_GET['use'] == "Update") echo substr($sch_data['sch_year'], 0,4)?>" <?php if($_GET['use'] == "Add") echo 'id="year-start"'?>/>
                                           </div>
                                     </div>
                               </div>
@@ -105,9 +106,9 @@
                                     <div class="row">
                                           <div class="col text-center">
                                                 <select name="semester" id="0" class="h5 w-50 text-center" style="height: 100%">
-                                                      <option value='1' <?php if($_GET['use'] == "Update" && $yearsection['semester'] == 1) echo 'selected'?>>1st Semester</option>";
-                                                      <option value='2' <?php if($_GET['use'] == "Update" && $yearsection['semester'] == 2) echo 'selected'?>>2nd Semester</option>";
-                                                      <option value='3' <?php if($_GET['use'] == "Update" && $yearsection['semester'] == 3) echo 'selected'?>>Mid Semester</option>";
+                                                      <option value='1' <?php if($_GET['use'] == "Update" && $sch_data['semester'] == 1) echo 'selected'?>>1st Semester</option>";
+                                                      <option value='2' <?php if($_GET['use'] == "Update" && $sch_data['semester'] == 2) echo 'selected'?>>2nd Semester</option>";
+                                                      <option value='3' <?php if($_GET['use'] == "Update" && $sch_data['semester'] == 3) echo 'selected'?>>Mid Semester</option>";
                                                 </select>
                                           </div>
                                     </div>

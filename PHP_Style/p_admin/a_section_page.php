@@ -15,7 +15,7 @@
 <?php 
             $_SESSION['MainMenu'] = "Class";
 
-            unset($_SESSION['Class'], $_SESSION['Student'], $_SESSION['year'], $_SESSION['section'], $_SESSION['section_id'] );
+            unset($_SESSION['Class'], $_SESSION['Student'], $_SESSION['year'], $_SESSION['section'], $_SESSION['section_id'], $_SESSION['Edit']);
 
             include './templates/header_2.php';
 
@@ -72,7 +72,6 @@
                                                       if ($section_data != 1 && $section_data != 2) {
                                                             foreach ($section_data as $section_data) {
                                                                   $count = $ssd->countStudentSectionYear($section_data['id']);
-
 ?>
                                                                   <a href="./a_s_class_page.php?id=<?php echo $section_data['id'] ?>" class="border btn text-center rounded m-3 p-0">
                                                                         <card data-image="<?php echo (false /*change to file_name*/)? "" : 
@@ -85,35 +84,17 @@
 <?php 
                                                             }     
                                                       }else { 
-?>
-                                                            <div class="border btn text-center rounded m-3 p-0">
-                                                                  <card data-image="../Assets/placeholders/no_available_file.png" class="m-0">
-                                                                        <h2 slot="header" class="fs-3 pop">No Available Class!</h2>
-                                                                        <p slot="content"></p>
-                                                                  </card>
-                                                            </div>
-<?php
+                                                            $tag = "No Available Class!";
+                                                            include './templates/not_available_card.php';
                                                       }
                                                 }
                                     }else { 
-?>
-                                          <div class="border btn text-center rounded m-3 p-0">
-                                                <card data-image="../Assets/placeholders/no_available_file.png" class="m-0">
-                                                      <h2 slot="header" class="fs-3 pop">No Available Class!</h2>
-                                                      <p slot="content"></p>
-                                                </card>
-                                          </div>
-      <?php
+                                          $tag = "No Available Class!";
+                                          include './templates/not_available_card.php';
                                     }
                               }else { 
-?>
-                                    <div class="border btn text-center rounded m-3 p-0">
-                                          <card data-image="../Assets/placeholders/no_available_file.png" class="m-0">
-                                                <h2 slot="header" class="fs-3 pop">No Available Class!</h2>
-                                                <p slot="content"></p>
-                                          </card>
-                                    </div>
-<?php
+                                    $tag = "No Available Class!";
+                                    include './templates/not_available_card.php';
                               }
 ?>
                   </div>
