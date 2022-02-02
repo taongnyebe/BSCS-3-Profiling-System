@@ -20,7 +20,7 @@
 
             $title = "Subject List";
             
-            $add = "./a_su_subjectInfo_page_update.php?use=Add";
+            $add = "./a_su_subjectInfo_page_update.php?use=Add&page=".(isset($_GET['page'])? $_GET['page'] : '' );
             $edit = "";
             $add_btn = true; $edit_btn = $search_input = $delete_btn = false;
             include './templates/back_tab.php';

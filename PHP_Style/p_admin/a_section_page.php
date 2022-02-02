@@ -15,7 +15,7 @@
 <?php 
             $_SESSION['MainMenu'] = "Class";
 
-            unset($_SESSION['Class'], $_SESSION['Student'], $_SESSION['year'], $_SESSION['section'], $_SESSION['section_id'] );
+            unset($_SESSION['Class'], $_SESSION['Student'], $_SESSION['year'], $_SESSION['section'], $_SESSION['section_id'], $_SESSION['Edit']);
 
             include './templates/header_2.php';
 

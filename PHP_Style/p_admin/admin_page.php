@@ -14,7 +14,7 @@
       <?php 
             unset($_SESSION['MainMenu'], $_SESSION['research'], $_SESSION['Class'],
             $_SESSION['Student'], $_SESSION['Subject'], $_SESSION['Activities'],
-            $_SESSION['awards'], $_SESSION['seminar']);
+            $_SESSION['awards'], $_SESSION['seminar'], $_SESSION['competition'], $_SESSION['Edit']);
 
             include './templates/header_1.php';
 

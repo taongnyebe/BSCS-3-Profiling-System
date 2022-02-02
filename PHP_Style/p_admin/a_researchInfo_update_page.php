@@ -8,7 +8,14 @@
                   .'<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>';
       $titleName = "SIMS CS-Org - Webinars";
 
-      include_once './MetaScript/meta.php'
+      include_once './MetaScript/meta.php';
+
+      //delete this
+      if (isset($_POST['submit'])) {
+            echo $address = $homeurl.((isset($_GET["id"]))? "p_admin/a_researchInfo_page.php?id=".$_GET["id"] : "p_admin/a_research_page.php");
+            echo "<script type='text/javascript'>document.location.href='{$address}';</script>";
+            echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $address . '">';
+      }
 ?>
 
 <body>

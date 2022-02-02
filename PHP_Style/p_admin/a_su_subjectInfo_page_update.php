@@ -8,7 +8,15 @@
                   .'<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>';
       $titleName = "SIMS CS-Org - Subject";
 
-      include_once './MetaScript/meta.php'
+      include_once './MetaScript/meta.php';
+
+      //delete this
+      if (isset($_POST['submit'])) {
+            echo $address = $homeurl.((isset($_GET['page']))? "p_admin/a_subject_page.php?page=".$_GET['page'] : "p_admin/a_su_subjectInfo_page.php?id=".$_GET["s_id"]);
+            echo "<script type='text/javascript'>document.location.href='{$address}';</script>";
+            echo '<META HTTP-EQUIV="refresh" content="0;URL=' . $address . '">';
+      }
+
 ?>
 
 <body style="height: 100vh">
@@ -20,6 +28,8 @@
             include './templates/header_2.php';
 
             $title = (isset($_GET["id"]))? $_SESSION['Subject'] : (($_GET['use'] == 'Add')? "Add Subject" : "Update Subject");
+
+            if (isset($_GET['page'])) $year = $schyearsem->getSelectedSchYear($_GET['page']);
 
             if (isset($_GET['s_id'])) $subject = $subj->getSubjectCardDataSpecific($_GET['s_id']);
             
@@ -81,10 +91,14 @@
                               </div>
                               <div class="row text-center">
                                     <div class="col">
-                                          <input class="w-50 text-center h4" type="text" name="sch_year" value="<?php echo 1 ?>">
+                                          <input class="w-50 text-center h4" type="text" name="sch_year" value="<?php echo ($_GET['use'] == 'Add')? $year['sch_year'] : "2020" ?>">
                                     </div>
                                     <div class="col">
-                                          <input class="w-50 text-center h4" type="text" name="semester" value="<?php echo 1 ?>">
+                                          <select class="h3 w-50 text-center" name="semester" id="0">
+                                                <option value='1' <?php echo '' ?>>1st Semester</option>
+                                                <option value='2' <?php echo '' ?>>2nd Semester</option>
+                                                <option value='3' <?php echo '' ?>>Mid Semester</option>
+                                          </select>
                                     </div>
                               </div>
                               <div class="row text-center">
